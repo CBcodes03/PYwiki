@@ -74,7 +74,7 @@ iframe { flex: 1; width: 100%; border: none; }
     </div>
 
     <div class="content">
-        <div id="current-path">📄 No file selected</div>
+            <div id="current-path">📄 No file selected</div>
         <iframe id="file-frame" src="{% url 'welcome' %}"></iframe>
     </div>
 </div>
@@ -128,7 +128,13 @@ document.addEventListener("DOMContentLoaded", function() {
             const path = e.target.dataset.path;
             iframe.src = path;
             currentPath.textContent = `📄 ${(path.replace('/view','')).slice(0,-1)}`;
-        }
+            currentPath.insertAdjacentHTML('beforeend', '<button id="edit-button" class="btn btn-sm btn-outline-light ms-2">Edit</button>');
+            currentPath.addEventListener("click", (e) => {
+                if (e.target.id === "edit-button") {
+                    console.log("Edit clicked");
+                }
+            });
+    }
     });
 
     // Default welcome if iframe empty
@@ -144,14 +150,6 @@ document.addEventListener("DOMContentLoaded", function() {
         var toast = new bootstrap.Toast(toastEl, { delay: 4000 });
         toast.show();
     });
-    // edit button handler
-    var editbutton = document.getElementById("edit-button");
-    if (editbutton) {
-        editbutton.addEventListener("click", function() {
-            var currentFilePath = iframe.src.replace('/view', '/edit');
-            iframe.src = currentFilePath;
-        });
-    }
 });
 </script>
 </body>
