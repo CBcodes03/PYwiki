@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Order Details &gt; Items List</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="My-Orders_31162437.html">My Orders</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Order Details &gt; Items List
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Jun 01, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="OrderDetails&gt;ItemsList-Overview">Overview</h2><p>Here users will be able to see the statuses of all the order items. This page will list down all the variants grouped by products.</p><p>This page has two major functions:</p><ol><li>Tracking items' status</li><li>Cancellation </li></ol></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="OrderDetails&gt;ItemsList-1.TrackingItemStatuses">1. Tracking Item Statuses</h2><p><strong>Data Points and Logic - Header</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 3.85426%;"/><col style="width: 19.8334%;"/><col style="width: 76.1217%;"/></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd">Company Name of the Seller</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Seller MOQ</td><td class="confluenceTd">Value of Seller MOQ (this must be fetched from the orders table, as this will be save in orders table at the time of placing the order.)</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Order ID</td><td class="confluenceTd">SK Order ID generated</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Order Value</td><td class="confluenceTd">This is the total net order value (adjusted of shipping and discounts)</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Total Pairs </td><td class="confluenceTd">Total sum of pairs in the order</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Payment Option</td><td class="confluenceTd">Payment option of the order</td></tr></tbody></table></div><p><br/></p><p><strong>Data Points and Logic - Products / Variants List</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.8195%;"><colgroup><col style="width: 3.53947%;"/><col style="width: 19.7888%;"/><col/></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Product Name</td><td class="confluenceTd">Brand Name and Counter Code</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Product MOQ</td><td class="confluenceTd">Product MOQ (fetch from Order Item table)</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Expected Delivery </td><td class="confluenceTd">Dispatch Time given by Seller + D2D time (5 Days)</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Product Value Amount</td><td class="confluenceTd">Sum of value of all variants [(<a class="createlink" href="/wiki/pages/createpage.action?spaceKey=DOC&amp;title=%28SKPrice%20%2B%20extSKPrice%29*%20total%20pairs&amp;linkCreation=true&amp;fromPageId=31293554">SKPrice + extSKPrice + extraCharge(if any) ) x total pairs</a>]</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Total pairs of the product</td><td class="confluenceTd">Total pairs of the product</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Variant image </td><td class="confluenceTd"><strong>On click,</strong> open the product details page (if available)</td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Variant Color</td><td colspan="1" class="confluenceTd">Name of the color of the variant</td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">Size Set</td><td colspan="1" class="confluenceTd">Size Set selected by the user of that variant</td></tr><tr><td colspan="1" class="confluenceTd">9</td><td colspan="1" class="confluenceTd">Extra Charge</td><td colspan="1" class="confluenceTd">Show extra charge value next to size set in orange color (if any)</td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd">Variant SK Price</td><td colspan="1" class="confluenceTd">SK Price + extSKPrice + ExtraCharge(if any)</td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Variant Pairs</td><td colspan="1" class="confluenceTd">Total pairs of that variant</td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">Variant Total Amount</td><td colspan="1" class="confluenceTd">Variant SK price x Variant pairs</td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd"><p>Variant Statuses</p><p><br/></p></td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>Every Variant will show statuses below it.</p><p>There can be maximum of 3 different statuses of one variant:</p><ul style="list-style-type: square;"><li>Movement Status</li><li>Cancelled by Buyer</li><li>Cancelled by Seller </li></ul><p>Each status will have following attributes and they will be dynamic:</p><ul style="list-style-type: square;"><li>Text </li><li>Text Color</li><li>Bg Color</li><li>Info Icon - Will appear only with cancelled Statuses</li></ul><p>Following are the various statuses:</p><p><strong>a. Confirmation Pending</strong></p><ol><li>Text Color: #818181</li><li>Bg Color: #F9F9F9</li></ol><p><strong>b. X Pairs In Process</strong></p><ol><li>Text Color: #FF9C4B</li><li>Bg Color: #FFF9F3</li></ol><p><strong>c. X Pairs In Packaging </strong></p><ol><li>Text Color: #FF9C4B</li><li>Bg Color: #FFF9F3</li></ol><p><strong>d. X Pairs Initiated Pickup</strong></p><ol><li>Text Color: #309FF6</li><li>Bg Color: #EEF7FF</li></ol><p><strong>e. X Pairs Dispatched</strong></p><ol><li>Text Color: #309FF6</li><li>Bg Color: #EEF7FF</li></ol><p><strong>f. X Pairs in NDR</strong></p><ol><li>Text Color: #FF6565</li><li>Bg Color: #FFF6F6</li></ol><p><strong>g. X Pairs in RTO</strong></p><ol><li>Text Color: #FF6565</li><li>Bg Color: #FFF6F6</li></ol><p><strong>h. X Pairs Delivered</strong></p><ol><li>Text Color: #00C29C</li><li>Bg Color: #E7FFFA</li></ol><p><strong>i. X Pairs Cancelled by you</strong></p><ol><li>Text Color: #FF6565</li><li>Bg Color: #FFF6F6</li><li>Info Icon - on click, Show reason of cancellation </li></ol><p><strong>j. X Pairs Cancelled by Seller</strong></p><ol><li>Text Color: #FF6565</li><li>Bg Color: #FFF6F6</li><li>Info Icon - on click, Show reason of cancellation</li></ol></div></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/31293554/31096945.png?width=350" data-image-src="attachments/31293554/31096945.png" data-unresolved-comment-count="0" data-linked-resource-id="31096945" data-linked-resource-version="3" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders Details Test 1 – 1.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31293554" data-linked-resource-container-version="13" data-media-id="d34b2ba4-a6bb-4df6-be29-7e193fb39194" data-media-type="file"></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p style="text-align: right;"><strong>All Possible Variant Statuses</strong> </p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/31293554/52723723.png?width=350" data-image-src="attachments/31293554/52723723.png" data-unresolved-comment-count="0" data-linked-resource-id="52723723" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="statuses.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31293554" data-linked-resource-container-version="13" data-media-id="e989731d-58b2-4e16-9dbc-9ab742b178d5" data-media-type="file"></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="OrderDetails&gt;ItemsList-2.Cancellation">2. Cancellation</h2><p>A Buyer can cancel the whole order. <span class="legacy-color-text-blue4"><em>(Variant Cancellations will be introduced in later releases)</em></span></p><h3 id="OrderDetails&gt;ItemsList-CancelOrder">Cancel Order</h3><p>This will be available inside the option menu on the Toolbar. </p><p>In case all the items of that order are already cancelled or all the items have status Pickup Initiated and above, then keep this option Disabled.</p><ol><li>If Order status = Placed, then cancel order button enabled.</li><li>If order status = Cancelled or Complete, then &quot;cancel order&quot; button disabled</li><li>If order status = confirmed, &quot;Cancel order button&quot; enabled. On click, check<br/><ol><li>If all items of that order have (order_stage), then show popup &quot;You order cannot be cancelled as all the items have been initiated for pickup&quot;. (handling by API)</li><li>If all items of that order are either fully cancelled OR does not have status (In Packaging, In Process, New Order), then show popup &quot;Your order cannot be cancelled as all of the items have either been initiated for pickup or already cancelled.&quot; (handling by API)</li><li>Else, show Bottom sheet for entering reason of cancellation</li></ol></li></ol><p><br/></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="300" loading="lazy" src="attachments/31293554/34766876.png?width=300" data-image-src="attachments/31293554/34766876.png" data-unresolved-comment-count="0" data-linked-resource-id="34766876" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Cancel Order.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31293554" data-linked-resource-container-version="13" data-media-id="6b7e3967-392f-43ec-a66c-1537b2799768" data-media-type="file"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-thumbnail" width="300" loading="lazy" src="attachments/31293554/34570284.png?width=300" data-image-src="attachments/31293554/34570284.png" data-unresolved-comment-count="0" data-linked-resource-id="34570284" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Cancelled Order.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31293554" data-linked-resource-container-version="13" data-media-id="67b8d90c-349c-4d74-955d-19f11bed9880" data-media-type="file"></span></p><p><strong>On click, </strong>Open a bottom sheet which will ask for the reason of cancellation. The list of reasons will be dynamic i.e Given by APIs.</p><p><strong>On click,</strong> of &quot;Cancel Order&quot;, validate that atleast one reason should be selected. If 'other reason' option is selected, then validate that the Edit box must not be empty.</p><p> <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/31293554/34570292.png?width=350" data-image-src="attachments/31293554/34570292.png" data-unresolved-comment-count="0" data-linked-resource-id="34570292" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Reason for cancellation.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31293554" data-linked-resource-container-version="13" data-media-id="740b0ca0-dcb3-4624-942a-0a89023ff733" data-media-type="file"></span></p><p><strong>On Click,</strong> of Cancel Order, check if all the variants are eligible to be marked Cancelled (i.e all variants have any of the following statuses &quot;Confirmation Pending&quot;, &quot;In Process&quot;, &quot;In Packaging&quot;):</p><ol><li>If Yes, open popup: &quot;All items of this order will get cancelled. Are you sure you want to cancel ?&quot; [ Options YES | NO ]. </li><li>If No, open Popup: &quot;X items of this order will get cancelled. Are you sure you want to cancel ?&quot; [ Options YES | NO ]</li></ol><p><strong>On click</strong> of  'YES', the following actions should be performed.</p><ul style="list-style-type: square;"><li>For case 1 above, Update the cancelled mark at Order Level [Status = 5, Cancelled On, Cancelled By, Remaining Pairs=0] and also update at order details level. Also insert respective cancellation log entries. </li></ul><ul><li>For case 2 above, Update status of all variants having any one of the status: &quot;Confirmation pending&quot;, &quot;In Process&quot;, &quot;In Packaging&quot; and mark them cancelled with the respective reason.</li></ul><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Web Serivice Tasks on Cancellation</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>On Cancelling the Order, the following tasks should happen in Database.</p><p><span class="legacy-color-text-blue4">Pending</span></p></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><strong>Alternative Flow:</strong></p><p><br/></p><ol><li>Orders Listing Api will give the data for no. of order items elligible for cancellation. (order_stage !=3 and remainingSetCount&gt;0) Suppose, itemsCancellable = X</li><li>In Orders Details Page, on toolbar,<ol><li>if the itemsCancellable = 0, then show Cancel Order Button Disabled. On click, show popup &quot;This order cannot be cancelled as all the items have either been initiated for pickup or already cancelled&quot;</li><li>If the itemsCancellable &gt; 0, then show Cancel Order Button as enabled. On click,<ol><li>If itemsCancellable = no. of order items, show popup : &quot;All items of this order will get cancelled. Are you sure you want to cancel ?&quot; [ Options YES | NO ]. </li><li>If itemsCancellable != no. of Order items, show popup: &quot;X items of this order will get cancelled. Are you sure you want to cancel ?&quot; [ Options YES | NO ]</li></ol></li><li>On Click of &quot;Yes&quot; in either of the above case, open Bottom Sheet.</li><li>After User selects the reasons, when he clicks on final &quot;Cancel Order&quot; button, on success, show message &quot;Items Cancelled Successfully&quot; and refresh the page to reflect the changes made.</li></ol></li></ol></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34734101.png">My Orders Details Test 1 – 1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34734093.png">orders items in placed status.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/52723714.png">My Orders Details Test 1 – 1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34701328.png">My Orders Details - PreConfirmation.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34701333.png">Variant Statuses.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34570284.png">Cancelled Order.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34766876.png">Cancel Order.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/53542913.png">Reason for cancellation.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34603111.png">cancel item expanded.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34701418.png">cancel item collapsed.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/31096945.png">My Orders Details Test 1 – 1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/52723723.png">statuses.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31293554/34570292.png">Reason for cancellation.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

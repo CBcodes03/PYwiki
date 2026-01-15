@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Track Consignment</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Track Consignment
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Jun 05, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="TrackConsignment-Overview">Overview</h2><p>This page will open on clicking &quot;Track Consignments&quot; menu option from the side Drawer. This screen basically will help the buyers keep a track on the status of their consignments of all the orders that they have placed. This page will be divided in three tabs:</p><ol><li><strong>In Transit:</strong> Show all consignments where: (cm.pickupInitiatedOn&gt;0 AND cm.actDispatchDate&gt;0 AND cm.rtoDate=0 AND cm.actDeliveryDate=0)</li><li><strong>Delivered:</strong> Show all consignments where: (cm.pickupInitiatedOn&gt;0 AND cm.actDispatchDate&gt;0 AND cm.rtoDate=0 AND cm.actDeliveryDate&gt;0)</li><li><strong>RTO:</strong> Show all consignments where: (cm.pickupInitiatedOn&gt;0 AND cm.actDispatchDate&gt;0 AND cm.rtoDate&gt;0)</li></ol><p>Each tab will show individual consignment cards with following data points: </p><h3 id="TrackConsignment-DataPointsandLogic"><strong>Data Points and Logic</strong></h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.888%;"><colgroup><col style="width: 3.10172%;"/><col style="width: 23.9976%;"/><col style="width: 72.8905%;"/></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points and Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd">This populates the name of the seller of the consignment</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Consignment ID</td><td class="confluenceTd">This is the SK Consignment ID which appears just below the seller name.</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Date </td><td class="confluenceTd"><p>This is a dynamic date. Its label will change according to the tab in which the consignment is:</p><ol><li>In Transit Tab: Show text &quot;Dispatched&quot; followed by the date cm.actDispatchDate</li><li>Delivered Tab: Show text &quot;Delivered&quot; followed by the date cm.actDeliveryDate</li><li>RTO Tab: Show text &quot;RTO On&quot; followed by the date cm.rtoDate</li></ol></td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Status &amp; Remarks</td><td class="confluenceTd"><p>The status comprises of two parts: Main Status &amp; Logistics Remarks. Each Main Status will be appended by the Logistics remarks which will be fetched from &quot;cm.logisticsTrackingRemark&quot; field.</p><ol><li><strong>In Transit</strong><ol><li>Logic: (cm.actDispatchDate&gt;0 AND cm.NDRDate=0 AND cm.logisticTrackingRemark != <span class="legacy-color-text-orange2">&quot;Out For Delivery&quot;</span>)</li><li>Color: #FF9C4B</li></ol></li><li><strong>OFD</strong><ol><li>Logic: (cm.actDispatchDate&gt;0 AND cm.logisticTrackingRemark = <span class="legacy-color-text-orange2">&quot;Out For Delivery&quot;</span>)</li><li>Color: #4BACFF</li></ol></li><li><strong>NDR</strong><ol><li>Logic: (cm.actDispatchDate&gt;0 AND cm.NDRDate&gt;0 AND cm.logisticTrackingRemark != <span class="legacy-color-text-orange2">&quot;Out For Delivery&quot;<span class="legacy-color-text-default">)</span></span></li><li><span class="legacy-color-text-orange2"><span class="legacy-color-text-default">Color: #FF6565</span></span></li></ol></li><li><strong><span class="legacy-color-text-orange2"><span class="legacy-color-text-default">Delivered</span></span></strong><ol><li>Logic: (cm.actDispatchDate&gt;0 AND cm.actDeliveryDate&gt;0 AND cm.rtoDate=0<span class="legacy-color-text-orange2"><span class="legacy-color-text-default">)</span></span></li><li><span class="legacy-color-text-orange2"><span class="legacy-color-text-default">Color: #00C29C</span></span></li></ol></li><li><strong><span class="legacy-color-text-orange2"><span class="legacy-color-text-default">RTO</span></span></strong><ol><li><span class="legacy-color-text-orange2"><span class="legacy-color-text-default">Logic: </span></span>(cm.actDispatchDate&gt;0 AND cm.rtoDate&gt;0<span class="legacy-color-text-orange2"><span class="legacy-color-text-default">)</span></span></li><li><span class="legacy-color-text-orange2"><span class="legacy-color-text-default">Color: <span class="legacy-color-text-orange2"><span class="legacy-color-text-default">#FF6565</span></span></span></span></li></ol></li></ol><p>Also, there will be an info icon on the right side of the remarks status. <strong>On click</strong>, open a tooltip which will display the full remarks text. </p><p><span class="legacy-color-text-orange2">** Note for Iqbal - There will be a new status &quot;OFD&quot; which is supposed to be shown while the consignment is in &quot;In Transit&quot; Tab. To show this status, we need to check our logistics partner's documentation for what remark they give in case of OFD. If the cm.logisticsTrackingRemark has that value then we show the &quot;OFD&quot; Status on App.</span></p></td></tr><tr><td class="highlight-red confluenceTd" data-highlight-colour="red">5</td><td class="highlight-red confluenceTd" data-highlight-colour="red"><p>Image Thumbnails</p><p><strong>(Deprecated for now)</strong></p></td><td class="highlight-red confluenceTd" data-highlight-colour="red"><p>This appears below the Status. This will show up the imgae thumbnails of the order items mapped with each consignment. The maximum no. of images showing here can be 5.</p><p>In case the screen size is not able to accommodate the 5 images, put a horizontal scroller on this section.</p></td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Consignment Value</td><td class="confluenceTd">This is the value that appears in Green. This is the consignment value (cm.consignmentValue)</td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Consignment Items</td><td colspan="1" class="confluenceTd"><p>This value comes right next to the Consignment Value. This shows No of Cartons (cm.cartonCount). Appended by No. of Pairs (This value will come from order_details table.) </p></td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">View Details</td><td colspan="1" class="confluenceTd"><p>This is the button that appears on bottom right corner of each card. <strong>On click, </strong>of this button, a new page &quot;<a href="Consignment-Details_71532581.html" data-linked-resource-id="71532581" data-linked-resource-version="3" data-linked-resource-type="page">Consignment Details</a>&quot; will open up. </p><p>Note - If a user clicks on the image thumbnail, then also open the &quot;<a href="Consignment-Details_71532581.html" data-linked-resource-id="71532581" data-linked-resource-version="3" data-linked-resource-type="page">Consignment Details</a> Page&quot;</p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<h3 style="text-align: right;" id="TrackConsignment-InTransitTab(Updated)">In Transit Tab (Updated)</h3><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/68059137/141623297.png?width=350" data-image-src="attachments/68059137/141623297.png" data-unresolved-comment-count="0" data-linked-resource-id="141623297" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders - Tracking Status - In Transit Updated.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="68059137" data-linked-resource-container-version="6" data-media-id="6612b04b-94d1-4d84-940b-2ab755125e52" data-media-type="file"></span></p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout three-equal" data-layout="three-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="TrackConsignment-DeliveredTab">Delivered Tab</h3><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/68059137/68911152.png?width=350" data-image-src="attachments/68059137/68911152.png" data-unresolved-comment-count="0" data-linked-resource-id="68911152" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders - Tracking Status - Delivered.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="68059137" data-linked-resource-container-version="6" data-media-id="3555cf6a-45cd-44c5-a480-9b0816e99304" data-media-type="file"></span></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 style="text-align: right;" id="TrackConsignment-DeprecatedDesign">Deprecated Design</h3><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/68059137/69337108.png?width=350" data-image-src="attachments/68059137/69337108.png" data-unresolved-comment-count="0" data-linked-resource-id="69337108" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders - Tracking Status - In Transit – 3.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="68059137" data-linked-resource-container-version="6" data-media-id="d54f578d-ca5c-46fe-9e67-4338a8a1784d" data-media-type="file"></span></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/68059137/69009416.png">My Orders - Tracking Status - In Transit.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/68059137/69337108.png">My Orders - Tracking Status - In Transit – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/68059137/68911152.png">My Orders - Tracking Status - Delivered.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/68059137/68878381.png">My Orders - Tracking Status - RTO.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/68059137/141623297.png">My Orders - Tracking Status - In Transit Updated.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

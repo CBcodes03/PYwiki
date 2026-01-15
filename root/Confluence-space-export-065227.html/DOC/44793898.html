@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Buyer Verification (Removed)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Admin-Panel-2.0_31096835.html">Admin Panel 2.0</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Buyer Verification (Removed)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 15, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="BuyerVerification(Removed)-Overview">Overview</h2><p>This screen will be used to verify the buyers who have placed an order but their documents are not verified. <strong>Since a buyer can place multiple orders at once, this page will show a combined order entry on the basis of the time of order placed. For example: if a buyer did a multiple checkout on 3 sellers, a combined entry will be shown on this page</strong>.</p><p>Overall, admin can do 3 actions here:</p><ul style="list-style-type: square;"><li>Cancel the Order</li><li>Verify the Buyer</li><li>Change the Address</li></ul><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic to show Orders</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Only those orders will be visible here, whose buyer has his documents pending for verification and order is not confirmed (o.status =4 AND o.confirmedOn=0).</p><p>For every order check, 'tinNo' field in user_master table.</p><ul style="list-style-type: square;"><li>If Empty, check 'orderVerifyDone'<ul style="list-style-type: square;"><li>If orderVerifyDone = 1, then do not show the order entry</li><li>If orderVeridyDone = 0, then show the order entry</li></ul></li><li>If Not Empty, check 'isGSTVerified'<ul style="list-style-type: square;"><li>if isGSTVerified = 1, then do not show the order entry</li><li>if isGSTVerified = 0, then show the order entry</li></ul></li></ul></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>This page will have the standard sort, filter and Search features. <span class="legacy-color-text-blue4">(Do not show the Download CSV button)</span></p><h3 id="BuyerVerification(Removed)-DataPointsandLogic">Data Points and Logic</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.8592%;"><colgroup><col style="width: 2.0339%;"/><col style="width: 12.7684%;"/><col style="width: 85.1977%;"/></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Total Buyers</td><td class="confluenceTd"><p>This appears below the Search, Filter section. This will show the total count of orders that appear on this page. (logic is same as explained above).</p><p>On applying Search and filters, this data should change accordingly.</p></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Pagination</td><td class="confluenceTd">This is the standard pagination used for all other pages.</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">R / N icons </td><td class="confluenceTd"><div class="content-wrapper"><p>These icons appear before the Buyers name in Order Card. R stands for Repeat Buyer and N Stands for New Buyer.</p><p>For any order only one of these icons will be present at a given time. </p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic to show Repeat/New icons</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Show R Icon: if the buyer has placed 2 or more orders and atleast one order has o.status=4 AND o.confirmedOn&gt;0</p><p>Show N icon: in else condition of the above logic.</p></div></div><p class="auto-cursor-target">Keep orange color for R and Cyan color for N.</p></div></td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Buyer Name (City)</td><td class="confluenceTd"><p>The 'companyName' of the buyer who has placed the order. Appended by the city to which he belongs. Fetch the city from the order table &quot;delCity&quot;. </p><p>Maximum character limit of 45. If exceeds show ....</p></td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Buyer Phone No.</td><td class="confluenceTd">This appears just below the Buyer Name. 'companyPhone'</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Verification info </td><td class="confluenceTd"><div class="content-wrapper"><p>This section appears to the right of the buyer name. There will be two labels:</p><ol><li>Document Verification</li><li>GST Verification</li></ol><p>Each label will be appended by either Red exclamation icon, Green Tick icon or 'Not Provided' text on the basis of the following condition.</p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic for verification icon</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>For Document Verification label,</p><ul style="list-style-type: square;"><li>Show Red Exclamation icon if, orderVerifyDoc is not NULL AND orderVerifyDone = 0</li><li>Show Green Tick icon if, orderVerifyDoc is not NULL AND orderVerifyDone = 1</li><li>Show 'Not Provided' text if, if, orderVerifyDoc is NULL </li></ul><p>For GST Verification Label, </p><ul><li>Show Red Exclamation icon if, tinNo is not NULL AND isGSTVerified=0</li><li>Show Green Tick icon if, tinNo is not NULL AND isGSTVerified=1</li><li>Show 'Not Provided' text if, if, isGSTVerified is NULL </li></ul></div></div></div></td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">Order Placed Date</td><td class="confluenceTd">Show the date of placing the order. Fetch this from ''updatedOn&quot;  field in Orders table.</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">Order Total Amounts and Pairs</td><td class="confluenceTd"><p>Show the Sum of  Net Value of the Orders placed at same placed Date (Sum of &quot;netAmount&quot; from Orders Table).</p><p>Append this with total SKUs of all orders placed on same placed date (Sum of &quot;items&quot; from Orders Table)</p><p>Append this with total pairs of all orders placed on same placed date (Sum of &quot;pairs&quot; from Orders Table)</p></td></tr><tr><td colspan="1" class="confluenceTd">9</td><td colspan="1" class="confluenceTd">Three Tabs</td><td colspan="1" class="confluenceTd"><p>Each Order Card will have three tab menus. </p><ul style="list-style-type: square;"><li>Verification and Payment</li><li>Buyer Details</li><li>Sellers</li><li>Comment Log (x) - Not there in Design</li></ul><p>On clicking any menu, the card will expand to their respective Ui's. On clicking again on an already opened menu tab, will collapse the card to its default Ui. </p></td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd">Verification and Payment Menu Tab</td><td colspan="1" class="confluenceTd"><p>This Tab contains three sections:</p><ul style="list-style-type: square;"><li>Document Verification</li><li>GST Verification</li><li>Payment Details</li></ul><p>(Each Explained Below)</p></td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Document Verification</td><td colspan="1" class="confluenceTd"><p>This section has following items:</p><ol><li>Verification Type : This will show a dropdown showing the values selected by the buyer from the app. (&quot;orderVerifyType&quot; from orders table). On clicking the dropdown a list of options will appear: Bill Book, Visiting Card and Shop Photo. On selection of any option it will set the value in the dropdown. (do not update in database at this stage). if the field is empty, show empty dropdown.</li><li>Verification info: If the 'orderVerifyDoc' field is not NULL, show a hyperlinked text &quot;View Image&quot; <strong>on click </strong>of which open the url file in a new tab. In case the 'orderVerifyDoc' field is NULL, show a text &quot;No Image&quot;</li><li>Checkbox - This check box will appear checked if &quot;orderVerifyDone = 1&quot; else unchecked. Admin will click on this checkbox and click on &quot;Mark Verified&quot; Button to update the verification status of the document.</li></ol></td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">GST Verification</td><td colspan="1" class="confluenceTd"><p>This section has following items:</p><ol><li>GST Number: this will show an edit box which will fetch values from 'tinNo' from user_master table.</li><li>Checkbox - This check box will appear checked if &quot;isGSTVerified= 1&quot; else unchecked. Admin will click on this checkbox and click on &quot;Mark Verified&quot; Button to update the verification status of the GST.</li></ol></td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd">Payment Details </td><td colspan="1" class="confluenceTd"><p>This will show the payment details as a sum value of all the orders placed on the same date and time.</p><ul style="list-style-type: square;"><li>Total Pairs (Sum of 'pairs' orders table)</li><li>Subtotals (Sum of od.setsize*od.setcount*(od.Skprice+od.extSKPrice) of each order item from order_details table)</li><li>Shipping Charge (Sum of shipping+shippingTaxAmt)</li><li>Coupon Discount (Sum of couponDiscount)</li><li>Advance Discount (Sum of advDiscount)</li><li>Net Amount (Sum of netAmount)</li><li>Payment Option (paymentOption)</li><li>Payment Mode (paymentMode)</li><li>Advance (Sum of advnace)</li><li>Balance (Sum of balance)</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">14</td><td colspan="1" class="confluenceTd">Buyer Details Menu Tab</td><td colspan="1" class="confluenceTd"><p> This section is divided into two parts:</p><ol><li>Shipping Address<ol><li>um.companyName</li><li>um.concernPerson</li><li>um.companyPhone</li><li>o.delStreetAddress (new)</li><li>o.delcity</li><li>o.delPincode</li><li>o.delstate</li><li>Edit Button - <strong>On click, </strong>open a address popup as shown in design. (Explained Below) </li></ol></li><li>Buyer Information<ol><li>um.concernPerson</li><li>ad.city (isSelected=1)</li><li>um.username</li><li>um.createdOn</li><li>um.platform</li><li>um.appVersion</li></ol></li></ol></td></tr><tr><td colspan="1" class="confluenceTd">15</td><td colspan="1" class="confluenceTd">Shipping Address Popup</td><td colspan="1" class="confluenceTd"><p>This popup will show the pre-filled address information of the delivery address given by buyer. This popup will be used to edit the address. On Updating the address all the orders placed on same placed date must get updated.</p><ul style="list-style-type: square;"><li>Street Address (o.delDtreetAddress) - new </li><li>Pincode (o.delPincode)</li><li>Check Availability Button - <strong>On click</strong>, run the pincode servicibility api used in the app and find if the pincode is available or not. If available, show green tick, if not available show red exclamation mark.</li><li>City and State fields will be locked edit boxed. By default they will be prefilled and fetched from the o.delcity and o.delstate from orders table. They will be updated by the servicibility api response as well.</li><li>Update Button: <strong>on click,</strong> Check the Servicibility api for pincode abailability. If yes, update the pincode, city, state and street address in orders table. If Not, show exclamation mark next to pincode edit box. </li></ul></td></tr><tr><td colspan="1" class="confluenceTd">15</td><td colspan="1" class="confluenceTd">Sellers menu tab</td><td colspan="1" class="confluenceTd"><p>This will expand and show the list of sellers on whom the order was placed.</p><ul style="list-style-type: square;"><li>Name of Seller </li><li>Seller's city</li><li>OrderID</li><li>Net Amount | Total SKU | Total pairs - for individual sellers' orders</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">16</td><td colspan="1" class="confluenceTd">Comment log</td><td colspan="1" class="confluenceTd"><p>The Comment Log text will be appended by &quot;(X)&quot; ; where X = no. of comments on that user. </p><p><strong>On click</strong>, open the comment log popup <em>(as designed by Pratyush)</em>. This will fetch and update data from the user_master table.</p></td></tr><tr><td colspan="1" class="confluenceTd">16</td><td colspan="1" class="confluenceTd">Cancel Order</td><td colspan="1" class="confluenceTd"><p><strong>On click, </strong>update the status of all the orders having same placed date as o.status = 5 AND update o.cancelledOn with the timestamp AND isRemoved=1</p><p>Also, update the following information at the Order Details level and update the entries in CancellationLog Table.</p><p>remainingSetCount=0, isRemoved=1.</p><p>Do no show this button is (isGSTVerified=1 OR orderVerifyDone =1)</p></td></tr><tr><td colspan="1" class="confluenceTd">17</td><td colspan="1" class="confluenceTd">Mark Verified</td><td colspan="1" class="confluenceTd"><p><strong>On Click, </strong>update the information provided in the Documents Verification and GST Verification Section.</p><p>After updating,</p><ul style="list-style-type: square;"><li>if still any verification is pending, then show toast message &quot;Unable to verify as Buyer Verification is incomplete.&quot;</li><li>If no verification is pending, then show toast message &quot;Buyer is successfully verified &quot;</li><li>If buyers' tinNo &gt; 0 and isGSTVerified =1, then update the tinNo. in Orders Table as well.</li></ul></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/44793898/48037907.png" data-image-src="attachments/44793898/48037907.png" data-unresolved-comment-count="0" data-linked-resource-id="48037907" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Verification Page.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="44793898" data-linked-resource-container-version="9" data-media-id="94d4794d-46db-4f14-af8b-47c7ee3a302c" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/44793898/48037907.png">Verification Page.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

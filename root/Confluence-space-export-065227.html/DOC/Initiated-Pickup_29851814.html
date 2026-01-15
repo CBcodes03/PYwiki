@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Initiated Pickup</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Seller-Board-3.0_24805934.html">Seller Board 3.0</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Order-Management_26542081.html">Order Management</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Initiated Pickup
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 11, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=tfe17dd89o]{color:#333333} html[data-color-mode=dark] [data-colorid=tfe17dd89o]{color:#cccccc}[data-colorid=jlekdeo0xy]{color:#333333} html[data-color-mode=dark] [data-colorid=jlekdeo0xy]{color:#cccccc}</style>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="InitiatedPickup-Overview">Overview</h2><p>This screen will list all the consignments whose pickup has been initiated and is not dispatched yet.</p><p><span class="legacy-color-text-blue4"><strong>NOTE - We do not have to do Cancel Consignment and Move back to In Packaging in this release</strong></span></p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.9371%;"><colgroup><col style="width: 3.30463%;" /><col style="width: 12.2103%;" /><col style="width: 77.9668%;" /><col style="width: 6.38521%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points /&nbsp; Button</th><th class="confluenceTh">Logic</th><th class="confluenceTh">Status</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Summary</td><td class="confluenceTd">This will be same as the In Packaging Screen.</td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Consignment Row</td><td class="confluenceTd"><p>The order of the consignments will be based on the latest Initiated pickup on top.</p><p>Showing Data Points:</p><ol style="text-align: left;"><li>Buyer Name and City&nbsp;[Existing]</li><li>Consignment ID&nbsp;[Existing]</li><li>Consignment Value: Total Consignment Value of non cancelled variants (SK Price x Pairs), Total non cancelled Products in consignment, Total non cancelled pairs in consignment)&nbsp;[Existing]</li><li>Initiated Pickup On: Date of initiating Pickup [New]</li><li>Delhivery Partner - Name of logistics partner assigned for that consignment.&nbsp;[Existing]</li><li>Documents Tab: On click of the documents tab, following options will appear:&nbsp;[Existing]<br />- Invoice (Download)<br />- Consignment Sticker (Download)<br />- Print Item List (open in print preview format)</li><li>Options Button: this will contain menu options &ldquo;Cancel Consignment&rdquo;, &ldquo;Move back to In Packaging&rdquo; &amp; &ldquo;Change Invoice No&rdquo;.[New]</li><li>Expand/Collapse Button &ndash; for expanding the view of any consignment.&nbsp;[New]</li></ol></td><td class="confluenceTd">Change</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Cancel Consignment</td><td class="confluenceTd"><p>On click, open a popup</p><p>&ldquo;Are you sure you want to cancel the Consignment&rdquo;. On cancelling the consignment, following things should happen,</p><ol><li>Update the status of consignment as cancelled.</li><li>Update the cancellation status at Order Item level as well</li><li>Cancelled By - Seller</li><li>Cancelled On - TimeStamp</li><li>Reason of Cancellation - As given by seller</li><li>Cancelled Order Item ID</li><li>No. of Lots Cancelled</li><li>Status at the time of cancellation - &quot;Pickup initiated&quot;</li></ol><p><strong>Validation:&nbsp;</strong>On cancelling the Consignment, run a check on all the variants in that consignment. Since the variants can belong to multiple orders, check all the unique orders if all their variants are marked cancelled or not. (i.e sum of remaining qty of all other variants in the order = 0)</p><ul style="list-style-type: square;"><li>If yes, Remove &amp; reset the consignment id, and update cancellation mark at order level&nbsp;[<span data-colorid="jlekdeo0xy">Status = 5, Cancelled By, Cancelled On]</span></li><li><span data-colorid="tfe17dd89o">If No, Just remove the consignment and reset it.</span></li></ul><p><span class="legacy-color-text-blue4">Cancelling Manifestation - Run manifest cancellation api and Pickup request cancellation api (if any)</span></p></td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Move Back to In Packaging</td><td class="confluenceTd"><p><strong>On Click</strong>, Change the status of the consignment from initiated to &quot;In packaging&quot; so that it starts to appear in &quot;In Packaging&quot; tab</p><p>Also do the following changes:</p><ol><li>Reset all the calculated values and logistics related information from the Consignment Table.</li><li>Run manifestation cancellation api (if Any)</li><li>Run the Pickup request cancellation Api (if Any)</li></ol><p>Note* This shall not merge with any existing consignment id (if present) in &quot;In Packaging&quot;&nbsp; page.&nbsp;</p></td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Change Invoice No.</td><td class="confluenceTd"><div class="content-wrapper"><p>On Click, open a small dialog below the &quot;documents&quot; button, where invoice no. value will be pre-filled if it already exists.&nbsp;</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/29851814/29884509.png" data-image-src="attachments/29851814/29884509.png" data-unresolved-comment-count="0" data-linked-resource-id="29884509" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="update invoice No..PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="29851814" data-linked-resource-container-version="2" data-media-id="6f92e575-3254-49e8-9f77-36b52a8b9ad2" data-media-type="file" /></span></p><p>Seller, can enter the invoice no. or update an existing invoice no.&nbsp;</p><p><strong>Validation:</strong> Invoice no. cannot be duplicate for one Seller.</p></div></td><td class="confluenceTd">New</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/29851814/29917329.png" data-image-src="attachments/29851814/29917329.png" data-unresolved-comment-count="0" data-linked-resource-id="29917329" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- Initiated Pickup.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="29851814" data-linked-resource-container-version="2" data-media-id="62930869-ca20-4d33-b58f-74c0e943ae9f" data-media-type="file" /></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="1000" loading="lazy" src="attachments/29851814/29917329.png?width=1000" data-image-src="attachments/29851814/29917329.png" data-unresolved-comment-count="0" data-linked-resource-id="29917329" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- Initiated Pickup.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="29851814" data-linked-resource-container-version="2" data-media-id="62930869-ca20-4d33-b58f-74c0e943ae9f" data-media-type="file" /></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/29851814/29917329.png">Orders- Initiated Pickup.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/29851814/29884509.png">update invoice No..PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

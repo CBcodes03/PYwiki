@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Buyer Info PopUp</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Seller-Board-3.0_24805934.html">Seller Board 3.0</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Order-Management_26542081.html">Order Management</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Buyer Info PopUp
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 14, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="BuyerInfoPopUp-Overview">Overview</h2><p>This popup can be accessed by clicking on the info icon next to the Buyer Name (City) in &quot;New Orders&quot; or &quot;In Process&quot; Screen.</p><p>This popup will basically give more details about the order and also some buyer history of the seller.</p><p><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 7.04403%;"/><col style="width: 25.8281%;"/><col style="width: 66.8623%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Buyer Name </td><td class="confluenceTd">This will be the title of the popup</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Profile Type</td><td class="confluenceTd">This will be the subtitle of the popup</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Order Count</td><td class="confluenceTd"><p>Count of Orders that buyer has placed on the Seller before </p><p>Keep this line hidden if the count is 0.</p></td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Pie Chart</td><td class="confluenceTd"><p>Represent the following data in a pie chart.</p><ol><li>Cancellation Rate – Total Pairs Cancelled by Buyer divided by the Total Pairs Ordered.</li><li>RTO rate - Total Pairs RTO divided by Total pairs ordered.</li></ol><p>This Pie Chart will be visible only once the Buyer has passed a threshold Parameter <span class="legacy-color-text-blue4">(Updated below the image)</span>. </p><p>In case the threshold has not been passed, keep the pie chart hidden and shift the &quot;order details&quot; section towards the left. (The width of popup must reduce accordingly.) </p></td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Order Details</td><td colspan="1" class="confluenceTd"><p>This is a tabular format element. Show following contents:</p><ol><li>Total Amount: Total Order Value (NET)</li><li>Total pairs</li><li>Payment Option</li><li>GST No. (If any)</li><li>Full Address</li><li>City</li><li>Pincode</li><li>State</li></ol></td></tr></tbody></table></div></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="700" loading="lazy" src="attachments/27918363/27787326.png?width=700" data-image-src="attachments/27918363/27787326.png" data-unresolved-comment-count="0" data-linked-resource-id="27787326" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="buyer info popup.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="27918363" data-linked-resource-container-version="2" data-media-id="5829eeba-de06-4e8e-a1b2-a652952e167e" data-media-type="file"></span></p><p><br/></p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic for Showing Pie Chart Data</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Show the pie chart data if:</p><ol><li>The total order count of the buyer is 6. (i.e o.status=4 AND o.confirmedOn&gt;0)</li><li>The Cancellation Rate Value and RTO Rater Value should be greater than 0%</li></ol></div></div><p class="auto-cursor-target"> In case the <strong>above logic do not satisy</strong>, show as following:</p><p class="auto-cursor-target"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/27918363/49217562.png" data-image-src="attachments/27918363/49217562.png" data-unresolved-comment-count="0" data-linked-resource-id="49217562" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="not enough data.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="27918363" data-linked-resource-container-version="2" data-media-id="5a531b32-7d4f-4d3b-9f14-ea652c52cf79" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27918363/27951160.png">Orders- New Orders – (Buyer Info).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27918363/27787326.png">buyer info popup.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27918363/49217562.png">not enough data.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

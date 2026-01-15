@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Favourites</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Favourites
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Mar 24, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="Favourites-Overview">Overview</h2><p>User can mark products as favorite. They can go to &quot;My favorites&quot; and revisit all the products marked as favorites.</p><h2 id="Favourites-UserFlow">User Flow</h2><ol><li>User can click favorite icon on the product card or the product list item</li><li>User can slide the product list item in one direction to mark it as favorite <span class="legacy-color-text-red2">(We can do this in subsequent release)</span></li><li><span class="legacy-color-text-default">&quot;My Favorites&quot; menu item will be there in Side Navigation menu which will display all the favorites marked items of that user.</span></li></ol><h2 id="Favourites-Validations"><span class="legacy-color-text-default">Validations</span></h2><p><span class="legacy-color-text-default">When user is trying to mark a product as favorite, check whether logged-in or not. If Not, show toast &quot;You need to login to use this feature&quot; and open the Login/Signup Page.</span></p><p><span class="legacy-color-text-default">Same goes when a user trying to access &quot;My Favorites&quot; menu without logging in.</span></p><p><br/></p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="Favourites-UserInteractions&amp;Designs">User Interactions &amp; Designs</h2><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" alt="Product Card" height="250" width="193" loading="lazy" src="attachments/23199842/23199846.png?width=193" data-image-src="attachments/23199842/23199846.png" data-unresolved-comment-count="0" data-linked-resource-id="23199846" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="product card.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23199842" data-linked-resource-container-version="4" data-media-id="6182c416-7e44-4838-8f35-a151c2591443" data-media-type="file" title="Product Card"></span>        <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" alt="Product List Item" height="150" loading="lazy" src="attachments/23199842/23265467.png?height=150" data-image-src="attachments/23199842/23265467.png" data-unresolved-comment-count="0" data-linked-resource-id="23265467" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="product List.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23199842" data-linked-resource-container-version="4" data-media-id="d6ea202d-7018-4af3-9172-a8ec71f59db3" data-media-type="file" title="Product List Item"></span>    <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" alt="Product List item (Swipe Favorite)" height="150" loading="lazy" src="attachments/23199842/23199852.png?height=150" data-image-src="attachments/23199842/23199852.png" data-unresolved-comment-count="0" data-linked-resource-id="23199852" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="slide to favourite.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23199842" data-linked-resource-container-version="4" data-media-id="63aa21ab-d47d-4845-907f-b12d187ca915" data-media-type="file" title="Product List item (Swipe Favorite)"></span></p><p><br/></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" loading="lazy" src="attachments/23199842/23199879.png?height=400" data-image-src="attachments/23199842/23199879.png" data-unresolved-comment-count="0" data-linked-resource-id="23199879" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Side Srawer (Logged In).png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23199842" data-linked-resource-container-version="4" data-media-id="3fc28327-2b54-4c63-acf6-85e60e7122d2" data-media-type="file"></span>        <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" loading="lazy" src="attachments/23199842/23134348.png?height=400" data-image-src="attachments/23199842/23134348.png" data-unresolved-comment-count="0" data-linked-resource-id="23134348" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="New Card List.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23199842" data-linked-resource-container-version="4" data-media-id="affe2bdc-4329-4716-b4d9-f414ad030164" data-media-type="file"></span></strong></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23199842/23199846.png">product card.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23199842/23265467.png">product List.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23199842/23199852.png">slide to favourite.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23199842/23199879.png">Side Srawer (Logged In).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23199842/23134348.png">New Card List.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

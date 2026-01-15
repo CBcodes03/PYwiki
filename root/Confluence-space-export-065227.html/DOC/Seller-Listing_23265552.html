@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Seller Listing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Seller Listing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Mar 26, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="SellerListing-Overview">Overview</h2><p>This will be a new page introduced to the app. this will help users browse through the sellers present on the App. Only the available sellers must appear in any seller listing (logic for sellers defined below).</p><h2 id="SellerListing-DataPoints">Data Points</h2><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.5956%;"><colgroup><col style="width: 5.28455%;"/><col style="width: 23.6585%;"/><col style="width: 71.0569%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd">Name of the Company with which registered as seller.</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">City</td><td class="confluenceTd">Name of the city with which registered</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Seller MOQ</td><td class="confluenceTd"><p>If the value is more than 0, show &quot;Seller MOQ - X Pairs&quot;</p><p>whereas, if the value is &quot;0&quot;, show &quot;No Seller MOQ&quot;</p></td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Product Count</td><td colspan="1" class="confluenceTd">Show Total active products of that seller. (logic of availability applicable here)</td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Image Thumbnails</td><td colspan="1" class="confluenceTd"><p>Show 4 variant thumbnail images. the variants visible here will be according to the latest product approved. </p></td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Go to Seller Shop (button)</td><td colspan="1" class="confluenceTd">redirect to Seller Shop Info Page</td></tr></tbody></table></div><h2 id="SellerListing-Userflow">User flow</h2><ol><li>If user click on any area of the card except the image thumbnails, then &quot;Seller Shop Info&quot; page will open up.</li><li>If user click directly on any image thumbnail, then &quot;Product Details&quot; page will open up.</li><li>There will be no Seller filters for release 6.0</li></ol><p><br/></p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic to check availability</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ol><li>sellerStatus = Active</li><li>isProductActive = 1</li><li>Has minimum of one approved product with status &quot;isAvailable=true&quot; and &quot;brand status = Active&quot; and limited stock for all size sets is not &quot;0&quot; (if limited stock is active)</li></ol></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23265552/23167168.png?width=350" data-image-src="attachments/23265552/23167168.png" data-unresolved-comment-count="0" data-linked-resource-id="23167168" data-linked-resource-version="5" data-linked-resource-type="attachment" data-linked-resource-default-alias="Seller Listing.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23265552" data-linked-resource-container-version="5" data-media-id="a09e87be-d96d-4b64-87a6-7bc7eebe45cd" data-media-type="file"></span></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23265552/23101662.png">Seller Listing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23265552/25755649.png">Seller Listing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23265552/24576514.png">Seller Listing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23265552/24642002.png">Seller Listing.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23265552/23167168.png">Seller Listing.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

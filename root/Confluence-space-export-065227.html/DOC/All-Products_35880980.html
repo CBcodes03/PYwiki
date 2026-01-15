@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : All Products</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Admin-Panel-2.0_31096835.html">Admin Panel 2.0</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : All Products
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 19, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=owz27tu3en]{color:#574751} html[data-color-mode=dark] [data-colorid=owz27tu3en]{color:#b8a8b2}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="AllProducts-Overview">Overview</h2><p>This is an internal module for the Admin Panel where the team can view all the Products that have been Approved via the Product Review Process.&nbsp;</p><p><strong>Scope of work:</strong></p><p>#1 Allow admin to apply filter, sort &amp; search from the list of products.<br />#2 Admin could Activate/Deactivate Variants<br />#3 Show admin all the information about the product</p><p><strong>Three Parts</strong>:</p><ol><li>Main Listing Page</li><li>Image slider popup&nbsp;</li><li>&nbsp;Product Details popup</li></ol><p><em>*Note for Dev</em> - Keep a special focus on the Search &amp; Filters options and how they work along with pagination.</p><ul style="list-style-type: square;"><li>Download CSV (Not currently.)</li></ul><p><strong>Zeplin URL -&nbsp;<span data-colorid="owz27tu3en"><a class="external-link" href="http://zpl.io/VOB4x4k" rel="nofollow">zpl.io/VOB4x4k</a></span></strong></p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>The Page title will be &quot;<strong>All Products</strong>&quot; followed by the total product count on the App. (Logic - Count of Unique product ids where &quot;ApprovedOn&gt;0&quot;)</p><p>Below the Sorting/Filters box, Show the following texts (as shown in image below):</p><p><strong>Total Variants</strong>:&nbsp;(Logic - Count of Unique variant ids where &quot;ApprovedOn&gt;0&quot;)</p><p><strong>Active Variants</strong>:&nbsp;(Logic - Count of Unique variant ids where &quot;ApprovedOn&gt;0&quot; AND &quot;isAvailable=1&quot;)</p><p><strong>Inactive Variants</strong>:&nbsp;(Logic - Count of Unique product ids where &quot;ApprovedOn&gt;0&quot; AND &quot;is Available=0&quot;)</p><p><strong>Sorting :</strong> By default Descending order based on ApprovedOn (approved Date).</p><p><strong>Filters :</strong>&nbsp; Yet to discuss....</p><p>Note - The above values will change as per the filters/search queries applied. In case no filters or search query is there it will simply show the total values.&nbsp;</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/35880980/44793872.png" data-image-src="attachments/35880980/44793872.png" data-unresolved-comment-count="0" data-linked-resource-id="44793872" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="all products variants sumary.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="35880980" data-linked-resource-container-version="9" data-media-id="5a55605c-f397-454f-9fd2-10efaa88346b" data-media-type="file" /></span></p><h3 id="AllProducts-DataPointsandLogics(MainListingpage)">Data Points and Logics (Main Listing page)</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 3.39266%;" /><col style="width: 16.4071%;" /><col style="width: 80.2002%;" /></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Product Name&nbsp;</td><td class="confluenceTd"><p>Name of the Brand. Appended with the brand counter.&nbsp;</p><p>[Brand Name Character Limit - 20]</p></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Seller Name&nbsp;</td><td class="confluenceTd"><p>Name of the Seller (using Seller ID of the product)</p><p>[Character Limit - 30]</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Sell type&nbsp;</td><td class="confluenceTd"><p>Check field &quot;sellsType&quot; in products Table:</p><ul style="list-style-type: square;"><li>If sellsType=0, show text &quot;Lot&quot;</li><li>If sellsType=1, show text &quot;Lot&quot;</li><li>If sellsType= 2, show text &quot;Carton&quot;</li></ul></td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Include Color</td><td class="confluenceTd"><p>Check field &quot;multipleColors&quot; in products Table:</p><ul style="list-style-type: square;"><li>If&nbsp;multipleColors=1, show text &quot;Yes&quot;</li><li>If&nbsp;multipleColors=0, show text &quot;No&quot;</li></ul></td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Lots Size</td><td class="confluenceTd">Data from field &quot;lotSize&quot; in Products Table</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Product MOQ</td><td class="confluenceTd">Data from field &quot;moqPairs&quot; in Products Table</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">Seller MOQ</td><td class="confluenceTd">Data from field &quot;sellerMOQ&quot; in user_master Table</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">MRP&nbsp;</td><td class="confluenceTd">Data from field &quot;mrp&quot; in Products Table</td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">SK Price</td><td class="confluenceTd">Data from field &quot;skPrice&quot; in Products Table</td></tr><tr><td class="confluenceTd">10</td><td class="confluenceTd">Category</td><td class="confluenceTd"><p>Show the category text in the following format:</p><p>'Main Category'&gt;'Sub-Category'&gt;'Style'</p><p>[Total Character Limit - 35]</p></td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">L/S</td><td colspan="1" class="confluenceTd"><p>Data from field &quot;isLeather&quot;,</p><ul style="list-style-type: square;"><li>If 0, show text &quot;Synthetic&quot;</li><li>If 1, show text &quot;Leather&quot;</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">Upper</td><td colspan="1" class="confluenceTd">Data from field &quot;matUpper&quot; in products Table</td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd">Lining</td><td colspan="1" class="confluenceTd">Data from field &quot;matLining&quot; in products Table</td></tr><tr><td colspan="1" class="confluenceTd">14</td><td colspan="1" class="confluenceTd">Sole</td><td colspan="1" class="confluenceTd">Data from field &quot;soleTypeId&quot; in products Table. Fetch the name of the sole via term type relationship tables.</td></tr><tr><td class="confluenceTd">15</td><td class="confluenceTd">Approved On&nbsp;</td><td class="confluenceTd">Show Date of Approval. Field &quot;approvedOn&quot; from products Table&nbsp;</td></tr><tr><td colspan="1" class="confluenceTd">16</td><td colspan="1" class="confluenceTd">Variant Image Thumb</td><td colspan="1" class="confluenceTd">Fetch the image url from &quot;defImage&quot; field in variants table.&nbsp;On click of any variant thumbnail image, a popup shall open showing all the angles.</td></tr><tr><td colspan="1" class="confluenceTd">17</td><td colspan="1" class="confluenceTd">Variant Color</td><td colspan="1" class="confluenceTd">Data from field &quot;colorId&quot; in variantsTable. fetch the color name via colors table&nbsp;</td></tr><tr><td colspan="1" class="confluenceTd">18</td><td colspan="1" class="confluenceTd">Article No.</td><td colspan="1" class="confluenceTd">Data from field &quot;brandCode&quot; in variants table</td></tr><tr><td colspan="1" class="confluenceTd">19</td><td colspan="1" class="confluenceTd">Active/Deactive Toggle</td><td colspan="1" class="confluenceTd"><p>This toggle will set the &quot;isAvailable&quot; field.</p><p>If Active, set value to &quot;1&quot;</p><p>If Deactive , set value &quot;0&quot;</p></td></tr><tr><td colspan="1" class="confluenceTd">20</td><td colspan="1" class="confluenceTd">View Details Button</td><td colspan="1" class="confluenceTd">On click of view Details button, open a &quot;Product Details&quot; popup. Explained below. Refer to the bottom of the screen. (Explained further below separately)</td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Data Points and Logics (Product Details Popup)</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 3.28142%;" /><col style="width: 16.6296%;" /><col style="width: 80.089%;" /></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points &amp; Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Base Pricing</td><td class="confluenceTd">Contains MRP, Seller Price (upto two decimal places, SK Price) from products table</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Bulk Pricing</td><td class="confluenceTd"><p>This section will be visible only if following value of the product is present in the &quot;product_bulkprice&quot; table:</p><p>a. 'MOQ' as MOQ</p><p>b. 'price' as Seller Price (upto two decimal places)</p><p>c. 'skPrice' as SK Price</p><p>This section must remain hidden in case no value are there in&nbsp;&quot;product_bulkprice&quot; table.</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Warranty</td><td class="confluenceTd">This texyt appears on right of Base Pricing Section. Fetch values from the field &quot;warrenty&quot; in products table</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Dispatch Time</td><td class="confluenceTd">Fetch data from field &quot;minLeadTime&quot; in products table.</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Size Sets and Extra Charge (if any)</td><td class="confluenceTd"><p>This section appears on bottom of popup. List down all the size sets mapped with the product in table &quot;product_setsizes&quot;.&nbsp; Find the Size IDs in this table and fetch its value via Size_master Table.</p><p>Also fetch the &quot;skPrice&quot; as Extra Charge and display next to the respective Size Sets.</p></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/35880980/44335120.png" data-image-src="attachments/35880980/44335120.png" data-unresolved-comment-count="0" data-linked-resource-id="44335120" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="All Products.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="35880980" data-linked-resource-container-version="9" data-media-id="1ac92ad9-2081-4e80-95c3-ac2d3ae388b5" data-media-type="file" /></span></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="AllProducts-Filters&amp;Sort">Filters &amp; Sort</h2><p><strong>Filters List</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 98.4657%;"><colgroup><col style="width: 23.6493%;" /><col style="width: 25.6881%;" /><col style="width: 21.5291%;" /><col style="width: 28.8685%;" /></colgroup><tbody><tr><th class="confluenceTh">Filter Parameter</th><th class="confluenceTh">Operations (possible)</th><th class="confluenceTh">Values</th><th colspan="1" class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">Brand Name</td><td class="confluenceTd">Equals, Contains, Starts with, Ends with</td><td class="confluenceTd">Alphabet inputs</td><td colspan="1" class="confluenceTd">Search for this in the 'brandName' field.</td></tr><tr><td class="confluenceTd">Main Category</td><td class="confluenceTd">Equals</td><td class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd">Values: Men, Women, Kids</td></tr><tr><td class="confluenceTd">Sub Category</td><td class="confluenceTd">Equals</td><td class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd">Values: Casuals, Formals, Sports, Slippers, Sandals, Boots, Heels, Boys, Girls</td></tr><tr><td class="confluenceTd">Style</td><td class="confluenceTd">Equals, Contains, Starts with, Ends with</td><td class="confluenceTd">Alphabet Inputs</td><td colspan="1" class="confluenceTd"><br /></td></tr><tr><td class="confluenceTd">Leather/Synthetic</td><td class="confluenceTd">Equals</td><td class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd"><p>Values: Leather (isLeather = 1), Synthetic (isLeather=0)&nbsp;</p></td></tr><tr><td class="confluenceTd">Sole</td><td class="confluenceTd">Equals</td><td class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd"><span class="legacy-color-text-blue4"><em>Will give values</em></span></td></tr><tr><td colspan="1" class="confluenceTd">Price&nbsp;</td><td colspan="1" class="confluenceTd">Equals, Greater than, Less than</td><td colspan="1" class="confluenceTd">Number Input</td><td colspan="1" class="confluenceTd"><br /></td></tr><tr><td colspan="1" class="confluenceTd">Availability</td><td colspan="1" class="confluenceTd">Equals</td><td colspan="1" class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd">Values: Active, Inactive</td></tr><tr><td colspan="1" class="confluenceTd">Seller Name&nbsp;</td><td colspan="1" class="confluenceTd">Equals, Contains, Starts with, Ends with</td><td colspan="1" class="confluenceTd">Alphabet Inputs</td><td colspan="1" class="confluenceTd"><br /></td></tr><tr><td colspan="1" class="confluenceTd">Sell Type</td><td colspan="1" class="confluenceTd">Equals</td><td colspan="1" class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd">Values: None, Lot, Carton</td></tr><tr><td colspan="1" class="confluenceTd">Multiple Color include</td><td colspan="1" class="confluenceTd">Equals</td><td colspan="1" class="confluenceTd">Dropdown</td><td colspan="1" class="confluenceTd">Values: None, Yes, No</td></tr><tr><td colspan="1" class="confluenceTd">Lot Size</td><td colspan="1" class="confluenceTd">Equals</td><td colspan="1" class="confluenceTd">Number Input</td><td colspan="1" class="confluenceTd"><br /></td></tr><tr><td colspan="1" class="confluenceTd">MOQ</td><td colspan="1" class="confluenceTd">Equals</td><td colspan="1" class="confluenceTd">Number Input</td><td colspan="1" class="confluenceTd"><br /></td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Sorting List</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 98.4657%;"><colgroup><col style="width: 23.6493%;" /><col style="width: 25.6881%;" /><col style="width: 28.8685%;" /></colgroup><tbody><tr><th class="confluenceTh">Filter Parameter</th><th class="confluenceTh">Operations (possible)</th><th colspan="1" class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">Approved On</td><td class="confluenceTd">Recent, Oldest</td><td colspan="1" class="confluenceTd">p.ApprovedOn Date</td></tr><tr><td class="confluenceTd">MRP</td><td class="confluenceTd">Highest, Lowest</td><td colspan="1" class="confluenceTd">mrp</td></tr><tr><td colspan="1" class="confluenceTd">SK Price</td><td colspan="1" class="confluenceTd">Highest, Lowest</td><td colspan="1" class="confluenceTd">skPrice</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35880980/35946503.pdf">Admin - All Products.pdf</a> (application/pdf)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35880980/44793877.png">All Products.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35880980/44793872.png">all products variants sumary.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/35880980/44335120.png">All Products.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

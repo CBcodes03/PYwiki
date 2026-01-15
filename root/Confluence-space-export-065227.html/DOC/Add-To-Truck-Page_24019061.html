@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Add To Truck Page</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Add To Truck Page
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Mar 26, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=w077kfi30b]{color:#333333} html[data-color-mode=dark] [data-colorid=w077kfi30b]{color:#cccccc}[data-colorid=bw67ejsivh]{color:#333333} html[data-color-mode=dark] [data-colorid=bw67ejsivh]{color:#cccccc}[data-colorid=zvimuoifhs]{color:#333333} html[data-color-mode=dark] [data-colorid=zvimuoifhs]{color:#cccccc}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="AddToTruckPage-Overview">Overview</h2><p>Here the users will make final decisions for purchasing a product. Lot Size, Carton Size, Size Sets, MOQ, variant color etc.</p><p>On landing on this page, app needs to check the various product configurations to populate the page accordingly.&nbsp;&nbsp;</p><p><br /></p><p>This Page will have majorly 4 Variations based on the product Configurations.</p><p><a href="23822563.html" data-linked-resource-id="23822563" data-linked-resource-version="2" data-linked-resource-type="page">Case 1: Lot Wise (Include Color = Yes)</a></p><p><a href="24707082.html" data-linked-resource-id="24707082" data-linked-resource-version="1" data-linked-resource-type="page">Case 2: Lot Wise (Include Color = No)</a></p><p><a href="24805399.html" data-linked-resource-id="24805399" data-linked-resource-version="1" data-linked-resource-type="page">Case 3: Carton Fixed (Include Color = Yes)</a></p><p><a href="24543275.html" data-linked-resource-id="24543275" data-linked-resource-version="1" data-linked-resource-type="page">Case 4: Carton Fixed (Include Color = No)</a></p><p><a href="24576078.html" data-linked-resource-id="24576078" data-linked-resource-version="1" data-linked-resource-type="page">Case 5: Carton Felxible</a></p><p><a href="24674413.html" data-linked-resource-id="24674413" data-linked-resource-version="1" data-linked-resource-type="page">Case 6: Lot Wise (Include Color = 0/Null)</a></p><p><br /></p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="AddToTruckPage-BasicPageDetails">Basic Page Details</h2><h3 id="AddToTruckPage-DataPoints">Data Points</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.26316%;" /><col style="width: 20.5668%;" /><col style="width: 74.17%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Brand Name and Counter</td><td class="confluenceTd">Name of Brand and Counter assigned to the Variant</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Sk Price and MRP</td><td class="confluenceTd">Final SK Price. Show MRP if MRP &gt; 0</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd"><span data-colorid="zvimuoifhs">MOQ/Carton</span></td><td class="confluenceTd"><p style="text-align: left;">&quot;MOQ&quot;, if Sell Type = Lot</p><p style="text-align: left;">&quot;Carton&quot;, if Sell Type = Carton</p><p style="text-align: left;">Appended by value of &quot;MOQ Pairs&quot;</p></td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd"><span data-colorid="w077kfi30b">Lot Size</span></td><td colspan="1" class="confluenceTd"><p style="text-align: left;">Show this in brackets appended to the MOQ/Carton text.&nbsp;</p><p style="text-align: left;">&quot;(1 Lot = X Pairs)&quot; ; where X = Lot Size Value&nbsp;</p></td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd"><span data-colorid="bw67ejsivh">Minimum Buying Details Text</span></td><td colspan="1" class="confluenceTd"><p style="text-align: left;">This Text line will appear below the &quot;MOQ Pairs&quot; Value. This text will be dynamic and the logic will be defined at API Level.</p><p style="text-align: left;">The logic for the Text has been explained in detail below.</p></td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Info Icon</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>On click of this icon, open a tooltip with following information:</p><ul style="list-style-type: square;"><li>Seller Name</li><li>Seller MOQ</li><li>Expected Delivery</li></ul><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="150" confluence-query-params="effects=border-simple,shadow-kn" loading="lazy" src="attachments/24019061/23822523.png?effects=border-simple,shadow-kn&amp;height=150" data-image-src="attachments/24019061/23822523.png" data-unresolved-comment-count="0" data-linked-resource-id="23822523" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="info tooltip.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24019061" data-linked-resource-container-version="16" data-media-id="7166ae06-06d0-4992-a292-3305c2bd8f95" data-media-type="file" /></span></p></div></td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Variant Block</td><td colspan="1" class="confluenceTd"><p>By Default, there will be only one variant block populated with first variant color image (in case multiple variant present). It will have following actionable points:</p><ul style="list-style-type: square;"><li>On Selection of No. of Pairs, show &quot;SK Price&quot; x &quot;Pairs Selected&quot; = &quot;Total amount&quot;. In case there is Extra Charge for selected Size Set, then append and show the Extra charge amount.</li><li>Color Name and &quot;Change Color&quot; Button. <strong>On click</strong>, open a dialog from below listing&nbsp;&nbsp;</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">Choose Size Set</td><td colspan="1" class="confluenceTd"><p><strong>On click</strong>, open dropdown with the list of size sets for the product.</p><ul><li>Validate for Limited Stock Value. In case a limited Stock value is active for a particular Size Set and the Stock lot value is '0', in that case do not show that Size Set.</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">9</td><td colspan="1" class="confluenceTd">No. of Pairs</td><td colspan="1" class="confluenceTd"><p><strong>On click</strong>, open list of numbers. The logic of numbers is defined based on the cases mentioned above.</p></td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd">Price , pairs and Total</td><td colspan="1" class="confluenceTd"><p>This will be visible only once the 'no. of pairs' selection has been made. It will show SK Price(including extra sk price if any), multiplication symbol, Value of No. of pairs selected, Total Amount.</p><p>In case the selected Size Set has extra charge attached to it, then show the extra charge value next to the Total Amount.&nbsp;</p><p>Also, in case the total no.of pairs chosen is such that it falls under bulk pricing, then update the SK Price both in variant block and in top section. Animate the SK Price Value after it has changed (Use shake animation). Also, show toast &quot;Bulk price has been applied&quot;</p></td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Color Name&nbsp;</td><td colspan="1" class="confluenceTd"><p>Show the color name of the selected variant</p></td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">Change Color button</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>In case the no. of variants in the product is only one, then keep this button hidden.</p><p>In case the no. of variants in the product are more than one, show this button.</p><p><strong>On click</strong>, open a bottom dialog box, displaying all the available colors. On click of any color, the dialog will close &amp; its respective variant block will be created and displayed on the page.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" loading="lazy" src="attachments/24019061/23822543.png?height=250" data-image-src="attachments/24019061/23822543.png" data-unresolved-comment-count="0" data-linked-resource-id="23822543" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="choose color.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24019061" data-linked-resource-container-version="16" data-media-id="70206148-31ec-407c-9567-059379c1ed62" data-media-type="file" /></span></p></div></td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd">Remove Button</td><td colspan="1" class="confluenceTd"><p>This button will be hidden/disabled if only one variant block is present at any given time.</p><p><strong>On click</strong>, remove the Variant block</p></td></tr><tr><td colspan="1" class="confluenceTd">14</td><td colspan="1" class="confluenceTd">Add Color Button</td><td colspan="1" class="confluenceTd"><p><strong>On click</strong>, open the variant color selection dialog from bottom. Same as &quot;Change Color&quot; button.&nbsp;&nbsp;</p><p>Keep this button, in case the product has only one variant and one size set.</p></td></tr><tr><td colspan="1" class="confluenceTd">15</td><td colspan="1" class="confluenceTd">Fulfill Pairs Box&nbsp;</td><td colspan="1" class="confluenceTd">This box and its text will be dynamic. This box will display whenever the minimum pairs requirement is not fulfilling. The dynamic texts will change based on the product configuration and cases defined above.</td></tr><tr><td colspan="1" class="confluenceTd">16</td><td colspan="1" class="confluenceTd">Total Amount&nbsp;</td><td colspan="1" class="confluenceTd">The Total Amount after adding the totals of all variant blocks</td></tr><tr><td colspan="1" class="confluenceTd">17</td><td colspan="1" class="confluenceTd">Total Pairs</td><td colspan="1" class="confluenceTd">The total pairs count after adding the total pairs of all variant blocks.&nbsp;</td></tr><tr><td colspan="1" class="confluenceTd">18</td><td colspan="1" class="confluenceTd">Add to Truck Button</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>By default, this button will be in a Disabled state.&nbsp;</p><p>This button will be enabled only when the minimum pairs requirement has been fulfilled.</p><p>This will also depend on the cases based on the product configuration.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="400" loading="lazy" src="attachments/24019061/23986380.png?width=400" data-image-src="attachments/24019061/23986380.png" data-unresolved-comment-count="0" data-linked-resource-id="23986380" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="disabled state.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24019061" data-linked-resource-container-version="16" data-media-id="2f1bfc8f-719d-4ace-9e16-155c07a2fdaa" data-media-type="file" /></span></p><p>On click of the Add to Truck button, items will get added to the cart and app will open the Product listing page.</p></div></td></tr></tbody></table></div><h2 class="auto-cursor-target" id="AddToTruckPage-AddtoTruckAnimationIdea">Add to Truck Animation Idea</h2><p class="auto-cursor-target">On click of 'Add to Truck' button, show a circular loading animation inside the button area. While the loading is in progress, An image of a Carton will appear from behind the ATT Button and travel upto the truck icon while zooming out.</p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24019061/23822508.png?width=350" data-image-src="attachments/24019061/23822508.png" data-unresolved-comment-count="0" data-linked-resource-id="23822508" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Lot Only.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24019061" data-linked-resource-container-version="16" data-media-id="a57814da-8de8-49eb-97b7-3c522078824c" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="AddToTruckPage-Validations">Validations</h2></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic for Buying Details Text</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon" /><div class="confluence-information-macro-body"><p><br /></p><p><strong>Case 1: Sell Type = Lot, Include Color = No,</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot; ; where X = MOQ Pairs</p><p><strong>Case 2: Sell Type = Lot, Include Color = Yes, (more than one variant)</strong></p><p>&quot;You can buy minimum of X pairs including multiple colors&quot;&nbsp;; where X = MOQ Pairs&nbsp;</p><p><strong>Case 3: Sell Type = Lot, Include Color = Yes, (one variant)</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot;&nbsp;; where X = MOQ Pairs&nbsp;</p><p><strong>Case 4: Sell Type = Carton, Carton type = Fixed, Include Color = Yes</strong></p><p>&quot;You can buy minimum of X pairs of fixed colors and Size set&quot;&nbsp;; where X = MOQ Pairs&nbsp;</p><p><strong>Case 5:</strong>&nbsp;<strong>Sell Type = Carton, Carton type = Fixed, Include Color = No</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot; ; where X = MOQ Pairs&nbsp;</p><p><strong>Case 6:</strong>&nbsp;<strong>Sell Type = Carton, Carton type = Flexible (one variant)</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot;; where X = MOQ Pairs</p><p><strong>Case 7:</strong>&nbsp;<strong>Sell Type = Carton, Carton type = Flexible (more than one variant)</strong></p><p>&quot;You can buy minimum of X pairs including multiple colors&quot;&nbsp;; where X = MOQ Pairs</p><p><strong>Case 8: Sell Type = Lot, and MOQ = Lot Size</strong></p><p>&quot;You can buy minimum of X Pairs of single color&quot;; where X = MOQ Pairs</p></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<h2 id="AddToTruckPage-AllCases">All Cases</h2><p>This Page will have majorly 4 Variations based on the product Configurations.</p><p><a href="23822563.html" data-linked-resource-id="23822563" data-linked-resource-version="2" data-linked-resource-type="page">Case 1: Lot Wise (Include Color = Yes)</a></p><p><a href="24707082.html" data-linked-resource-id="24707082" data-linked-resource-version="1" data-linked-resource-type="page">Case 2: Lot Wise (Include Color = No)</a></p><p><a href="24805399.html" data-linked-resource-id="24805399" data-linked-resource-version="1" data-linked-resource-type="page">Case 3: Carton Fixed (Include Color = Yes)</a></p><p><a href="24543275.html" data-linked-resource-id="24543275" data-linked-resource-version="1" data-linked-resource-type="page">Case 4: Carton Fixed (Include Color = No)</a></p><p><a href="24576078.html" data-linked-resource-id="24576078" data-linked-resource-version="1" data-linked-resource-type="page">Case 5: Carton Flexible</a></p><p>Case 6: Lot Wise (Include Color = 0/Null)</p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24019061/24641538.png">Lot Only.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24019061/23822523.png">info tooltip.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24019061/23822543.png">choose color.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24019061/23986380.png">disabled state.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24019061/23822508.png">Lot Only.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

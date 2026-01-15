@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PYWiki</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { display: flex; flex-direction: column; min-height: 100vh; }
+.wrapper { display: flex; flex: 1; }
+.sidebar { width: 260px; background-color: #f8f9fa; padding: 1rem; border-right: 1px solid #dee2e6; overflow-y: auto; }
+.content { flex: 1; display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.folder { font-weight: bold; cursor: pointer; margin-bottom: 0.3rem; }
+.file-btn { display: block; width: 100%; text-align: left; margin-bottom: 0.2rem; padding: 0.25rem 0.5rem; border: none; background: none; color: #0d6efd; cursor: pointer; }
+.file-btn:hover { text-decoration: underline; }
+ul { list-style: none; padding-left: 0; }
+#current-path {
+    background-color: #212529;
+    color: #f8f9fa;
+    padding: 10px 15px;
+    font-family: monospace;
+    font-size: 0.95rem;
+    border-bottom: 2px solid #0d6efd;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+iframe { flex: 1; width: 100%; border: none; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">MyWiki</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser == 1 %}
+                        <li class="nav-item"><a class="nav-link" href="#">Hi, {{ user.username }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_panel' %}">Admin Panel</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link" href="#">Hi, {{ user.username }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                    {% endif %}
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'signup' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Toasts -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 1055">
+  {% for message in messages %}
+  <div class="toast align-items-center text-bg-{{ message.tags }} border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body">{{ message }}</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Main layout -->
+<div class="wrapper">
+    <div class="sidebar">
+        <h5>PROJECTS</h5>
+        <ul id="file-tree" class="nav flex-column"></ul>
+    </div>
+
+    <div class="content">
+        <div id="current-path">📄 No file selected</div>
+        <iframe id="file-frame" src="{% url 'welcome' %}"></iframe>
+    </div>
+</div>
+
+<footer class="bg-dark text-light text-center py-3 mt-auto">
+    &copy; 2025 PYWiki Project
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const treeData = {{ tree_json|safe }};
+    const fileTree = document.getElementById("file-tree");
+    const iframe = document.getElementById('file-frame');
+    const currentPath = document.getElementById('current-path');
+
+    // Recursive tree creation
+    function createTreeNode(node) {
+        const li = document.createElement('li');
+
+        if (node.type === 'file') {
+            const btn = document.createElement('button');
+            btn.textContent = node.name;
+            btn.classList.add('file-btn');
+            btn.dataset.path = `/view/${node.path}/`;
+            li.appendChild(btn);
+        } else if (node.type === 'dir') {
+            const folderDiv = document.createElement('div');
+            folderDiv.classList.add('folder');
+            folderDiv.textContent = `📁 ${node.name}`;
+            folderDiv.onclick = () => {
+                const childList = li.querySelector('ul');
+                if (childList) childList.classList.toggle('d-none');
+            };
+            li.appendChild(folderDiv);
+
+            const ul = document.createElement('ul');
+            ul.classList.add('ms-3', 'd-none');
+            node.children.forEach(child => ul.appendChild(createTreeNode(child)));
+            li.appendChild(ul);
+        }
+        return li;
+    }
+
+    // Build sidebar
+    treeData.forEach(node => fileTree.appendChild(createTreeNode(node)));
+
+    // Handle file click
+    document.querySelector('.sidebar').addEventListener('click', function(e) {
+        if (e.target && e.target.matches('.file-btn')) {
+            const path = e.target.dataset.path;
+            iframe.src = path;
+            currentPath.textContent = `📄 ${(path.replace('/view','')).slice(0,-1)}`;
+        }
+    });
+
+    // Default welcome if iframe empty
+    iframe.addEventListener('load', function() {
+        if (iframe.src.includes('welcome')) {
+            currentPath.textContent = '🏠 Welcome Page';
+        }
+    });
+
+    // Toast handling
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    toastElList.map(function (toastEl) {
+        var toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+        toast.show();
+    });
+    // edit button handler
+    var editbutton = document.getElementById("edit-button");
+    if (editbutton) {
+        editbutton.addEventListener("click", function() {
+            var currentFilePath = iframe.src.replace('/view', '/edit');
+            iframe.src = currentFilePath;
+        });
+    }
+});
+</script>
+</body>
+</html>

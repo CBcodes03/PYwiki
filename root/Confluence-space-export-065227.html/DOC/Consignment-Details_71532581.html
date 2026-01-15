@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Consignment Details</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Track-Consignment_68059137.html">Track Consignment</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Consignment Details
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 26, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=ra07xirqxf]{color:#333333} html[data-color-mode=dark] [data-colorid=ra07xirqxf]{color:#cccccc}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="ConsignmentDetails-Overview">&nbsp;Overview</h2><p>This page will open on click of the &quot;View Details&quot; Button or &quot;Images area&quot; from the Track Consignment Page. This page will show all the details regarding the consignment to the buyer. The details will be majorly the following:</p><ol><li>Tracking Details</li><li>Consignment Values</li><li>Items List</li></ol><h3 id="ConsignmentDetails-DataPoints&amp;Logic">Data Points &amp; Logic</h3><div class="table-wrap"><table class="relative-table confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 2.83401%;" /><col style="width: 19.5142%;" /><col style="width: 65.668%;" /><col style="width: 11.9838%;" /></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points &amp; Buttons</th><th class="confluenceTh">Logic</th><th colspan="1" class="confluenceTh">Status</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Consignment ID</td><td class="confluenceTd">This appears right at the top of the screen&nbsp;</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Date&nbsp;</td><td class="confluenceTd"><p>This date appears right below the Consignment ID. The date will follow the same logic in the Track Consignments Screen. The Date label and value shall change depending on the tab under which that consignment is appearing.</p><ol style="text-align: left;"><li>In Transit Tab: Show text &quot;Dispatched&quot; followed by the date cm.actDispatchDate</li><li>Delivered Tab: Show text &quot;Delivered&quot; followed by the date cm.actDeliveryDate</li><li>RTO Tab: Show text &quot;RTO On&quot; followed by the date cm.rtoDate</li></ol></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd"><p>Show label &quot;Seller Name&quot;. Below the Label show the name of the Seller.</p><p>If the value of Seller name exceeds the width of the screen then show &quot;...&quot;</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd"><span data-colorid="ra07xirqxf">Status &amp; Remarks</span></td><td class="confluenceTd"><p style="text-align: left;">The status has exactly the same logic as given in the <a href="Track-Consignment_68059137.html" data-linked-resource-id="68059137" data-linked-resource-version="6" data-linked-resource-type="page">Track Consignments </a>Screen.&nbsp;</p><p style="text-align: left;">Show Main Status, Logistics Remark and the info icon.</p><p style="text-align: left;">On Click of info icon, open a tooltip showing the full logistics Remark Text.</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Tracking No.</td><td class="confluenceTd">This is the value of Waybill No. generated for that consignment.</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Track Details Button</td><td class="confluenceTd">This button appear to the right of Tracking No. <strong>On click, </strong>open webview in the app and open the Logistic Partners' Tracking URL (saved in Database) and append the Waybill no. to that URL so that inside the webview, the specific consignments' details get opened.</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">Consignment Details&nbsp;</td><td class="confluenceTd"><p>This Section will display all the values and amounts related to that Consignment.</p><ol><li>&quot;Cartons&quot; - Show the count of Cartons&nbsp;</li><li>&quot;Total Pairs&quot; - Show the total pair count of that consignment</li><li>&quot;Amount&quot; - Shows the Consignment Value.</li><li>&quot;Amount Payable&quot; - Shows the value (cm.consignmentValue - cm.advancePaid)</li></ol></td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">Get Invoice on Mail</td><td class="confluenceTd"><div class="content-wrapper"><p><strong>On click,</strong> open a popup.&nbsp;</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="450" loading="lazy" src="attachments/71532581/71761973.png?width=450" data-image-src="attachments/71532581/71761973.png" data-unresolved-comment-count="0" data-linked-resource-id="71761973" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Send to Email Invoice.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="71532581" data-linked-resource-container-version="3" data-media-id="ced5c8c9-2204-4c80-80ae-6165512b6401" data-media-type="file" /></span></p><p>Show this edit box empty if, the username has value in format: &quot;mobilenumber&quot;@shoekonnect.com</p><p>else, show this edit box prefilled with the username value.&nbsp;</p><p><strong>On click</strong> of &quot;Send Invoice&quot; Button, validate the email format and empty values.</p><p>On failing validation, show toast &quot;Please enter valid email Id&quot;</p><p>On passing validation, check whether the given email id exists against any other user in the database.</p><ul style="list-style-type: square;"><li>If Not, save the value as the user's 'Username' and trigger the invoice email on that email id&nbsp;</li><li>If Yes, then show toast &quot;This email Id belongs to another user&quot;&nbsp;</li></ul></div></td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">Items in Consignment</td><td class="confluenceTd"><p>This Section appears below the consignment Details Section. This lists down all the order items mapped with that consignment.</p><p>Data points for each item entry:</p><ul style="list-style-type: square;"><li>Image Thumbnail</li><li>Product Name (Brand Name + Brand Counter)</li><li>Variant Color&nbsp;</li><li>Size Set</li><li>Price (skPrice + extSkPrice)</li><li>Pairs&nbsp;</li><li>Total Amount (Price x Pairs)</li></ul></td><td colspan="1" class="confluenceTd">Existing</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p style="text-align: right;"><strong>Consignment Details</strong></p><p style="text-align: right;"><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/71532581/71729231.png?width=350" data-image-src="attachments/71532581/71729231.png" data-unresolved-comment-count="0" data-linked-resource-id="71729231" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders - Tracking Status - In Transit – 1.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="71532581" data-linked-resource-container-version="3" data-media-id="9db237ce-955c-4ee8-99d5-ae892beba237" data-media-type="file" /></span></strong></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/71532581/71729231.png">My Orders - Tracking Status - In Transit – 1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/71532581/71761973.png">Send to Email Invoice.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

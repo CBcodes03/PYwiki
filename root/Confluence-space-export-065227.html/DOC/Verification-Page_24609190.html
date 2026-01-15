@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Verification Page</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Verification Page
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 05, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=ecbbc3h12l]{color:#263238} html[data-color-mode=dark] [data-colorid=ecbbc3h12l]{color:#c7d3d9}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="VerificationPage-Overview">Overview</h2><p>This page is mainly accessible from the Side Drawer Menu. This page will let users give their verification details before/after placing an order.&nbsp;</p><p>Page is divided into 3 Sections (View Pagers):</p><ol><li>GST</li><li>Verification</li><li>Bank Details</li></ol></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="VerificationPage-1.GST">1. GST</h2><p>Here user will give the GST No.</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.9109%;"><colgroup><col style="width: 4.52785%;" /><col style="width: 20.0973%;" /><col style="width: 75.2259%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">GST Input Edit box</td><td class="confluenceTd"><p>User will enter his 15 Digit GST no. here. (Max input character length is 15)</p><p><strong>GST No. Validation:</strong>&nbsp;<span data-colorid="ecbbc3h12l">2 Digits Followed by 5 English Characters followed by 4 digits followed by 1 character followed by 1 digit followed by 1 character followed by 1 digit</span></p><p>If the GST No. is Approved by Admin, this field will be in Locked state. ie. cannot be edited</p></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Save GST Number Button</td><td class="confluenceTd"><div class="content-wrapper"><p>On Click, check for validation of the GST Number and save it against the user. The number should be 15 Character Long.&nbsp;</p><ul style="list-style-type: square;"><li>If GST input is not in specified format as given above, show toast &quot;Please enter valid GST no.&quot;</li></ul><p>If the GST no. is approved by the admin, Hide the &quot;Save GST number&quot; button and show the following text in its place:</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" height="80" width="419" loading="lazy" src="attachments/24609190/24707493.png?width=419" data-image-src="attachments/24609190/24707493.png" data-unresolved-comment-count="0" data-linked-resource-id="24707493" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="GST verified.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24609190" data-linked-resource-container-version="4" data-media-id="373799e8-d38a-40f5-afd4-9fbd5e3c8f4e" data-media-type="file" /></span></p><p>&quot;Your GST Number has been successfully verified&quot;</p></div></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="300" loading="lazy" src="attachments/24609190/24576466.png?width=300" data-image-src="attachments/24609190/24576466.png" data-unresolved-comment-count="0" data-linked-resource-id="24576466" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="GST.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24609190" data-linked-resource-container-version="4" data-media-id="2ac304cc-d033-45cc-90bf-36ae8085e673" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="VerificationPage-2.Verification">2. Verification</h2><p>Here user can upload any of the following document:</p><ol><li>Bill Book</li><li>Visiting Card</li><li>Shop Photo</li></ol><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.9109%;"><colgroup><col style="width: 4.52785%;" /><col style="width: 20.0973%;" /><col style="width: 75.2259%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Document Type Dropdown</td><td class="confluenceTd"><p>Dropdown Options:</p><ul style="list-style-type: square;"><li>Bill Book</li><li>Visiting Card</li><li>Shop Photo</li></ul><p>If verification is approved via admin, keep the dropdown in locked state. i.e cannot be edited.</p></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Upload Photo Button</td><td class="confluenceTd"><div class="content-wrapper"><p><strong>On Click</strong>, Open image selection tool. On selecting an image show a thumb preview of the image as well.</p><p>If verification is approved via admin, keep the image button in locked state. i.e cannot be edited.</p></div></td></tr><tr><td colspan="1" class="confluenceTd">3</td><td colspan="1" class="confluenceTd">Why Button</td><td colspan="1" class="confluenceTd"><p>On click open the popup showing reason for verification.</p><p>Use the existing popup in the current app.</p></td></tr><tr><td colspan="1" class="confluenceTd">3</td><td colspan="1" class="confluenceTd">Save Verification Button</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><strong>On click</strong>, check if both the Document type Value and Image URL are present.</p><p>If not, show toast&quot; Please provide all details&quot;</p><p>If yes, Save the details with in User table</p><p><br /></p><p>&nbsp;If the verification. is approved by the admin, Hide the &quot;Save Verification&quot; button and show the following text in its place:</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/24609190/24609222.png" data-image-src="attachments/24609190/24609222.png" data-unresolved-comment-count="0" data-linked-resource-id="24609222" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="verification verified.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24609190" data-linked-resource-container-version="4" data-media-id="a80cd4ac-c647-423f-a4dc-5c9be4372d3f" data-media-type="file" /></span></p><p>&quot;Your Document has been successfully verified&quot;</p><p><br /></p></div></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="300" loading="lazy" src="attachments/24609190/24543576.png?width=300" data-image-src="attachments/24609190/24543576.png" data-unresolved-comment-count="0" data-linked-resource-id="24543576" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Verification.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24609190" data-linked-resource-container-version="4" data-media-id="dc31645f-e9a8-4709-81f3-cfd51c1db064" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="VerificationPage-3.BankDetails">3. Bank Details</h2><p>Here user can update his Bank Details for refund purposes.</p><p>User will enter the following information.</p><ul style="list-style-type: square;"><li class="auto-cursor-target">Account Number</li><li class="auto-cursor-target">Beneficiary Name</li><li class="auto-cursor-target">Bank name</li><li class="auto-cursor-target">IFSC Code</li></ul><p><strong>On click</strong> &quot;Save Bank Details&quot;, save the details and keep this page pre populated everytime its loaded.</p><p><span class="legacy-color-text-blue4"><strong>NEXT RELEASE</strong></span></p><p>Add Logic: Check for buyers' consignment return entries WHERE returntransactionID IS NOT NULL, and update the bank details for these entries.</p><p><br /></p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24609190/24805814.png?width=350" data-image-src="attachments/24609190/24805814.png" data-unresolved-comment-count="0" data-linked-resource-id="24805814" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Bank Details.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24609190" data-linked-resource-container-version="4" data-media-id="93f4cbbf-460b-4477-b26e-8fc7a9275a0c" data-media-type="file" /></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24609190/24576466.png">GST.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24609190/24543576.png">Verification.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24609190/25657402.png">Bank Details.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24609190/24707493.png">GST verified.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24609190/24609222.png">verification verified.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24609190/24805814.png">Bank Details.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Edit Seller Order</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="My-Truck_24576133.html">My Truck</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Edit Seller Order
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 07, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=i8lwtzoc5t]{color:#222222} html[data-color-mode=dark] [data-colorid=i8lwtzoc5t]{color:#dddddd}</style>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="EditSellerOrder-Overview">Overview</h1><p>This page will open on click of &quot;Edit Order&quot; button from <a href="My-Truck_24576133.html" data-linked-resource-id="24576133" data-linked-resource-version="9" data-linked-resource-type="page">My Truck Page</a>. This page will basically help a buyer to alter product items in case buyer wants to make changes or in case of some product moq or seller moq violations.&nbsp;<br />This page will show following details of a single order.&nbsp;</p><ol><li>Seller Details</li><li>Product Details</li></ol><p>The page title will be &quot;Edit Seller Order&quot;</p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><strong>Data Points and Logics</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 2.91498%;" /><col style="width: 25.668%;" /><col style="width: 71.2551%;" /></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic&nbsp;</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Seller Name&nbsp;</td><td class="confluenceTd">Company Name of the Seller</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Seller MOQ</td><td class="confluenceTd"><p>Show the Seller MOQ Value below the Seller Name.&nbsp;</p><p>In case the value = 0, show text &quot;No Seller MOQ&quot;</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Add Products Button&nbsp;</td><td class="confluenceTd">This button appears to the right of the Seller Name. <strong>On click,</strong> open the seller shop page of that seller.</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Order Value and Pairs</td><td class="confluenceTd"><p>This will show the sum value of all products in that order [Sum of (SK Price x Pairs)]. This will be appended by the count of total pairs ordered. The color of the text will change according to following condition:</p><ul><li>If Pairs Ordered &lt; Seller MOQ, set the color as Red&nbsp;#FF6565</li><li>If the Pairs Ordered&nbsp;<span data-colorid="i8lwtzoc5t">&ge;<span>&nbsp;Seller MOQ, set the color as Green&nbsp;#00C29C</span></span></li></ul></td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Info text Box</td><td class="confluenceTd"><p>This is a red info box that appears above the Order Value text. This box will display texts to the user in case there is a Seller MOQ or Product MOQ violations. This box will appear only in two cases:</p><p><strong>Case 1:&nbsp;</strong>If the no. of pairs of any product in an order becomes less than the Product MOQ. This could be because any product became inactive (isAvailable = 0) or is StockLot of any variant become 0 or brand is Deactivated. etc..</p><ul><li>Show text: &quot;EDIT ORDER: X Product's MOQ does not match the order qty&quot; ; where X = Count pf products which have this violation.</li></ul><p><strong>Case 2:<span>&nbsp;</span></strong>If the no. of pairs of any order is less than the sellerMOQ.&nbsp;</p><ul><li>Show text: &quot;Add X more pairs to complete Seller MOQ&quot; ; where X is the difference of pairs between pairs ordered and sellerMOQ</li></ul><p><strong>Case 3:&nbsp;</strong>In all other cases do not show this box.&nbsp;</p></td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Product List</td><td class="confluenceTd">Show list of all the products (group variants by product id) in that order.</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">Product Name&nbsp;</td><td class="confluenceTd">Show the Brand Name &amp; Brand Counter.&nbsp;</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">Product value and pairs</td><td class="confluenceTd"><p>Show this data point on the top right corner of each card. Show amount of Sum value of all variants of a product [Sum of (SK Price x Pairs)]. Appended by Sum of pairs of that product.</p></td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">Expected Delivery Days</td><td class="confluenceTd"><p>Show the text:</p><p>&quot;Expected Delivery in X Days&quot; ; where X = Delivery Time of that product in Days&nbsp;</p></td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd">Product Violation info text</td><td colspan="1" class="confluenceTd"><p>Show the text below the expected Delivery text. Show this text only when, the valid pairs ordered of a product is less than the product MOQ.</p><p>Text: &quot;Add X Pairs to complete the Product MOQ of Y Pairs&quot;</p><p>where; X = the value of difference between the product MOQ and the Sum of pairs ordered of that product.</p><p>and Y = Value of Product MOQ</p></td></tr><tr><td class="confluenceTd">10</td><td class="confluenceTd">Variant Thumb Image</td><td class="confluenceTd"><p>Show the list of all variant thumb images of that product.&nbsp;</p><p>In case the product is no more available. apply a black overlay (50%) and show text &quot;OUT OF STOCK&quot;</p><p>The above case can come in following conditions.</p><ol><li>v.isAvaiable=0</li><li>Brand for that seller is Deactivated</li><li>Stock Lot of variant has become 0</li></ol><p>Below each image show the no of pairs of each variant.</p></td></tr><tr><td class="confluenceTd">11</td><td class="confluenceTd">Edit Product Button&nbsp;</td><td class="confluenceTd"><p>This button appears at the bottom of the card. <strong>On click,</strong> open the Add to Truck Page in EDIT Mode.</p></td></tr><tr><td class="confluenceTd">12</td><td class="confluenceTd">Remove Product Button</td><td class="confluenceTd"><p><strong>On click,</strong> open popup:</p><p style="text-align: left;">Main Text: &quot;Are you sure you want to remove this product ?&quot;</p><p style="text-align: left;">Options: No, Yes</p><p><strong>On click</strong> Yes, delete the order details entry of all the variants of that product so that it stops showing in the list.</p><p>On Cancelling, check if there are no order items left in that order. In that case, delete the Order Entry as well.</p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p style="text-align: right;"><strong>Edit Order Screen</strong></p><p style="text-align: right;"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/100433921/100237370.png" data-image-src="attachments/100433921/100237370.png" data-unresolved-comment-count="0" data-linked-resource-id="100237370" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Edit Seller Order.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="100433921" data-linked-resource-container-version="3" data-media-id="18f361fb-103c-4e67-9e6e-e0b37a078415" data-media-type="file" /></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/100433921/100663370.png">Edit Seller Order.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/100433921/100237370.png">Edit Seller Order.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

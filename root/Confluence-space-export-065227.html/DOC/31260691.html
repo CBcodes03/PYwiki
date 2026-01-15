@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Dispatched (old)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Seller-Board-3.0_24805934.html">Seller Board 3.0</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Order-Management_26542081.html">Order Management</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Dispatched (old)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Dec 10, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="Dispatched(old)-Overview">Overview</h2><p>This page will be for the sellers to track the statuses of all the consignments that have been Dispatched from their end. This page will be divided into 3 parts:</p><ol><li>In Transit </li><li>Delivered</li><li>RTO</li></ol><p>The structure if this page will also be the same as &quot;Initiated Pickup&quot; Page. Collapsed Consignment Rows and on expanding the collapsed products rows will open up. </p><p><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.9378%;"><colgroup><col style="width: 3.26757%;"/><col style="width: 14.4548%;"/><col style="width: 82.243%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Button</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Summary</td><td class="confluenceTd">Total Consignments: This will show the count of all the consignments that have ever been dispatched by the seller. </td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Tabs </td><td class="confluenceTd"><p>Page will have three tabs:</p><ol><li>In Transit - Count of consignments whose &quot;actDispatchDate &gt; 0&quot; AND &quot;actDeliveryDate = 0&quot; AND &quot;RtoDate = 0&quot;</li><li>Delivered - Count of consignments whose &quot;actDispatchDate &gt; 0&quot; AND &quot;actDeliveryDate &gt; 0&quot; AND &quot;RtoDate = 0&quot;</li><li>RTO - Count of consignments whose &quot;RtoDate &gt; 0&quot;</li></ol></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Consignment Row</td><td class="confluenceTd"><div class="content-wrapper"><p style="text-align: left;">Showing Data Points:</p><ol style="text-align: left;"><li>Buyer Name and City [Existing]</li><li>Consignment ID [Existing]</li><li>Consignment Value: Total Consignment Value (SK Price x Pairs), Total Products in consignment, Total pairs in consignment) [Existing]</li><li>Date: This Date will change based on different tabs (Explained Below)</li><li>Delhivery Partner - Name of logistics partner assigned for that consignment. [Existing]</li><li>Status: The Status text will be different based on different tabs (Explained Below)</li><li>Documents Tab: On click of the documents tab, following options will appear: [Existing]<br/>- Invoice (Download)<br/>- Consignment Sticker (Download)<br/>- Print Item List (open in print preview format)</li><li>Expand/Collapse Button – for expanding the view of any consignment. [New]</li></ol><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/31260691/56721413.png" data-image-src="attachments/31260691/56721413.png" data-unresolved-comment-count="0" data-linked-resource-id="56721413" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="dispatch page row ui.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31260691" data-linked-resource-container-version="7" data-media-id="216c388e-b3b7-4f0e-83d2-da673b075f85" data-media-type="file"></span></p></div></td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Status Tooltip</td><td class="confluenceTd"><p>This tooltip will appear by hovering on the status text info icon. The content of this tooltip will be:</p><ol><li>Waybill No. of the consignment</li><li>Status: Based on Tabs</li><li>Location: As specified by the Logistics tracking API</li></ol></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="Dispatched(old)-1.InTransit">1. In Transit</h2><p>Refer image on the right for In Transit tab.</p><p>This page will show all the consignments who fall under following <strong>condition:</strong></p><p>&quot;actDispatchDate &gt; 0&quot; AND &quot;actDeliveryDate = 0&quot; AND &quot;RtoDate = 0&quot;</p><p><br/></p><p><strong>Date: </strong>On this tab show the &quot;actDispatchDate&quot;</p><p><strong>Status: </strong>On this tab there can be three statuses:</p><ol><li>Dispatched - (if cm.actDispatchDate &gt;0 AND ndrDate =0)</li><li>Out for Delivery  </li><li>NDR [If &quot;NDRdate &gt; 0&quot;]</li></ol></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" height="395" width="700" loading="lazy" src="attachments/31260691/31195161.png?width=700" data-image-src="attachments/31260691/31195161.png" data-unresolved-comment-count="0" data-linked-resource-id="31195161" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- Dispatched (In transit).png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31260691" data-linked-resource-container-version="7" data-media-id="904cd045-be82-40c3-ab86-4658ca7a8ad5" data-media-type="file"></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="Dispatched(old)-2.Delivered">2. Delivered</h2><p>Refer image on the right for Delivered Tab.</p><p>This page will show all the consignments who fall under following <strong>condition:</strong></p><p>&quot;actDispatchDate &gt; 0&quot; AND &quot;actDeliveryDate &gt; 0&quot; AND &quot;RtoDate = 0&quot;</p><p><br/></p><p><strong>Date: </strong>On this tab show the &quot;actDeliveryDate&quot;</p><p><strong>Status: </strong>On this tab there can be only one status:</p><ol><li>Delivered</li></ol></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" height="395" width="700" loading="lazy" src="attachments/31260691/31096884.png?width=700" data-image-src="attachments/31260691/31096884.png" data-unresolved-comment-count="0" data-linked-resource-id="31096884" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- Dispatched (Delivered).png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31260691" data-linked-resource-container-version="7" data-media-id="16b7e031-b656-4746-b454-be5cc5292615" data-media-type="file"></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="Dispatched(old)-3.RTO">3. RTO</h2><p>Refer image on the right for RTO Tab.</p><p>This page will show all the consignments who fall under following <strong>condition:</strong></p><p>&quot;RtoDate &gt; 0&quot;</p><p><br/></p><p><strong>Date: </strong>On this tab show the &quot;RtoDate&quot;</p><p><strong>Status: </strong>On this tab there can be two status:</p><ol><li>RTO</li><li>RTO Delivered [If &quot;actDeliveryDate &gt; 0&quot;]</li></ol></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" height="395" width="700" loading="lazy" src="attachments/31260691/31162403.png?width=700" data-image-src="attachments/31260691/31162403.png" data-unresolved-comment-count="0" data-linked-resource-id="31162403" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- Dispatched (RTO).png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31260691" data-linked-resource-container-version="7" data-media-id="d56a85a3-0bf7-4f8a-b747-1c323bd565c6" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31260691/31162403.png">Orders- Dispatched (RTO).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31260691/31096884.png">Orders- Dispatched (Delivered).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31260691/31195161.png">Orders- Dispatched (In transit).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31260691/56721413.png">dispatch page row ui.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

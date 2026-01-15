@@ -1,0 +1,59 @@
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome {{ user.username }}</title>
+<style>
+body {
+  background: linear-gradient(135deg, #1e1e2f, #3b3b98);
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+.container {
+  max-width: 600px;
+  padding: 20px;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+pre {
+  color: #00ffcc;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>👋 Welcome, {{ user.username }}!</h1>
+    <p>Glad to see you back on <strong>PYWiki</strong>.</p>
+
+    <pre>
+     /\_/\
+    ( o.o )
+     > ^ <
+    </pre>
+
+    <p>Let's explore your projects together 🚀</p>
+  </div>
+</body>
+</html>
+{% else %}
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Welcome Guest</title></head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;">
+  <h2>👋 Welcome to PYWiki! Please <a href="{% url 'login' %}">login</a> to continue.</h2>
+</body>
+</html>
+{% endif %}

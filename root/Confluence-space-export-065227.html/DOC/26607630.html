@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : New Orders (old)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Seller-Board-3.0_24805934.html">Seller Board 3.0</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Order-Management_26542081.html">Order Management</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : New Orders (old)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Dec 10, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="NewOrders(old)-Overview">Overview</h2><p>This screen will be used to receive new orders. From here sellers can move orders to &quot;In Process&quot; Stage.</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.9371%;"><colgroup><col style="width: 3.6967%;"/><col style="width: 17.3633%;"/><col style="width: 71.4696%;"/><col style="width: 7.28138%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th><th class="confluenceTh">Status</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Summary</td><td class="confluenceTd"><div class="content-wrapper"><p>Total Orders – Sum of all the orders on this Page.</p><p>Total Products – Sum of all the Products in the Orders</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="800" loading="lazy" src="attachments/26607630/27787274.png?width=800" data-image-src="attachments/26607630/27787274.png" data-unresolved-comment-count="0" data-linked-resource-id="27787274" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Summary new orders.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="26607630" data-linked-resource-container-version="12" data-media-id="e82b0ff3-8a7d-4a48-85b6-f2d58d014907" data-media-type="file"></span></p></div></td><td class="confluenceTd">Changed</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Pagination</td><td class="confluenceTd">New Design. Has dropdown of no. of pages. On click of any dropdown option, load the particular page.</td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">&quot;Move To In Process&quot; Button</td><td class="confluenceTd"><p>This button will remain disabled if no new orders are present.</p><p>This Button will be enabled if atleast one new order is Present.</p><p>On click, move all the orders present in the &quot;New Orders&quot; Screen to &quot;In Process&quot; Screen and update the &quot;confirmedOn&quot; field withe the Timestamp </p><p>On click, also update the following fields 'in order_details' table. The logic for this can be found in old Admin &quot;Confirm Orders Screen&quot; on click of confirm button. </p><ul style="list-style-type: square;"><li>expectedDispatchDate</li><li>expectedDeliveryDate. </li></ul></td><td class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Order Row</td><td class="confluenceTd"><p>The Orders will appear if the following conditions match:</p><ul style="list-style-type: square;"><li>Order Status = 4</li><li>Atleast one verification should be approved by Admin (either GST or Document)</li></ul><p><br/></p><p>Each Order Row will contain the following:</p><ol><li>Buyer Name (City) [Existing]</li><li>Info Icon [New]</li><li>SKOrderID [Existing]</li><li>Date of placing the order [Existing]</li><li>Total Order Value [Existing]</li><li>Total Products [Existing]</li><li>Total Pairs [Existing]</li><li>Cancel Button</li></ol></td><td class="confluenceTd">Changed</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Info Icon</td><td class="confluenceTd">This icon appears next to the Buyer Name (City) on the Order Row. On click, open the <a href="Buyer-Info-PopUp_27918363.html" data-linked-resource-id="27918363" data-linked-resource-version="2" data-linked-resource-type="page">Buyer Info Popup</a>. Explained Separately in other page.</td><td class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Cancel Button</td><td colspan="1" class="confluenceTd"><p>On click, Update the Status of the Order [Order Status= 5, Cancelled On, Cancelled By, Cancelled Reason ]</p><p>Also, update the Cancellation status at variant level and save the Stage of cancellation. </p><p><strong>Implications:</strong></p><p>Send Push and SMS to the Buyer intimating about the cancellation.</p><p><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong>____</p><p>&quot;%Buyer’s_company_name%,</p><p>The seller %Seller_Company_Name% has cancelled your order ID - %SKOrderID%.</p><p>Helpline: %phone%&quot;</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">Product Row</td><td class="confluenceTd"><p>Each Product Row is collapsible. Each row will contain following:</p><ol><li>Brand Name and Counter Code [Existing]</li><li>SK Price [Existing]</li><li>Total (SK Price (+ ext SK price if any) x no. of pairs)) [Existing]</li><li>Order Quantity: Will show Total no. of Lots ordered of that product [New]</li><li>No. of Colors: Will show the total no. of Variants of that product ordered [New]</li><li>Sell Type: (Carton or Lot) [New]</li><li>Dispatch Time – Will show the Dispatch Time in Days units [Changed]</li></ol></td><td class="confluenceTd">Changed</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">Variant Row</td><td class="confluenceTd"><div class="content-wrapper"><p>This row will expand/collapse on click of the product row. This row contains the following:</p><ol><li>Color Name [Existing]</li><li>Image Thumbnail [Existing]</li><li>Article Code [Existing]</li><li>Order Quantity (In Lots) for each variant [Existing]</li><li>Size Set [Existing]</li></ol><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="800" loading="lazy" src="attachments/26607630/27787285.png?width=800" data-image-src="attachments/26607630/27787285.png" data-unresolved-comment-count="0" data-linked-resource-id="27787285" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="variant row new orders.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="26607630" data-linked-resource-container-version="12" data-media-id="25fd1b5b-9c1a-464a-9b1d-169ba32a8622" data-media-type="file"></span></p></div></td><td class="confluenceTd">Existing</td></tr></tbody></table></div><p><strong>UX Notes</strong> - By default, all the orders and their product rows must be visible. User can then toggle  and expand/collapse respective product rows.</p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="1000" loading="lazy" src="attachments/26607630/29851788.png?width=1000" data-image-src="attachments/26607630/29851788.png" data-unresolved-comment-count="0" data-linked-resource-id="29851788" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- New Orders - First Release.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="26607630" data-linked-resource-container-version="12" data-media-id="32cbfa87-8f21-4a8f-aaf1-d7f020d8ca5c" data-media-type="file"></span></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="NewOrders(old)-NotesForNextRelease">Notes For Next Release</h2><p>Transfer Confirmation responsibility on Seller.</p><p>Seller Can cancel orders from this page.</p><p>This Page will show all the Orders that have been placed and at least one verification (GST or Document) is complete. Therefore, the orders must appear in the following conditions:<br/>a) GST Value &gt; 0 &amp; GST Verified = 1<br/>&amp; DocumentURL &gt; 0 &amp; DocumentVerified = 1<br/>b) GST Value &gt; 0 &amp; GST Verified = 1<br/>&amp; DocumentURL = 0 &amp; DocumentVerified = 0<br/>c) GST Value = 0 &amp; GST Verified = 0<br/>&amp; DocumentURL &gt; 0 &amp; DocumentVerified = 1<br/><br/>4) “Confirm All Orders” Button– This Button will mark confirm all the Orders in the “New Orders” Tab<br/>5) “Confirm Selected Orders” Button – This button will remain disabled (grayed out) by default. Once any order is checked, this button will enable and start showing the count of selected orders. On click of this button, all the selected orders will be marked confirmed.</p><p><br/></p><p>In Order Row, following additions to be done.</p><ol><li>Add Check Box on every order</li><li>Cancel Orders Button – This will mark the Order as Cancelled</li><li>Confirm Order Button – This will mark the Order Confirmed.</li></ol><p><br/></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="780" loading="lazy" src="attachments/26607630/26640424.png?width=780" data-image-src="attachments/26607630/26640424.png" data-unresolved-comment-count="0" data-linked-resource-id="26640424" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- New Orders.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="26607630" data-linked-resource-container-version="12" data-media-id="4ded1a31-7ba4-4e67-bba0-5daebcb10175" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/26607630/26640424.png">Orders- New Orders.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/26607630/26640436.png">Orders- New Orders – (Current version).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/26607630/27787274.png">Summary new orders.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/26607630/27787285.png">variant row new orders.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/26607630/29851788.png">Orders- New Orders - First Release.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

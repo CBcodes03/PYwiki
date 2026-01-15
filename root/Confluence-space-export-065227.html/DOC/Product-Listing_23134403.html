@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Product Listing</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Product Listing
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 31, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=n0kcs2ofwy]{color:#333333} html[data-color-mode=dark] [data-colorid=n0kcs2ofwy]{color:#cccccc}[data-colorid=c9w4of5034]{color:#333333} html[data-color-mode=dark] [data-colorid=c9w4of5034]{color:#cccccc}[data-colorid=lhizb65p83]{color:#333333} html[data-color-mode=dark] [data-colorid=lhizb65p83]{color:#cccccc}[data-colorid=rfk3ioy6wd]{color:#333333} html[data-color-mode=dark] [data-colorid=rfk3ioy6wd]{color:#cccccc}[data-colorid=z37higxs76]{color:#222222} html[data-color-mode=dark] [data-colorid=z37higxs76]{color:#dddddd}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="ProductListing-DataPoints&amp;VisibilityLogics">Data Points &amp; Visibility Logics</h2><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.26316%;" /><col style="width: 14.0891%;" /><col style="width: 67.8543%;" /><col style="width: 12.7935%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Point</th><th class="confluenceTh">Logic</th><th class="confluenceTh">Status</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Main Category</td><td class="confluenceTd"><span data-colorid="lhizb65p83">Main Category of the variant. (Men, Women, Kids)</span></td><td class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Image Thumb</td><td class="confluenceTd"><p>Thumbnail image of the variant</p></td><td class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Favourite Button</td><td class="confluenceTd"><p><span data-colorid="c9w4of5034">On click, mark the particular variant as &quot;favorite&quot; for that specific user.&nbsp;</span></p></td><td class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Brand Tag</td><td colspan="1" class="confluenceTd"><span data-colorid="rfk3ioy6wd">Visible if the status of the brand is Registered</span></td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Leather Tag</td><td colspan="1" class="confluenceTd">Visible if the product is marked as Leather&nbsp;</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Brand Name &amp; Counter</td><td colspan="1" class="confluenceTd">Name of the brand followed by the counter code assigned to that variant</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd"><span data-colorid="n0kcs2ofwy">MOQ/Carton</span></td><td colspan="1" class="confluenceTd"><p style="text-align: left;">&quot;MOQ&quot;, if Sell Type = Lot</p><p style="text-align: left;">&quot;Carton&quot;, if Sell Type = Carton</p><p style="text-align: left;">Appended by value of &quot;MOQ Pairs&quot;</p></td><td colspan="1" class="confluenceTd"><p>New</p></td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">Single/Multi Color</td><td colspan="1" class="confluenceTd"><div style="">Logic: Show text &quot;Multiple Colors&quot; if acc = Yes and no. of variants&nbsp;<span>&nbsp;</span><span data-colorid="z37higxs76">&ge;</span>&nbsp;2.&nbsp;</div><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else, show text &quot;Single Color&quot;&nbsp;</div><p>This value will be appear appended to &quot;MOQ Pairs&quot; Value.</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">9</td><td colspan="1" class="confluenceTd">Seller Name</td><td colspan="1" class="confluenceTd">Name of the Seller who uploaded the product</td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd">Seller MOQ</td><td colspan="1" class="confluenceTd">Value of the Seller MOQ set by the Seller. If the value is set to &quot;0&quot;, then keep this line hidden.</td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Expected Delivery</td><td colspan="1" class="confluenceTd">This value will be (Dispatch time = X Days for D2D)</td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">SK Price</td><td colspan="1" class="confluenceTd">Final SK Price</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd">MRP</td><td colspan="1" class="confluenceTd">MRP Value. Show only if MRP&gt;0</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">14</td><td colspan="1" class="confluenceTd">Bulk Price</td><td colspan="1" class="confluenceTd"><p style="text-align: left;">This will appear only if a variant has bulk price entry.</p><p style="text-align: left;">Values will show &quot;Bulk Sk Price&quot; followed by Bulk MOQ pairs.</p></td><td colspan="1" class="confluenceTd">New</td></tr></tbody></table></div><h2 class="auto-cursor-target" id="ProductListing-OtherFeatures">Other Features</h2><ol><li>Load minimum of 20 variants in one call.</li><li>The new Filter bar will appear at the bottom&nbsp;<sub><span class="legacy-color-text-blue4">(This can be postponed to subsequent release)</span></sub></li><li>On click of any product, check the availability of the product. If not available, show toast &quot;Product not available&quot; (This issue can come due to periodic caching)</li></ol><p><br /></p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic to check availability</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon" /><div class="confluence-information-macro-body"><ol><li>isAvailable (variants)</li><li>isSellerActive (user_master)</li><li>isProductActive (user_master)</li><li>isBrandActive (don't know the table name here)</li><li>Limited Stock ('products' in case of Carton, 'variants_size_stock' in case of Lot)</li></ol></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p><p><br /></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="300" loading="lazy" src="attachments/23134403/23134410.png?width=300" data-image-src="attachments/23134403/23134410.png" data-unresolved-comment-count="0" data-linked-resource-id="23134410" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="New Card List.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23134403" data-linked-resource-container-version="4" data-media-id="7bc5b443-2137-4410-8675-7a5e25445e2b" data-media-type="file" /></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23134403/23101603.png">New Card List.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23134403/23134410.png">New Card List.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

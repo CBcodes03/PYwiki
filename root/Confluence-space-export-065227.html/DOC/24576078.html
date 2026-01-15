@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Case 5: Carton Flexible</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Add-To-Truck-Page_24019061.html">Add To Truck Page</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Case 5: Carton Flexible
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span> on Mar 24, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div style="" class="table-wrap"><p class="auto-cursor-target"><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped tablesorter tablesorter-default confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.34413%;"/><col style="width: 20.081%;"/><col style="width: 74.5749%;"/></colgroup><tbody><tr class="tablesorter-headerRow"><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">S.No</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Data Points </div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Logic</div></th></tr><tr><td style="text-align: left;" class="confluenceTd" colspan="1">1</td><td style="text-align: left;" class="confluenceTd" colspan="1">No. of Pairs</td><td style="text-align: left;" class="confluenceTd" colspan="1"><p style="text-align: left;">The dropdown value will give the list of numbers in <strong>multiple</strong> of Lot Size. </p><p style="text-align: left;">Minimum being the Lot Size value itself and going upto 10 multiples (dynamic).</p><ul style="text-align: left;"><li>Validate for Stock Lot information. If Stock lot is activated and the value for a particular size set is say 3 Lots ; where lot size = 8, then in the dropdown, the values populated should be (8, 16, 24). </li><li>In order to Select no. of pairs, the Size Set field should be selected. If Size set is not selected, and user clicks on No. of Pairs dropdown, show toast &quot;Please select a Size Set first&quot;</li></ul></td></tr><tr><td style="text-align: left;" class="confluenceTd">2</td><td style="text-align: left;" class="confluenceTd">Fulfill pairs box</td><td style="text-align: left;" class="confluenceTd"><p style="text-align: left;">Suppose, value of MOQ/Carton = X Pairs,</p><p style="text-align: left;">By Default, when no. of Pairs value is not selected in any variant block, keep this box hidden. </p><p style="text-align: left;">Now if the sum of pairs selected in all variant block is not equal to 'X' or any multiple of 'X', show this box with following text:</p><ul style="text-align: left;"><li>If sum of no. of pairs selected is less than X, show text: &quot;Required minimum of X pairs&quot;</li><li>If sum of no. of pairs selected is more than X, check for nearest lower and upper multiples of X to that value. and show Text &quot;Please choose either X<sub>1</sub> pairs or X<sub>2</sub> pairs&quot; ; where X<sub>1</sub> = lower nearest multiple AND X<sub>2</sub> = upper nearest multiple. </li></ul><p style="text-align: left;">As long as the required pairs criteria is not fulfilled, the &quot;Add to Truck&quot; button must be in Disabled State.</p><p style="text-align: left;">As soon as the required pairs criteria is met, hide this box again.</p></td></tr></tbody></table></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24576078/24608883.png?width=350" data-image-src="attachments/24576078/24608883.png" data-unresolved-comment-count="0" data-linked-resource-id="24608883" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Carton - flexible.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24576078" data-linked-resource-container-version="1" data-media-id="89581f7a-2278-4e95-8df6-2afdd27e79fa" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24576078/24707151.png">Add to truck disabled.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24576078/24608883.png">Carton - flexible.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

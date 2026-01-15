@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Checkout Page</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Checkout Page
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 26, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=x5tbfauvm3]{color:#263238} html[data-color-mode=dark] [data-colorid=x5tbfauvm3]{color:#c7d3d9}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="CheckoutPage-Overview">Overview</h2><p>Objective: To simplify and minimize the existing checkout process into 2 to 3 Steps.</p><h2 id="CheckoutPage-Structure">Structure</h2><p>This will be a slightly lengthy page but will pack all the pre-order information at one place.</p><p>The main sections here will be:</p><ol><li>Shipping</li><li>Payment</li><li>Verificatiion</li><li>Bill Summary</li><li>Apply Coupon</li></ol><p>Have explained each section in detail below.</p><p><br /></p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p style="text-align: left;"><strong>On this Page&nbsp;</strong></p><p><style type="text/css">/*<![CDATA[*/
+div.rbtoc1755586314400 {padding: 0px;}
+div.rbtoc1755586314400 ul {list-style: disc;margin-left: 0px;}
+div.rbtoc1755586314400 li {margin-left: 0px;padding-left: 0px;}
+
+/*]]>*/</style></p><div class="toc-macro rbtoc1755586314400">
+<ul class="toc-indentation">
+<li><a href="#CheckoutPage-Overview">Overview</a></li>
+<li><a href="#CheckoutPage-Structure">Structure</a>
+<ul class="toc-indentation">
+<li><a href="#CheckoutPage-1.Shipping">1. Shipping</a></li>
+<li><a href="#CheckoutPage-2.Payments">2. Payments</a></li>
+<li><a href="#CheckoutPage-3.Verification">3. Verification</a></li>
+<li><a href="#CheckoutPage-4.BillSummary">4. Bill Summary</a></li>
+<li><a href="#CheckoutPage-5.ApplyCoupon">5. Apply Coupon</a></li>
+<li><a href="#CheckoutPage-5.ConfirmButton">5. Confirm Button</a></li>
+</ul>
+</li>
+<li><a href="#CheckoutPage-FullPageView">Full Page View</a></li>
+<li><a href="#CheckoutPage-" /></li>
+</ul>
+</div><p /></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="CheckoutPage-1.Shipping">1.&nbsp;Shipping</h3><p>This section will display the Delivery address chosen by the user for delivery of the consignments. This will also allow the user to change or add new addresses.</p><p>On the right we have two views of this section in following conditions:</p><p>a. No address provided.</p><p>b. Address already provided</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.34413%;" /><col style="width: 23.5628%;" /><col style="width: 71.0931%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logics</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Shipping Address Title</td><td class="confluenceTd">This is the title on the Top &quot;Shipping Address&quot;</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Address Area</td><td class="confluenceTd"><p>When no address is provided, show text</p><ul style="list-style-type: square;"><li>&quot;Please provide address for delivery&quot;</li></ul><p>When address is already provided, show address in given format</p><ul style="list-style-type: square;"><li>Company Name (In bold)</li><li>Representative Name (if provided)</li><li>Street Address</li><li>City - Pincode</li><li>Phone No.&nbsp;</li><li>Optional Phone No. (if provided)</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">3</td><td colspan="1" class="confluenceTd">Delivery Available info text</td><td colspan="1" class="confluenceTd"><p>Every time the page loads, app will check if a selected address exists.&nbsp;</p><p>If selected address exists, check for Pincode Servicibility of the selected address:</p><ul style="list-style-type: square;"><li>If pincode serviciable, show check icon and text &quot; Delivery available at above address&quot; in theme green color</li><li>If pincode not serviciable, show cross icon and text &quot;Delivery service not available at above address&quot; in red color.</li></ul><p>If no selected address exist, then do not show this line at all.</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Add New Address</td><td class="confluenceTd"><strong>On click,</strong> open the &quot;<a href="Manage-Addresses_24805626.html" data-linked-resource-id="24805626" data-linked-resource-version="3" data-linked-resource-type="page">Add New Address</a>&quot; Page. Described about it more below.</td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Change Address</td><td colspan="1" class="confluenceTd"><p>This button will be visible only when an address is already selected. <strong>On click,</strong> open the <a href="Manage-Addresses_24805626.html" data-linked-resource-id="24805626" data-linked-resource-version="3" data-linked-resource-type="page">My Address List</a> Page. Described about it more below.-</p><p><br /></p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p style="text-align: right;"><strong>No Address Given</strong></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24641793.png?width=350" data-image-src="attachments/24674543/24641793.png" data-unresolved-comment-count="0" data-linked-resource-id="24641793" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="no address.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="b139612b-c357-41c5-be58-ec8b2a9c8862" data-media-type="file" /></span></p><p><br /></p><p style="text-align: right;"><br /></p><p style="text-align: right;"><br /></p><p style="text-align: right;"><br /></p><p style="text-align: right;"><br /></p><p style="text-align: right;"><br /></p><p style="text-align: right;"><strong><strong>Addres</strong></strong><strong><strong>s Given</strong></strong></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24609044.png?width=350" data-image-src="attachments/24674543/24609044.png" data-unresolved-comment-count="0" data-linked-resource-id="24609044" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="address given.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="2fad4185-9716-454f-b05d-640bfe864219" data-media-type="file" /></span><br /><br /></p><p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="CheckoutPage-2.Payments">2. Payments</h3><p>Here user will have three interactive points:</p><p>a. Can check his COD Limit</p><p>b. Choose Payment Option</p><p>c. Choose Payment Method</p><p>By Default, no option should be pre-selected.</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.82996%;" /><col style="width: 26.3158%;" /><col style="width: 67.8543%;" /></colgroup><tbody><tr><th class="confluenceTh">S. No</th><th class="confluenceTh">Data Points / Buttons&nbsp;</th><th class="confluenceTh">Logics</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Payment Option title&nbsp;</td><td class="confluenceTd"><p>&quot;Payment Option&quot;&nbsp;</p><p>&quot;Please choose one option&quot;&nbsp;</p></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Payment Options List</td><td class="confluenceTd"><ul style="list-style-type: square;"><li>Full Cash on Delivery&nbsp;</li><li>20% Advance | 80% COD</li><li>100% Advance</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">3</td><td colspan="1" class="confluenceTd">Full Cash on Delivery</td><td colspan="1" class="confluenceTd"><p>This payment option must remain Disabled in the following conditions:</p><p>a. If the Net order Amount is greater than the &quot;remaining COD Limit&quot;</p><p>b. If the Net Order Amount is above Rs 2,00,000</p></td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd"><p>20% Advance | 80% COD</p></td><td colspan="1" class="confluenceTd"><p>This payment option must remain disabled if,</p><p>the Net Order Amount is above Rs. 2,50,000</p><p>If this option is chose, show an extra container below the summary section displaying the breakup of 20% advance and 80% COD.</p></td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">100 % Advance</td><td colspan="1" class="confluenceTd"><p>Show a subtext &quot;2% Extra Discount&quot; below the main text. The value of subtext should dynamic and controlled via APIs.&nbsp;</p><p>If this option is chosen, update the Bill summary section by showing &quot;Advance discount&quot; deductions.</p></td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Remaining COD Limit</td><td class="confluenceTd"><p>This will appear below the &quot;Full Cash On Delivery&quot; option.</p><p>Show following values:</p><ul style="list-style-type: square;"><li>Remaining COD Limit</li><li>Total COD Limit</li></ul><p>On click of info button open a tooltip. <span class="legacy-color-text-blue4"><em>(Attach the tooltip image with content below)</em></span></p><p><br /></p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24707387.png?width=350" data-image-src="attachments/24674543/24707387.png" data-unresolved-comment-count="0" data-linked-resource-id="24707387" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="payment option.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="d203e76e-dfb5-45ab-9f4a-2f5eacf085f3" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="CheckoutPage-3.Verification">3. Verification</h3><p>Here users will give any one form of verification.&nbsp;</p><p>If they choose GST option, they shall provide the GST No.&nbsp;</p><p>If they choose &quot;i do not have GST&quot;, they shall give any one verification image.</p><p>This however is not a mandatory step. If a user selects any option and does not provide the verification document or gst no. we shall not stop hime from placing the order.&nbsp;</p><p><strong>Data Points &amp; Logics</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 4.53441%;" /><col style="width: 19.3522%;" /><col style="width: 76.1134%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No&nbsp;</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logics</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">GST Option</td><td class="confluenceTd"><p>This option will remain selected by default. When this option is selected, the below area must show a Edit box for inputting a GST No. (Max input limit: 15 characters)</p><p>Show information below the Edit box &quot;To get GST invoice and tax benefits, please provide your GST Number above.&quot;</p><p>If the GST No. has been approved, then keep this edit box in a locked state.</p><p>Case 1:&nbsp; GST Edit box will be on open state if, isGSTVerified=0 (and show pre-filled value if any)</p><p>Case 2: GST Edit box will be locked if, isGSTVerified=1 (and show pre-filled value if any)</p><p><br /></p><ul style="list-style-type: square;"><li>GST input format validation:&nbsp;<span data-colorid="x5tbfauvm3">2 Digits Followed by 5 English Characters followed by 4 digits followed by 1 character followed by 1 digit followed by 1 character followed by 1 digit</span>&nbsp;</li></ul></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Other Verification Option</td><td class="confluenceTd"><p>On selection of this option, the below area will change (as shown in image).</p><p>Document Dropdown Options:</p><ul style="list-style-type: square;"><li>Bill Book</li><li>Visiting Card</li><li>Shop Photo</li></ul><p>Image Upload button: <strong>On click,</strong> open the image selection tool and upload the image. On successful upload, show a thumbnail preview in the image box. If user clicks on the Image Upload button without selecting any dropdown option, then do not open image selection tool and show toast &quot;Please select one document option&quot;&nbsp;</p><p>If the verification document is approved by Admin, then keep both the Dropdown and Image upload button in locked state.</p><p>CASE 1 : Keep the Dropdown and Image Upload Button in active state, if orderVerifyDone=0 (Show pre-filled data if any)</p><p>CASE 2: Keep the Dropdown and Image Upload Button In Locked State, if orderVerifyDone = 1 (Show pre-filled data if any)</p><p>CASE 3: Keep the &quot;I dont have GST&quot; option disabled if, isGSTVerified=1 (so user will not be able to open doc verification box)&nbsp;</p><p>On click of why option, open a popup displaying the reason for verification. Use the existing popup design and content.</p></td></tr><tr><td colspan="1" class="confluenceTd">3</td><td colspan="1" class="confluenceTd">Verification Disclaimer box</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="400" loading="lazy" src="attachments/24674543/107905070.png?width=400" data-image-src="attachments/24674543/107905070.png" data-unresolved-comment-count="0" data-linked-resource-id="107905070" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="verification disclaimer.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="703bd415-f178-40f3-8a84-30599a739ab0" data-media-type="file" /></span></p><p>This text box will appear below the verification section only in following case:</p><ul style="list-style-type: square;"><li>Show text box if, um.isGSTVerified = 0 AND um.orderVerifyDone = 0</li><li>Hide this box if,&nbsp;um.isGSTVerified = 1 OR um.orderVerifyDone = 1</li></ul><p>Keep the message dynamic via API.</p></div></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24576344.png?width=350" data-image-src="attachments/24674543/24576344.png" data-unresolved-comment-count="0" data-linked-resource-id="24576344" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Verification GSt.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="8c305cae-7a16-4bf6-bcfb-184038c64bac" data-media-type="file" /></span><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24674627.png?width=350" data-image-src="attachments/24674543/24674627.png" data-unresolved-comment-count="0" data-linked-resource-id="24674627" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Verification Other.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="094d35cf-1b9e-4331-8de9-abf1bbb78fea" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="CheckoutPage-4.BillSummary">4. Bill Summary</h3><p>Here the complete bill summary will be listed.&nbsp;</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 4.61538%;" /><col style="width: 19.6761%;" /><col style="width: 75.7085%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points&nbsp;</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Total Sellers</td><td class="confluenceTd">Show the no. of sellers for whom the user is checking out.</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Total Pairs</td><td class="confluenceTd">Sum of pairs of all orders</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Subtotal&nbsp;</td><td class="confluenceTd">This is the sum of subtotal value of all orders&nbsp;[Sum of (SK price x Pairs)]</td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Coupon Discount</td><td colspan="1" class="confluenceTd">This row will appear only when user applies any valid coupon. Show the value with negative sign.</td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Shipping Charge</td><td colspan="1" class="confluenceTd"><p class="auto-cursor-target">Every time this page is loaded, run API to calculate the Shipping charge for all the orders on separate basis.</p><p class="auto-cursor-target">i.e If Order 1 has 24 pairs and Order 2 has 48 pairs, then shipping charge will be calculated for each order separately and shown here as a sum. ( Instead of calculating shipping charge for 48+24 = 72 pairs )</p><p class="auto-cursor-target">Note - Shipping charges will include the Shipping tax values.</p></td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Advance Discount</td><td colspan="1" class="confluenceTd"><p>This row will appear only if the payment option selected is &quot;100% Advance&quot;.</p><p>The value to be deducted here should be dynamic as the discount percentage will be kept dynamic as well.</p></td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Grand Total</td><td colspan="1" class="confluenceTd"><p>This is the sum of all the values appearing above:</p><p>Subtotal - Coupon Discount + Shipping Charge - Advance Discount = Grand Total</p></td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">20% Advance Amount Box</td><td colspan="1" class="confluenceTd"><p>This box will be visible below the summary section only in case the payment option selected is &quot;20% Advance | 80% COD&quot;.</p><p>This will show the breakup of 20% advance and 80% COD and the value payable in the next step.</p><p><br /></p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24707429.png?width=350" data-image-src="attachments/24674543/24707429.png" data-unresolved-comment-count="0" data-linked-resource-id="24707429" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="bill summary.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="edd25f51-c7f9-4afe-afa5-ff941952f054" data-media-type="file" /></span><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24707443.png?width=350" data-image-src="attachments/24674543/24707443.png" data-unresolved-comment-count="0" data-linked-resource-id="24707443" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="20% advance box.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="c7033075-2ecc-49c6-a8b0-1f9606735052" data-media-type="file" /></span></p><p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="CheckoutPage-5.ApplyCoupon">5. Apply Coupon</h3><p>Here users can apply a coupon code and avail discounts from ShoeKonnect.</p><p><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 4.49664%;" /><col style="width: 19.9137%;" /><col style="width: 75.399%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Button</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Coupon Code Edit Box</td><td class="confluenceTd">User will enter inputs here (Keep Keypad in Capital Chase characters only)</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">APPLY/CLEAR Button</td><td class="confluenceTd"><p>When user enters a value in edit box, he will click on the &quot;APPLY&quot; button. This will check for validity of the Coupon Code and change the button to &quot;CLEAR&quot;. While the button is &quot;CLEAR&quot;, user cannot manually edit the Coupon code.&nbsp;</p><p>On click of &quot;CLEAR&quot;, the edit box will be resetted and user will be able to enter a new coupon code.</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Validation text</td><td class="confluenceTd"><p>This text will appear below the edit box. The text will be dynamic.&nbsp;</p><p>On Success, &quot;Congratulations ! Discount Coupon is applied.&quot;</p><p>On Fail, &quot;It seems the coupon is not valid&quot;</p><p><br /></p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24576399.png?width=350" data-image-src="attachments/24674543/24576399.png" data-unresolved-comment-count="0" data-linked-resource-id="24576399" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Coupon empty.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="a9ef135e-41ba-4ff4-a21b-5c457d165da9" data-media-type="file" /></span><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24674543/24805740.png?width=350" data-image-src="attachments/24674543/24805740.png" data-unresolved-comment-count="0" data-linked-resource-id="24805740" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="coupon applied.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="d96099de-7ddb-4252-8552-6c41495de932" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="CheckoutPage-5.ConfirmButton">5. Confirm Button</h3><p>This button will be the last element of this page. There will be multiple validations on click of this button.</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 4.49664%;" /><col style="width: 19.9137%;" /><col style="width: 75.399%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Button</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Button Text</td><td class="confluenceTd"><p>If the Payment option chosen is &quot;Full Cash on Delivery&quot;, then the button text will be:</p><ul style="list-style-type: square;"><li>&quot;CONFIRM ORDER&quot; - on click, open the confirmed order page.</li></ul><p>If the Payment option chosen is either &quot;20% Advance&quot; or &quot;100% Advance&quot; , then the button text will be:</p><ul style="list-style-type: square;"><li>&quot;PAY NOW&quot; - on click, open the Payment gateway</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">2</td><td colspan="1" class="confluenceTd">Order Values<br />(total pairs)</td><td colspan="1" class="confluenceTd"><p>In Case of 20% Advance,</p><ul style="list-style-type: square;"><li>Show the Amount of 20% payable amount</li></ul><p>In all other payment options,</p><ul style="list-style-type: square;"><li>show Net amount payable</li></ul></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Validations</td><td class="confluenceTd"><p>a. Check if the Address provided is serviciable or not.</p><ul style="list-style-type: square;"><li>If not, show toast &quot;Delivery service not available at your address&quot;</li></ul><p>b. Check if any payment mode is selected.</p><ul style="list-style-type: square;"><li>If no payment mode is selected, show toast &quot;Please select any one payment mode.</li></ul><p>c. If GST Verification option is selected, check if any value input in the edit box.</p><ul><li>If the Edit box is left blank, let the user continue with placing the order&nbsp;</li><li>if some values have been entered in Edit box, check if length of characters is 15. If Yes, proceed with order. If No, show toast &quot;Please enter valid GST No.&quot;</li></ul><p>d. If other verification option is selected, check</p><ul><li>If any value has been selected from Dropdown options but no image is uploaded or vice versa, then on click of &quot;Confirm&quot; Button, let the order proceed and do not save the verification type option.</li><li>If no value has been selected from dropdown and no image uploaded, then let order proceed.</li><li>If both Dropdown value and image has been uploaded, save the both the data in user table.</li></ul><p>e. If the Grand Total Value is less than 100. Show toast&quot; You cannot place order for value less than Rs.100&quot;&nbsp;</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Other Points</td><td class="confluenceTd"><ol><li>Save the Address in Order Table with proper Format.</li><li>Save the GST No. at order level if Verified by Admin</li><li>Save the Seller MOQ in Order Table at time of placing order.</li></ol></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/24674543/107872273.png" data-image-src="attachments/24674543/107872273.png" data-unresolved-comment-count="0" data-linked-resource-id="107872273" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="place button.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="346ae9ad-8f46-4ed3-a82f-678cf0510a27" data-media-type="file" /></span></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="CheckoutPage-FullPageView">Full Page View</h2><p>Find here a full view of the page.&nbsp;</p><h2 id="CheckoutPage-"><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="350" loading="lazy" src="attachments/24674543/24543553.png?width=350" data-image-src="attachments/24674543/24543553.png" data-unresolved-comment-count="0" data-linked-resource-id="24543553" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Checkout Details – 2.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24674543" data-linked-resource-container-version="10" data-media-id="81c1c23c-ed5c-48bb-b12d-3c88b22ae924" data-media-type="file" /></span></h2></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24609044.png">address given.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24641793.png">no address.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24707387.png">payment option.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24576344.png">Verification GSt.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24674627.png">Verification Other.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24707429.png">bill summary.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24707443.png">20% advance box.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24805740.png">coupon applied.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24576399.png">Coupon empty.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24805772.png">place order.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/24543553.png">Checkout Details – 2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/107905070.png">verification disclaimer.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24674543/107872273.png">place button.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

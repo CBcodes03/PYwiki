@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : My Orders</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : My Orders
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 16, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="MyOrders-Overview">Overview</h2><p>This page will produce a list of all the orders placed by the user and allow users to track and manage them.</p><p>This page consists of two sub-parts:</p><ol><li><a href="31293554.html" data-linked-resource-id="31293554" data-linked-resource-version="13" data-linked-resource-type="page">Order Details &gt; Item List</a></li><li><a href="53575684.html" data-linked-resource-id="53575684" data-linked-resource-version="3" data-linked-resource-type="page">Order Details &gt; Summary</a></li></ol></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 96.3899%;"><colgroup><col style="width: 3.24898%;"/><col style="width: 24.409%;"/><col/></colgroup><tbody><tr><th class="confluenceTh">#</th><th class="confluenceTh">Data Points / Button</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Orders Listing</td><td class="confluenceTd">Each card will represent one order. The orders will be grouped by time of Order, if more than one orders were placed together. </td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Placed On Date</td><td class="confluenceTd">This is the date the order was placed by the buyer.</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Time of Order</td><td class="confluenceTd">This is the exact time on which the order was placed. </td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd">Name of the seller on which order has been placed</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Status </td><td class="confluenceTd"><p>Each order will have one status. The following attributes of the status will be dynamic:</p><ul style="list-style-type: square;"><li>Text</li><li>Text Color</li><li>Bg Color</li><li>Bg Border</li></ul><p>Listing down all the possible statuses and their conditions:</p><ol><li><strong>Placed</strong>: [order status = 4 AND confirmedOn = 0]<br/><ol><li>Text Color: #989898</li><li>Bg Color: #F9F9F9</li><li>Bg Border: #D3D3D3</li></ol></li><li><strong>Confirmed</strong>: [order status = 4 AND confirmedOn &gt; 0 AND atleast one variant of that order does not have any of the following statuses 'RTO','Cancelled','Delivered')<ol><li>Text Color: #FF9C4B</li><li>Bg Color: #FFF8F2</li><li>Bg Border: #F7D1B2</li></ol></li><li><strong>Cancelled</strong>: [order status = 5]<ol><li>Text Color: #FF3636</li><li>Bg Color: #FFF1F1</li><li>Bg Border: #FFA6A6</li></ol></li><li><strong>Complete</strong>: [all variants of that order has one of the following statuses 'RTO','Cancelled','Delivered'] <ol><li>Text Color: #00C29C</li><li>Bg Color: #F1FFFC</li><li>Bg Border: #B0EADE</li></ol></li></ol></td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Order Amount</td><td class="confluenceTd">The Net amount of the Order (after adjusting Shipping, discounts etc.)</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">Count of Products &amp; Pairs</td><td class="confluenceTd">Total Product count and Total pairs count of that order</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">SK Order ID</td><td class="confluenceTd">SK Order Id Generated </td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">View Items List Button</td><td class="confluenceTd"><strong>On click,</strong> open the Order Details page with Items List Tab selected</td></tr><tr><td class="confluenceTd">10</td><td class="confluenceTd">View Summary Button</td><td class="confluenceTd"><strong>On click,</strong> open the Order Details page with Summary Tab selected</td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Page Loads (pagination)</td><td colspan="1" class="confluenceTd">While loading orders a group must not be broken due to page load. i.e the page load should decide the no. of groups to be populated in one call rather than no. of orders.</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/31162437/34635801.png?width=350" data-image-src="attachments/31162437/34635801.png" data-unresolved-comment-count="0" data-linked-resource-id="34635801" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders - Test 1.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="31162437" data-linked-resource-container-version="3" data-media-id="b33ee96b-45fb-4128-a9a8-0cb72fa2a81d" data-media-type="file"></span></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31162437/34734125.png">My Orders.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31162437/31293521.png">My Orders.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/31162437/34635801.png">My Orders - Test 1.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

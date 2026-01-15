@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Limited Stock Doc</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Seller-Board-3.0_24805934.html">Seller Board 3.0</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Product-Management_24642088.html">Product Management</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Product-Uploading_25657454.html">Product Uploading</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Limited Stock Doc
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 29, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="LimitedStockDoc-Overview">Overview</h2><p>This is basically the part of product uploading where seller can manage and update the stock lots for its products. </p><p>This button will be enabled only when at least one size set and one color has been chosen.</p><p>There are two types of stock lots:</p><ol><li>For all cases except Fixed Carton Acc:Yes</li><li>For Fixed Carton Acc:Yes</li></ol><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" loading="lazy" src="attachments/145653815/145784894.png?height=250" data-image-src="attachments/145653815/145784894.png" data-unresolved-comment-count="0" data-linked-resource-id="145784894" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Product Listing (Limited Stock Popup).png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="145653815" data-linked-resource-container-version="3" data-media-id="f79b7fde-7030-4575-bf5d-117072706983" data-media-type="file"></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" loading="lazy" src="attachments/145653815/145752134.png?height=250" data-image-src="attachments/145653815/145752134.png" data-unresolved-comment-count="0" data-linked-resource-id="145752134" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Set Limited Stock (for Carton fixed  YES).png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="145653815" data-linked-resource-container-version="3" data-media-id="08f29f32-a227-417a-9424-6d8877e3d89c" data-media-type="file"></span></p><p>On click of the button, a popup will open (based on the above type) where seller will be able to input Limited Stock. The popup will Display the Variant Color and its listed sizes. For each size set there will be </p><ul style="list-style-type: square;"><li>Active/Deactive toggle</li><li>Number Input Edit Box (Number input only. Max digits = 3)</li><li>For Type 1 - fetch details from variant_size_stock table. </li><li>For Type 2 - fetch the details from the product table. (limitedCartonStatus, limitedCarton)</li></ul><p>By Default (first time), all the toggles will be in Deactivated state.</p><p>The Edit box will be in a locked state if toggle = Deactive, and in open state if toggle = active. A user will have to Activate the toggle in order to enter the stock lot value.</p><p>Show the Edit Box prefilled with value of stock lot if already set in Db. </p><p><em>Addition:</em> Add a text on top &quot;Warning: If the Limited Stock is Active and Remaining Stock is '0', then it will not be visible to the buyer.</p><p><br/></p><p><strong>On click</strong>  &quot;Continue&quot; Button,</p><ul style="list-style-type: square;"><li>In Product Uploading Page &gt; Type 1 - Update the Ui for required variant blocks with the values of Stock lot.  (Sum of stock lots for each variant) from 'variant_size_stock' </li></ul><h2 id="LimitedStockDoc-VisibilityofStockLotinUploadingPage.">Visibility of Stock Lot in Uploading Page.</h2><p>When a user sets any positive values and having Activated Stock Lot , then they will appear in respective variant blocks.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" height="250" width="505" loading="lazy" src="attachments/145653815/145817645.png?width=505" data-image-src="attachments/145653815/145817645.png" data-unresolved-comment-count="0" data-linked-resource-id="145817645" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="variant block.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="145653815" data-linked-resource-container-version="3" data-media-id="d54b2827-d046-423f-97ac-84bbb3474c8e" data-media-type="file"></span></p><p>For Type 1 - The Total Stock Left will show the value of SUM of Activated stock lots for each color/variant.  </p><p>For Type 2 - The Total Stock Left will show the value of Carton Lots if Stock Lot is activated. The Value will be Sum of value selected for each size set for each color. (will explain elaborately)</p><h2 id="LimitedStockDoc-ResettingValues">Resetting Values</h2><ol><li><span class="legacy-color-text-blue4">When changing the <strong>Sell type to (Sell Type = Carton, Carton type = Fixed, multiple Colors = Yes)</strong> or vice cersa, Check if any Stock lot is Activated for any size set (Type 1 or Type 2). If yes, then show warning popup, &quot;By changing the this option, your stock lots will be reset. Are you sure you want to continue ?&quot;  On click of Yes, reset the values in Front-end. Now, when user clicks on Save Draft or Submit for review, Delete the old Stock lot Values and update the new values in Db.</span></li><li><span class="legacy-color-text-blue4"><strong>When deselecting a Size Set,</strong> check if there is an entry of that size set for all variant of the selected product. Update the Stock Lot Value on variant block and popup in front end. Now when user clicks on Save Draft or Submit for Review, Delete/update the Stock lot value in Db according to the type 1 or type 2.</span></li><li><span class="legacy-color-text-blue4">When <strong>Changing the color</strong> of a variant, check if any stock lot is activated for that variant(type 1 or Type 2), then update the limited stock pop to show the change in color.  Do not do any changes in Db for this.</span></li><li><span class="legacy-color-text-blue4">When removing a <strong>variant block</strong>, Remove the Variant entry from display in Limited Stock popup. On Click of Save Draft or Submit for Review, Delete the Stock lot entry for that variant and Sizeids (if Type 1) and update the caluclation (if Type 2).</span></li><li><span class="legacy-color-text-blue4">On <strong>Changing Lot or Main Category</strong>, Check if there exists Active stock lot (Type 1 Or Type 2), if yes then add a text in the existing warning popup &quot;Also, the limited Stock lot values will be reset.&quot; </span></li></ol><p><br/></p><p>This Button will also appear in the Product Edit Mode and have the same functionality.</p><p><br/></p><p><br/></p><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="LimitedStockDoc-ForType1">For Type 1</h1><h3 id="LimitedStockDoc-Case1-Onopeningthepopup">Case 1 - On opening the popup</h3><ol><li>Fetch the values from variant_size_stock table, for variantids and sizeids of that product. And show these entries as &quot;Activated&quot;</li></ol><h3 id="LimitedStockDoc-Case2-OnClickof&quot;Continue&quot;Buttoninthepopup">Case 2 - On Click of &quot;Continue&quot; Button in the popup</h3><ol><li>In Frontend - in the variant block, show the sum of all the activated stock lots for size sets</li><li>In frontend - set variables of active/inactive for any changes made by the seller. </li></ol><h3 id="LimitedStockDoc-Case3-Onclickof&quot;SaveDraft&quot;or&quot;SubmitforReview&quot;">Case 3 - On click of &quot;Save Draft&quot; or &quot;Submit for Review&quot;</h3><ol><li>Delete the old stock lot entries </li><li>Update the new stock lot entries</li></ol><p><br/></p><p><br/></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>For Type </p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/145653815/145784894.png">Product Listing (Limited Stock Popup).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/145653815/145752134.png">Set Limited Stock (for Carton fixed  YES).png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/145653815/145817645.png">variant block.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : In Process Page</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Seller-Board-3.0_24805934.html">Seller Board 3.0</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Order-Management_26542081.html">Order Management</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : In Process Page
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 30, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="InProcessPage-Overview">Overview</h2><p>Here, sellers can browse all the orders and items that are &quot;In Process&quot;. Major actionable on this page: </p><ol><li>Move to Packaging</li><li>Cancel Lots</li><li>Cancel Order</li><li>Remove Orders/Products</li></ol><p><em>Screen Preview at the bottom of this page.</em></p><p><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.9371%;"><colgroup><col style="width: 3.30463%;"/><col style="width: 15.1789%;"/><col style="width: 74.6622%;"/><col style="width: 6.72128%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th><th class="confluenceTh">Status</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Summary</td><td class="confluenceTd"><ol><li>Total Orders – Sum of all the orders on this Page.</li><li>Total Products – Sum of all the Products in the Orders</li><li>Total Products in Delay: No of Products whose Dispatch time has exceeded</li></ol></td><td class="confluenceTd">Change</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Tabs</td><td class="confluenceTd"><ol><li>In Process - This tab will show all the orders moved in process from the “New Orders”. The orders will be listed according to the Latest Confirmed Order on top.</li><li>Expected Dispatches <span class="legacy-color-text-blue4">(Keep this tab hidden for this release. We will have only one tab)</span></li></ol></td><td class="confluenceTd">Change</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Order Row</td><td class="confluenceTd"><ol style="text-align: left;"><li>Buyer Name (City) [Existing]</li><li>Info Icon - Open <a href="Buyer-Info-PopUp_27918363.html" data-linked-resource-id="27918363" data-linked-resource-version="2" data-linked-resource-type="page">Buyer Info PopUp</a>[New]</li><li>SKOrderID [Existing]</li><li>Date of confirmation of the order [New]</li><li>Total Order Value [Existing]</li><li>Total Products [Existing]</li><li>Total Pairs [Existing]</li><li>Total Lots cancelled Count [New] - Explained below</li><li>&quot;Remove this Order&quot; Button [New] - Explained below</li><li>Option button - &quot;Cancel Order&quot; Option</li></ol></td><td class="confluenceTd">Change</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Count of Total Lots Cancelled</td><td class="confluenceTd"><p>Show text “All items Cancelled” if all lots have been cancelled in that order.</p><p>Show text &quot;X Lots Cancelled&quot;, if all lots have not been cancelled ; where X = No. of Lots Cancelled</p><p>Do not show any text if no lots have been cancelled in that order.</p></td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Remove this Order button</td><td class="confluenceTd"><p>This button will appear only if all the Lots having the status “In Process” in that order have been cancelled.</p><p><strong>On click,</strong> the order entry must disappear form this tab.</p></td><td class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Cancel Order</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>On click, open the popup shown below. Seller will have to select one reason to Cancel the Order. <span class="legacy-color-text-blue4">(List of Reasons will be provided soon)</span> </p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/27820073/27852891.png" data-image-src="attachments/27820073/27852891.png" data-unresolved-comment-count="0" data-linked-resource-id="27852891" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="cancel popup - Variant.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="27820073" data-linked-resource-container-version="11" data-media-id="ced4cb1c-553c-4415-9e2c-e76145cd2ceb" data-media-type="file"></span></p><p>On Click of &quot;Confirm Cancellation&quot;, following Data points should be updated for every lot whose status is &quot;In Process&quot;:</p><ol><li>Cancelled By - Seller</li><li>Cancelled On - TimeStamp</li><li>Reason of Cancellation - As given by seller</li><li>Cancelled Order Item ID</li><li>No. of Lots Cancelled</li><li>Status at the time of cancellation</li></ol><p>Also, hide that order from this page.</p><p><strong>Impact of Cancellation:</strong></p><p>a. Send Push Notification and SMS to the buyer about cancellation. Now, check if the no. of lots cancelled is equal to the no. of lots in that order,</p><ul style="list-style-type: square;"><li>If yes, then send Push Notification &quot;%seller_name% has cancelled your order - %skorderID%&quot;</li><li>If No, then send then the push notifications &quot;X lots have been cancelled by the Seller - %seller_name% from your order - %skorderid%     </li></ul><p>b. Send SMS to Buyer about cancellation. Use above condition here as well</p><ul><li>If yes, then send Push Notification &quot;Dear Buyer, Seller - %seller_name% has cancelled your order - %skorderID%. Check 'My Orders' Section in the app for updates.&quot;</li><li>If No, then send then the push notifications &quot;Dear Buyer, %X% lots have been cancelled by the Seller - %seller_name% from your order - %skorderid%. Check 'My Orders' Section in the app for updates.&quot;     </li></ul></div></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Product Row</td><td class="confluenceTd"><ol style="text-align: left;"><li>Brand Name and Counter Code [Existing]</li><li>SK Price [Existing]</li><li>Total (SK Price + ext SK price) x (no. of pairs ordered with status &quot;In Process&quot; - no. of pairs cancelled in &quot;In Process&quot;)  [New]</li><li>Order Quantity: This value is Total Lots ordered – Total Lots Cancelled for that product [New]</li><li>Cancelled: This will show the count of total lots cancelled in that product.</li><li>No. of Colors: Will show the total no. of Variants of that product ordered [New]</li><li>Sell Type: (Carton or Lot) [New]</li><li>Dispatch Time – This will show the expected date of dispatch (ConfirmedOn Date + Dispatch time) [Existing]</li><li>B2D Delay: This will show the status of delay of the product. Explained Below</li><li>&quot;Move to Packaging&quot; Button. Explained Below</li><li>&quot;Remove Product&quot; Button. Explained Below</li></ol></td><td class="confluenceTd">Changed</td></tr><tr><td class="confluenceTd">7</td><td class="confluenceTd">B2D Delay Info</td><td class="confluenceTd"><ol style="text-align: left;"><li>If current Date &lt; Dispatch Date, show nothing</li><li>If Current Date = Dispatch Date, show text “(Dispatch Today)” Font Color: Green</li><li>If Current Date &gt; Dispatch Date, show “(X Days/hours Delay)” Font Color: Red</li></ol></td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">Move to Packaging Button (Product Row)</td><td class="confluenceTd"><p><strong>On Click,</strong> all the lots of the product having status “In Process” will move to “In Packaging”.</p><p>-Also check if variants of any other product in that order still has status &quot;In Process&quot;</p><ul style="list-style-type: square;"><li>If Not, Hide the whole Order Entry.</li></ul><ul style="list-style-type: square;"><li>If Yes, Do nothing</li></ul></td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">Remove Product Button (Product row)</td><td class="confluenceTd"><p>This button will appear if all the lots having Status “In Process” in that product have been Cancelled. <strong>On click,</strong> that product entry must hide from that order.</p><p>Also,  check if the Order contains any other product whose variant has status &quot;In Process&quot; and not cancelled.</p><ul style="list-style-type: square;"><li>If Not, remove the whole order entry as well.</li><li>If Yes, Remove only the particular product. </li></ul></td><td class="confluenceTd">New</td></tr><tr><td class="confluenceTd">10</td><td class="confluenceTd">Variant Row</td><td class="confluenceTd"><div class="content-wrapper"><p style="text-align: left;">This row will expand/collapse on click of the product row. This row contains the following:</p><ol style="text-align: left;"><li>Color Name [Existing]</li><li>Image Thumbnail [Existing]</li><li>Article Code [Existing]</li><li>Order Quantity (In Lots) for each variant excluding cancelled lots [Existing]</li><li>Size Set [Existing]</li><li>Cancel Option Button. On click, open dropdown with option &quot;Cancel Item&quot;. Explained further below. </li><li>Move to packaging button. Explained Below</li><li>Cancellation by Buyer/Seller Info. Explained Below</li></ol><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/27820073/27852883.png" data-image-src="attachments/27820073/27852883.png" data-unresolved-comment-count="0" data-linked-resource-id="27852883" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Variant row - in process.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="27820073" data-linked-resource-container-version="11" data-media-id="3b02cb2f-dde6-4904-8ab4-9596e429eed5" data-media-type="file"></span></p></div></td><td class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Cancel Item (Variant row)</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>On click of &quot;Cancel Item&quot;, open the popup shown below.</p><p>Seller must select the no. of lots to cancel from the dropdown. The Dropdown will contain values in lots of the variant. Minimum Value being '1' &amp; Max. value being the (Lots ordered - Lots Cancelled).</p><p>Seller will also select the reason of Cancellation. <span class="legacy-color-text-blue4">(List of Reasons will be provided soon)</span> </p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" loading="lazy" src="attachments/27820073/27820122.png?height=250" data-image-src="attachments/27820073/27820122.png" data-unresolved-comment-count="0" data-linked-resource-id="27820122" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="cancel popup.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="27820073" data-linked-resource-container-version="11" data-media-id="a3e05f5f-c353-4ad6-9f49-07ec55ede505" data-media-type="file"></span></p><p>On Click of &quot;Confirm Cancellation&quot;, following Data points should be updated in cancellation table</p><ol><li>Cancelled By - Seller</li><li>Cancelled On - TimeStamp</li><li>Reason of Cancellation - As given by seller</li><li>Cancelled Order Item ID</li><li>No. of Lots Cancelled</li><li>Status at the time of cancellation</li></ol><p>Impact of Cancellation:</p><ol><li>Send Push Notification to the buyer about cancellation</li><li>Send SMS to Buyer about cancellation</li></ol></div></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">Move to Packaging (Variant row)</td><td colspan="1" class="confluenceTd"><p><strong>On Click,</strong> This will move all the Lots of this variant (excluding cancelled) to “In Packaging”. </p><p><em><strong>On click</strong> of this button, also check for statuses of other lots in that order. If no other lots have status “In Process”, then automatically remove the Order entry </em></p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd">Cancellation by Buyer/Seller info</td><td colspan="1" class="confluenceTd"><p>There can be two Cancelled statuses for each variant (one for buyer and one for seller), therefore cgroup the cancellations by Buyer and Seller Separately.</p><p>On hovering on this status, it will the show the reason of cancellation in a tooltip. As we will on club and show the cancellations by Buyers and Sellers there could be more than one reason for cancellation for each. Hence, in this case show multiple reasons on hovering.</p><p>If all the Lots of any variant gets cancelled, then the whole variant block will become translucent to 50% and “options” button and “move to packaging: button will be disabled. (Although, the cancellation tooltip should still work)</p></td><td colspan="1" class="confluenceTd">New</td></tr></tbody></table></div><p class="auto-cursor-target">Other Notes* - Add &quot;ProductId&quot; field in the Order Details Table.</p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><p class="title">Checks for Cancellation</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>To determine whether we can mark order status as cancelled or not</strong></p><p><strong>Validation for Order Cancel and Hiding Order Entry</strong>, On Cancellation at Lot Level,</p><p>Check whether all the other variants in that order are marked Cancelled or not,(i.e. all the remaining qty of all variants in that Order = 0)</p><ul style="list-style-type: square;"><li>If Yes, then update cancellation mark at the Order Level as well [Status = 5, Cancelled By, Cancelled On] and remove the order row.  </li><li>If No, then check if all the other variants in that order that have status &quot;In Process&quot; are marked Cancelled or Not.<ul style="list-style-type: square;"><li>If Yes, then hide that order entry from In process Page</li><li>If No, then check if all the other Variants in that product having status &quot;In Process&quot; been cancelled or not:<ul style="list-style-type: square;"><li>If Yes, then hide the product entry</li><li>If No, then just cancel the given variant and make the variant block translucent to 50% where all the options should get locked except the cancellation tooltip should remain working)</li></ul></li></ul></li></ul></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="InProcessPage-ScreenPreview">Screen Preview</h2><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="1000" loading="lazy" src="attachments/27820073/27852846.png?width=1000" data-image-src="attachments/27820073/27852846.png" data-unresolved-comment-count="0" data-linked-resource-id="27852846" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Orders- In process.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="27820073" data-linked-resource-container-version="11" data-media-id="f58ddde0-556d-4df6-8dba-44bca0240ec0" data-media-type="file"></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="InProcessPage-SMSOnCancellations">SMS On Cancellations</h2><p><strong>On cancelling SKU level:</strong></p><p>%Buyer’s company name%,</p><p>The seller %Seller_Company_Name% has cancelled the article %Brand_Name%-%Brand_Counter% of order ID - %SKOrderID%.</p><p>Helpline: %phone%</p><p><br/></p><p><strong>On Cancelling Order Level or Consignment Level (Cancel Orders, Cancel All Consignmnets)</strong></p><p>%Buyer’s company name%,</p><p>The seller %Seller_Company_Name% has cancelled %SKU_Count% Items from your order.</p><p>Helpline: %phone%</p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27820073/27852846.png">Orders- In process.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27820073/27852883.png">Variant row - in process.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27820073/27852891.png">cancel popup - Variant.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/27820073/27820122.png">cancel popup.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

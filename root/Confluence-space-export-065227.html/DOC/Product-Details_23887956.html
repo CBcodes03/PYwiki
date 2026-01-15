@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Product Details</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Product Details
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Jun 16, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=c7jfu0u7ru]{color:#333333} html[data-color-mode=dark] [data-colorid=c7jfu0u7ru]{color:#cccccc}</style>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="ProductDetails-Overview">Overview</h2><p>This is a revamp of the existing product details page. Goal has been to give the buyers a feel of looking at products inside a seller shop. Also, enabling buyers to explore more products through this page and avoid a dead-end.</p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="ProductDetails-PageDetails">Page Details&nbsp;</h2><h3 id="ProductDetails-DataPoints">Data Points</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.34413%;" /><col style="width: 17.6518%;" /><col style="width: 64.2105%;" /><col style="width: 12.7935%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th><th class="confluenceTh">Status</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Seller Details</td><td class="confluenceTd">Seller Name, City &amp; Country</td><td class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">2</td><td colspan="1" class="confluenceTd">Seller MOQ</td><td colspan="1" class="confluenceTd"><p>Value of Seller MOQ.&nbsp;</p><p>If value = 0, then hide the whole text.</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">3</td><td colspan="1" class="confluenceTd">Brand tag</td><td colspan="1" class="confluenceTd">Visible if Variants' brand is registered&nbsp;</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Categories</td><td colspan="1" class="confluenceTd">Main Category &gt; Sub Category</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Leather Icon</td><td colspan="1" class="confluenceTd">Visible if variants' product is leather</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Variant Image Slider</td><td colspan="1" class="confluenceTd"><p>All the above information will appear on foreground this slider.&nbsp;</p><ul style="list-style-type: square;"><li>Right Left arrows and Circle dot indicators</li><li>On Click, open a separate page with full screen Sliding images and Zooming features</li></ul></td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Variant Color</td><td colspan="1" class="confluenceTd"><p>In case product has only one variant color, then hide the colors area and reduce the height of the image Image Slider container accordingly.</p><p>In case product has more than one variant color, then show the color area with following elements</p><ul style="list-style-type: square;"><li>Outlined box with variant thumbnail</li><li>Rectangle filled with the color of the variant</li><li>In Selected state, the outline/border of the box will become green in color with increased stroke width.</li><li>Also, in case there are many variant colors, this area should become horizontally scrollable to accommodate all colors.</li><li><strong>On click</strong> of any color, refresh the page and update only the slider images as rest of the things will remain same.</li></ul></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">Brand Name</td><td colspan="1" class="confluenceTd">Name of the Brand of the variant</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">9</td><td colspan="1" class="confluenceTd">Share Icon</td><td colspan="1" class="confluenceTd">This will create a snapshot of the products and create product URL as caption and share on various platforms.</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd">Brand Counter</td><td colspan="1" class="confluenceTd">Counter Code assigned for the variant</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Previous/Next Product Button</td><td colspan="1" class="confluenceTd"><p>On click of these buttons a different product of the same seller should open. We have to have a sliding transition animation between changing of products.&nbsp;</p><p>We can use the facebook shimmer effect while the data loads on the new product page.</p><p>The logic of previous/next variants will be Randomized initially and we will change this logic eventually. Therefore, this logic must be handled dynamically via APIs.</p><p>While fetching products run them through the availability logic.</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">12</td><td colspan="1" class="confluenceTd">SK Price</td><td colspan="1" class="confluenceTd">Final SK Price&nbsp;</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">13</td><td colspan="1" class="confluenceTd">MRP</td><td colspan="1" class="confluenceTd">MRP Value. Show only if MRP&gt;0</td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">14</td><td colspan="1" class="confluenceTd">MOQ/Carton</td><td colspan="1" class="confluenceTd"><p style="text-align: left;">&quot;MOQ&quot;, if Sell Type = Lot</p><p style="text-align: left;">&quot;Carton&quot;, if Sell Type = Carton</p><p style="text-align: left;">Appended by value of &quot;MOQ Pairs&quot;</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">15</td><td colspan="1" class="confluenceTd">Lot Size</td><td colspan="1" class="confluenceTd"><p>Show this in brackets appended to the MOQ/Carton text.&nbsp;</p><p>&quot;(1 Lot = X Pairs)&quot; ; where X = Lot Size Value&nbsp;</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">16</td><td colspan="1" class="confluenceTd">Minimum Buying Details Text</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p>This Text line will appear below the &quot;MOQ Pairs&quot; Value. This text will be dynamic and the logic will be defined at API Level.</p><p>The logic for the Text has been explained in detail below.</p></div></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">17</td><td colspan="1" class="confluenceTd">Expected Delivery</td><td colspan="1" class="confluenceTd"><span data-colorid="c7jfu0u7ru">This value will be (Dispatch time = X Days for D2D)</span></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">18</td><td colspan="1" class="confluenceTd">Bulk Price</td><td colspan="1" class="confluenceTd"><p>This Section will be visible only in case: &quot;Sell Type = Lot AND Bulk Price exists&quot;</p><p>Format: Bulk Pricing Available: &quot;MOQ Value&quot; Pairs @ &quot;Bulk SK Price&quot;</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td class="confluenceTd">19</td><td class="confluenceTd">Available Set Sizes</td><td class="confluenceTd"><p>This will display the list of available sizes for the product.&nbsp;</p><p>Also, show 'extra SK Price&quot; if applicable.</p></td><td class="confluenceTd">Existing</td></tr><tr><td class="confluenceTd">20</td><td class="confluenceTd">Description</td><td class="confluenceTd"><p>Here both the labels and their values must be dynamic.</p><ul style="list-style-type: square;"><li>Upper, Sole, Lining</li><li>Warranty - Warranty Value</li></ul><p>(<strong>On click</strong> of sold by or seller name, redirect to the Seller Shop)</p></td><td class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">21</td><td colspan="1" class="confluenceTd">Description Search icon</td><td colspan="1" class="confluenceTd"><p>Set search icons next to the values of Upper, Sole and Lining.</p><p>On click of this icon, open the Search Page and show search results for the respective keyword.&nbsp;</p></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">22</td><td colspan="1" class="confluenceTd">Seller Shop Card</td><td colspan="1" class="confluenceTd"><p>This Card will display information about the seller of the variant and showcase more products from the seller.</p><ul style="list-style-type: square;"><li>Seller Name</li><li>Seller MOQ</li><li>Total Products by Seller</li><li>Visit Shop Button (<strong>On click</strong>, open the Seller Shop Products Page)</li><li>Horizontally Scrollable images (maximum 6 images) with SK Price</li><li>Logic for images shown will be based on the latest products uploaded by Seller. (This logic should be kept Dynamic)</li></ul></td><td colspan="1" class="confluenceTd">New</td></tr><tr><td colspan="1" class="confluenceTd">23</td><td colspan="1" class="confluenceTd">Recommended Products</td><td colspan="1" class="confluenceTd"><p>This will show product cards in a horizontally scrollable container. Max 7-8 Variants to be shown.</p></td><td colspan="1" class="confluenceTd">Existing</td></tr><tr><td colspan="1" class="confluenceTd">24</td><td colspan="1" class="confluenceTd">Add To Truck Button</td><td colspan="1" class="confluenceTd"><p>This Button will be constantly visible at the bottom of the screen. <strong>On click</strong>, open the Adding to Truck activity page.</p><p>In case the product is not available, set the button text as &quot;Not available&quot; This text will be given by the API.</p></td><td colspan="1" class="confluenceTd">Existing</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br /></p><p><br /></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23887956/23920719.png?width=350" data-image-src="attachments/23887956/23920719.png" data-unresolved-comment-count="0" data-linked-resource-id="23920719" data-linked-resource-version="6" data-linked-resource-type="attachment" data-linked-resource-default-alias="Product Details EXPERIMENT – 3.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23887956" data-linked-resource-container-version="11" data-media-id="65f0dfbe-e97a-4323-9247-216f66c46b74" data-media-type="file" /></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="ProductDetails-UpdatedLogicforinfotext"><strong>Updated Logic for info text</strong></h3><p><strong>Case 1:</strong></p><p><span>Sell Type = Lot, Acc: Yes, (1+ Variants)</span></p><ol><li>You can buy minimum of X Pairs of multiple color. ;Where X = MOQ Pairs</li></ol><p><strong>Case 2:</strong></p><p><span>Sell Type = Lot, Acc: Yes (1 Variants) OR Acc: No&nbsp;</span></p><ol><li>You can buy minimum of X Pairs of single color. ;Where X = MOQ Pairs</li></ol><p><strong>Case 3</strong></p><p><span>[&nbsp;Sell Type =&nbsp;Carton Fixed, Acc: Yes (1+ Variants)&nbsp;]&nbsp;</span></p><ol><li><span><span>Carton Type:&nbsp;</span><span>Multiple Colors per Carton (Fixed)</span></span></li></ol><p><strong>Case 4</strong></p><p><span>[&nbsp;Sell Type = Carton Fixed, Acc: No ]&nbsp; OR&nbsp;&nbsp;</span><span>[&nbsp;Sell Type =&nbsp;Carton Fixed, Acc: Yes (1 Variants)&nbsp;] OR&nbsp;<span>[&nbsp;Sell Type =&nbsp;Carton Flexible (1 Variants)&nbsp;]</span></span></p><ol><li><span><span>Single Color per Carton</span></span></li></ol><p><strong>Case 5</strong></p><p><span>Sell Type = Carton Flexible (1+ Variants)&nbsp;</span></p><ol><li><span><span>Carton Type:&nbsp;</span><span>Multiple Colors per Carton (Customizable)</span></span></li></ol><p><br /></p><p><br /></p><p><br /></p><p><br /></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p class="auto-cursor-target"><span class="legacy-color-text-red2"><strong>OLD Logic - Do not Look Here&nbsp;</strong></span></p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Logic for Buying Details Text</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon" /><div class="confluence-information-macro-body"><p><br /></p><p><strong>Case 1: Sell Type = Lot, Include Color = No,</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot; ; where X = MOQ Pairs</p><p><strong>Case 2: Sell Type = Lot, Include Color = Yes, (more than one variant)</strong></p><p>&quot;You can buy minimum of X pairs including multiple colors&quot;&nbsp;; where X = MOQ Pairs&nbsp;</p><p><strong>Case 3: Sell Type = Lot, Include Color = Yes, (one variant)</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot;&nbsp;; where X = MOQ Pairs&nbsp;</p><p><strong>Case 4: Sell Type = Carton, Carton type = Fixed, Include Color = Yes</strong></p><p>&quot;You can buy minimum of X pairs of fixed colors and Size set&quot;&nbsp;; where X = MOQ Pairs&nbsp;</p><p><strong>Case 5:</strong>&nbsp;<strong>Sell Type = Carton, Carton type = Fixed, Include Color = No</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot; ; where X = MOQ Pairs&nbsp;</p><p><strong>Case 6:</strong>&nbsp;<strong>Sell Type = Carton, Carton type = Flexible (one variant)</strong></p><p>&quot;You can buy minimum of X pairs of single color&quot;; where X = MOQ Pairs</p><p><strong>Case 7:</strong>&nbsp;<strong>Sell Type = Carton, Carton type = Flexible (more than one variant)</strong></p><p>&quot;You can buy minimum of X pairs including multiple colors&quot;&nbsp;; where X = MOQ Pairs</p><p><strong>Case 8: Sell Type = Lot, and MOQ = Lot Size</strong></p><p>&quot;You can buy minimum of X Pairs of single color&quot;; where X = MOQ Pairs</p></div></div><p><br /></p><p><br /></p><p><br /></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887956/23855186.png">Product Details EXPERIMENT – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887956/23855195.png">Product Details EXPERIMENT – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887956/24609259.png">Product Details EXPERIMENT – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887956/25657389.png">Product Details EXPERIMENT – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887956/25755697.png">Product Details EXPERIMENT – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887956/23920719.png">Product Details EXPERIMENT – 3.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

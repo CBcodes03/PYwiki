@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Brand Management System (Fixes)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Brand Management System (Fixes)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 22, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h1 id="BrandManagementSystem(Fixes)-Overview">Overview</h1><ul style="list-style-type: square;"><li>One Brand can have multiple Sellers but only one owner</li><li>One Seller can sell multiple brands</li></ul><p><strong>Table Structure</strong></p><ul style="list-style-type: square;"><li>Brand_request - sellerId, brandId, brandLogo, registryDoc, nocDoc, isRegistered, requestDate, requestStatus, remarks</li><li>New: Brand Logo URL to be saved in 'term_type' table (tt.leadImg)</li><li>All the Approved Brands gets saved in terms table (termid)</li><li>All the brand and Seller linkages gets saved in term_type_relationship table</li></ul><p>The Seller Board will be responsible to generate brand requests. and the admin will be responsible to Approve or reject the brand request.</p></div>
+</div>
+</div>
+<div class="columnLayout two-equal" data-layout="two-equal">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><strong>Seller Board &gt; My Account &gt; Add Brand Popup</strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" loading="lazy" src="attachments/113901601/114065432.png?height=250" data-image-src="attachments/113901601/114065432.png" data-unresolved-comment-count="0" data-linked-resource-id="114065432" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="brand popup.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="113901601" data-linked-resource-container-version="5" data-media-id="8d2cb05c-7e85-4e93-b0f2-9cca14ea7026" data-media-type="file"></span></p><p>When Seller enters a brand name, check for the following:</p><ol><li>If the brand exists. (Check the brand name in brand_request table, WHERE br.brandId IS NOT NULL and br.requestStaus=1)</li><li>If the brand logo exists. (Check brand_request table WHERE br.brandId IS NOT NULL and br.requestStatus=1 AND br.brandLogo IS NOT NULL)</li><li>If the Brand is Registered/Unregistered (Check isRegistered status for brands WHERE tr.status = 1 AND br.requestStatus=1)</li><li>If Brand is unregistered, then do not show any doc uploading fields.</li><li>If the brand is Registered, check if Registry Doc is present. <ol><li>If present, ask for NOC DOC (mandatory)</li><li>If not present, ask for both (one mandatory)</li></ol></li></ol><p><br/></p><p>Brand Table Ui </p><ul style="list-style-type: square;"><li>Change the column name from &quot;Status&quot; to &quot;Approval Status&quot; </li><li>Show the info icon in Request Status column only when br.remarks is NOT NULL and requestStatus=2 </li></ul><p><br/></p><p>In Approval Status, show text &quot;Unapproved&quot; instead of Rejected.</p><p><br/></p><p>If tr.status = 1 then show App Status = ACTIVE</p><p>Else, show App Status = INACTIVE</p><p><br/></p></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><strong>Admin &gt; Brand Management System</strong></p><p><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image confluence-content-image-border" height="250" width="533" loading="lazy" src="attachments/113901601/113967148.png?width=533" data-image-src="attachments/113901601/113967148.png" data-unresolved-comment-count="0" data-linked-resource-id="113967148" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Brand requests admin.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="113901601" data-linked-resource-container-version="5" data-media-id="120365db-7a18-4ea1-a1f3-610d8a6f385c" data-media-type="file"></span></strong></p><p>Remove the isRegistered Column.</p><p><br/></p><p>When Admin approves a Brand request.</p><ol><li>Remove the brand logo uploading option from brand request tab.</li><li>How to check when the brand is unlinked with seller and show the message on Admin and Seller Board?<ol><li>Linking of sellers from tr</li></ol></li><li>Check the app (web services) implications </li></ol><p><br/></p><p>In brand_request table, in &quot;status&quot; column show the following data points:</p><ol><li>Listed/New </li><li>If Listed append in brackets &quot;Registered with registryDoc&quot; or &quot;Registered with NOC Doc&quot; or &quot;Unregistered&quot;</li></ol><p><br/></p><p>In Case a brand request comes with a registry doc for a brand that is already listed with registry doc, then show popup stating &quot;This brand already has an owner. Please contact admin to resolve this issue&quot;</p><p>When Admin takes action on this popup, then On click of Yes, </p><ul style="list-style-type: square;"><li>Unlink the existing owners so that app stops showing the brand for that seller</li><li>Update the brand request of the existing owner. Set resquestStatus=2 and set remarks:<ul style="list-style-type: square;"><li>&quot;Deactivated due to unavailability of NOC&quot; if new owner has the registryDoc</li><li>&quot;Deactivated due to NOC/Registry Doc&quot; If the new seller has the NOC Doc</li></ul></li></ul><p><br/></p><p>In case when, where the seller is automatically removed because of submission of new genuine docs, then add a remark in the brand request table &quot;Deactivated by Admin&quot; and set requestStatus=2</p><p><br/></p><p>Insertions:</p><ol><li>If Brand logo provided, then save the brandLogoUrl, for all the brand request entries where br.brandLogo IS Null AND brandName = brand name given in Seller Board and br.requestStatus=1.</li></ol><p><br/></p><p><strong>Updating brand Logo URLs</strong></p><p>When Approving Brand request with brand Logo, then update all the approved entries having the same brand name with the brandLogo.</p><p>In Approved Tab &gt; When uploading a brandLogo, update that logo url in tr and in brand_request table for all the approved entries having the same brand name. </p><p><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong><strong>_</strong>__</p><p>Change the column label &quot;Status&quot; to &quot;App Status&quot;</p><p>In Seller Details Page &gt; Brand Section, when toggling the status button, set the tr.status =0/1. Remove the linkages of App Status and Approval Status.</p><p><br/></p><p><strong>Additional Requirement</strong></p><p>When Approving a Brand Request, run a check on the seller </p><p>If um.isSellerActive = 1, run all the logics to approve the brand</p><p>If um.isSellerActive = 0, then do not approve the brand and show error toast &quot;Cannot approve this brand. Please approve the seller first.&quot;</p><p><br/></p><p><strong>In Approved Brands Tab (22-05-2018)</strong></p><ol><li>Lock the isRegistered Toggle</li><li>In the brand Owner Column, below the owner name, show another very small button &quot;Disable Owner&quot; On click, open popup saying &quot;This will remove the owner of the brand and he/she will not be able to upload any products under this brand. Also, all existing products of the owner for this brand will not be visible on app.&quot; On click YES, do the following tasks<ol><li>set tr.status=0 for the owner and brand</li><li>set br.requestStatus=2</li><li>update br.reason with text - There are some problems with the provided documents.</li></ol></li></ol></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/113901601/114065432.png">brand popup.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/113901601/113967148.png">Brand requests admin.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

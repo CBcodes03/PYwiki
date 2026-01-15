@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Seller Shop</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Seller Shop
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Mar 26, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="SellerShop-Overview">Overview</h2><p>A Seller shop is basically consists two elements:</p><ol><li>Seller Shop</li><li>Seller Details Popup</li></ol><p>This will allow buyers to view information about sellers to make buying decisions such as Seller MOQ, Cancellation rates etc. and will allow users to browse specific sellers' products.</p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="SellerShop-1.SellerShopProducts">1. Seller Shop Products</h2><h3 id="SellerShop-DataPoints">Data Points</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.4251%;"/><col style="width: 24.2915%;"/><col style="width: 70.2834%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Button</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Background Image</td><td class="confluenceTd">This will be a dynamic image. URL passed by API</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd"><p>Seller Name</p></td><td class="confluenceTd">Company Name of the seller registered</td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Profile Type</td><td class="confluenceTd">Profile type selected at the time of registration</td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">City</td><td colspan="1" class="confluenceTd">Name of city with whcib</td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Seller MOQ</td><td colspan="1" class="confluenceTd"><p>Show Value, if Seller MOQ &gt; 0</p><p>Show &quot;No Seller MOQ&quot;, if Seller MOQ = 0 </p></td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Total Products</td><td colspan="1" class="confluenceTd">Show text &quot;Total X Products&quot; ; where X is the value of total variants uploaded by the Seller.</td></tr><tr><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Seller Details </td><td colspan="1" class="confluenceTd">On click, open a popup showcasing details of the Seller. Explained in below.</td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Showing Brands</td><td colspan="1" class="confluenceTd"><p><strong>Case 1 -</strong> If one brand is listed, then hide this whole section and start with the product Listing.</p><p><strong>Case 2 -</strong> If more than one brand is listed, then show this section.</p><p>By Default, all the brands must be in selected state. User can click on a brand to deselect it. The Product Listings should be filtered accordingly. </p><p>In case only one Brand is in selected state and user tries to deselect it, do not deselect that brand and show toast &quot;Atleast one brand must be selected&quot;</p><p>This section will be horizontally scrollable.</p></td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Product Listing</td><td colspan="1" class="confluenceTd">The order of the products listed must be dynamic and handled through APIs</td></tr><tr><td colspan="1" class="confluenceTd">8</td><td colspan="1" class="confluenceTd">Filters</td><td colspan="1" class="confluenceTd"><span class="legacy-color-text-blue4">We will use new filters in subsequent release</span>. For initial release we will maintain our existing filter system.</td></tr></tbody></table></div><h3 class="auto-cursor-target" id="SellerShop-OtherNotes">Other Notes</h3><ol><li>Load minimum of 20 Variants in one page</li><li>We will use Parallax effect for the upper container.</li><li>The Filters will stick to the bottom.</li></ol></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23887875/24018966.png?width=350" data-image-src="attachments/23887875/24018966.png" data-unresolved-comment-count="0" data-linked-resource-id="24018966" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Seller Shop – Products.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23887875" data-linked-resource-container-version="2" data-media-id="e10d81ac-939a-420b-b7bc-9cd5c970b432" data-media-type="file"></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="SellerShop-2.SellerDetailsPopUp">2. Seller Details PopUp</h2><p>This popup will open on click of &quot;Seller Details&quot; button.</p><p><strong>Data Points and Logic</strong></p><div class="table-wrap"><table class="relative-table confluenceTable" style="width: 99.9097%;"><colgroup><col style="width: 4.74181%;"/><col style="width: 19.9317%;"/><col style="width: 75.226%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Analytics</td><td class="confluenceTd"><div class="content-wrapper"><p>This visibility of this section needs to be dynamic such that we can hide/show this section based on a key value given by API.</p><p><span class="legacy-color-text-blue4">Logic for when to show and hide these sections is yet to be decided.</span></p><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Cancellation Rate</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>(Total pairs cancelled by Seller / Total no. of pairs ordered) * 100</p></div></div><div class="confluence-information-macro confluence-information-macro-information"><p class="title">Return Rate</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>(Total pairs returned by buyers / Total no. of pairs delivered) * 100</p></div></div></div></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Seller Details</td><td class="confluenceTd"><p><strong>Concern Person</strong> - Name of company representative </p><p><strong>Location</strong> - City, State</p><p><strong>Avg. Dispatch Time</strong> - Average of the Dispatch time of all products uploaded by seller</p><p><strong>Categories Sold</strong> - This will show max of 3 categories. Each category will be a combination of Main Category and subcategory. The categories shown here will be based on the maximum no. of products of the seller in a particular category combination. Do not break the line if the text is exceeding the available space.</p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23887875/24576538.png?width=350" data-image-src="attachments/23887875/24576538.png" data-unresolved-comment-count="0" data-linked-resource-id="24576538" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Seller Details Popup.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23887875" data-linked-resource-container-version="2" data-media-id="71b59c62-20eb-474b-ba24-320d6bac8539" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887875/23920656.png">Seller Shop – info.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887875/24609232.png">Seller Shop – Products.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887875/24018966.png">Seller Shop – Products.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887875/24576538.png">Seller Details Popup.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

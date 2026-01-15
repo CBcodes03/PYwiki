@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Old Consignments</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Admin-Panel-2.0_31096835.html">Admin Panel 2.0</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Old Consignments
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span> on Jun 11, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <h3 id="OldConsignments-Overview">Overview </h3><p>The Goal is to eliminate all the functions where &quot;ods&quot; is being used and fix the logics if required on the basis of the new Structure.</p><p>1. Check Logics of the following data points (for ods dependencies)</p><ol><li>Carton Count</li><li>No of SKUs</li><li>No of Pairs</li><li>Consignment Value</li><li>Delay Data</li><li>Amount Payable</li></ol><p>2. CTA Logics</p><ol><li>When Status = &quot;Initiated Pickup&quot;, show CTA &quot;Mark Dispatch&quot;<ol><li>On Click, set TimeStamp in &quot;actDispatchDate&quot;</li></ol></li><li>When Status = &quot;Dispatched&quot;, show CTA &quot;Mark NDR&quot; and &quot;Mark Delivered&quot;<ol><li>On click of &quot;Mark NDR&quot;, set TimeStamp in &quot;ndrDate&quot;</li><li>On click of &quot;Mark Delivered&quot;, set &quot;actDeliveryDate&quot; and add the value of SUM (od.remainingSetCount*od.setCount) where cm.Consignmentid=od.consignmentid in &quot;o.completedPairs&quot; </li></ol></li><li>When Status = &quot;NDR&quot;, show CTA &quot;Mar RTO&quot; &amp; &quot;Mark Delivered&quot;<ol><li>On click of &quot;Mark RTO&quot;, set TimeStamp in &quot;rtoDate&quot; and add the value of SUM (od.remainingSetCount*od.setCount) where cm.Consignmentid=od.consignmentid in &quot;o.completedPairs&quot;</li><li>On click of &quot;Mark Delivered&quot;, set &quot;actDeliveryDate&quot; and add the value of SUM (od.remainingSetCount*od.setCount) where cm.Consignmentid=od.consignmentid in &quot;o.completedPairs&quot;</li></ol></li><li>When Status = &quot;RTO&quot;, show CTA &quot;Mark Warehouse Delivered&quot;<ol><li>On click, set currentTimeStamp in &quot;actDeliveryDate&quot;  </li></ol></li><li>When Status = &quot;Delivered&quot; or &quot;Warehouse Delivered&quot;, Do not show any CTA</li></ol><p>3. Check ods Logic in the Status Filters, Filters, Sorting, Search</p><p><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/178126868/177733655.png" data-image-src="attachments/178126868/177733655.png" data-unresolved-comment-count="0" data-linked-resource-id="177733655" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Old consignment card.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="178126868" data-linked-resource-container-version="1" data-media-id="694ada87-e380-466a-9e8f-46a79d888692" data-media-type="file"></span></p>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/178126868/177733655.png">Old consignment card.PNG</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/178126868/178290708.png">old consignment filter and search.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

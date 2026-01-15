@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Order Details &gt; Summary</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="My-Orders_31162437.html">My Orders</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Order Details &gt; Summary
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Apr 16, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="OrderDetails&gt;Summary-Overview">Overview</h2><p>This is the second tab of the 'Order Details Page'. This page is broadly divided into X Sections:</p><ol><li>Header</li><li>Current Status</li><li>Original Bill Details</li><li>Advance Payment (optional)</li><li>Delivery Address</li></ol><p><br/></p><div class="table-wrap"><p class="auto-cursor-target"><strong>Data Points and Logic - Header</strong></p><div class="table-wrap"><table class="relative-table wrapped tablesorter tablesorter-default confluenceTable" style="width: 898.667px;"><colgroup><col style="width: 0.0px;"/><col style="width: 0.0px;"/><col style="width: 0.0px;"/></colgroup><tbody><tr class="tablesorter-headerRow"><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">#</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Data Points / Buttons</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Logic</div></th></tr><tr><td style="text-align: left;" class="confluenceTd">1</td><td style="text-align: left;" class="confluenceTd">Seller Name</td><td style="text-align: left;" class="confluenceTd">Company Name of the Seller</td></tr><tr><td style="text-align: left;" class="confluenceTd">2</td><td style="text-align: left;" class="confluenceTd">Seller MOQ</td><td style="text-align: left;" class="confluenceTd">Value of Seller MOQ (this must be fetched from the orders table, as this will be save in orders table at the time of placing the order.)</td></tr><tr><td style="text-align: left;" class="confluenceTd">3</td><td style="text-align: left;" class="confluenceTd">Order ID</td><td style="text-align: left;" class="confluenceTd">SK Order ID generated</td></tr><tr><td style="text-align: left;" class="confluenceTd">4</td><td style="text-align: left;" class="confluenceTd">Order Value</td><td style="text-align: left;" class="confluenceTd">This is the total net order value (adjusted of shipping and discounts)</td></tr><tr><td style="text-align: left;" class="confluenceTd">5</td><td style="text-align: left;" class="confluenceTd">Total Pairs </td><td style="text-align: left;" class="confluenceTd">Total sum of pairs in the order</td></tr><tr><td style="text-align: left;" class="confluenceTd">6</td><td style="text-align: left;" class="confluenceTd">Payment Option</td><td style="text-align: left;" class="confluenceTd">Payment option of the order</td></tr></tbody></table></div></div><p class="auto-cursor-target"><strong>Data Points and Logic - Current Status</strong></p><p class="auto-cursor-target">This data will be calculated at run time.</p><div class="table-wrap"><table class="relative-table wrapped tablesorter tablesorter-default confluenceTable" style="width: 898.667px;"><colgroup><col style="width: 0.0px;"/><col style="width: 0.0px;"/><col style="width: 0.0px;"/></colgroup><tbody><tr class="tablesorter-headerRow"><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">#</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Data Points / Buttons</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Logic</div></th></tr><tr><td style="text-align: left;" class="confluenceTd">1</td><td style="text-align: left;" class="confluenceTd">Cancelled</td><td style="text-align: left;" class="confluenceTd">Total Pairs &amp; Amount cancelled in that Order</td></tr><tr><td style="text-align: left;" class="confluenceTd">2</td><td style="text-align: left;" class="confluenceTd">RTO</td><td style="text-align: left;" class="confluenceTd">Total Pairs and Amount of pairs RTO in that Order</td></tr><tr><td style="text-align: left;" class="confluenceTd">3</td><td style="text-align: left;" class="confluenceTd">Delivered</td><td style="text-align: left;" class="confluenceTd">Total Pairs and Amount of Pairs Delivered in that Order</td></tr><tr><td style="text-align: left;" class="confluenceTd">4</td><td style="text-align: left;" class="confluenceTd">Undelivered</td><td style="text-align: left;" class="confluenceTd">Total Pairs and Amount of Pairs which are not Delivered, RTO or Cancelled</td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Data Points and Logic - Original Bill Details</strong></p><div class="table-wrap"><table class="relative-table wrapped tablesorter tablesorter-default confluenceTable" style="width: 898.667px;"><colgroup><col style="width: 0.0px;"/><col style="width: 0.0px;"/><col style="width: 0.0px;"/></colgroup><tbody><tr class="tablesorter-headerRow"><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">#</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Data Points / Buttons</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Logic</div></th></tr><tr><td style="text-align: left;" class="confluenceTd">1</td><td style="text-align: left;" class="confluenceTd">Pairs</td><td style="text-align: left;" class="confluenceTd">Total Pairs ordered</td></tr><tr><td style="text-align: left;" class="confluenceTd">2</td><td style="text-align: left;" class="confluenceTd">Subtotal</td><td style="text-align: left;" class="confluenceTd">Sum Value of all the pairs ordered (SKPrice + extSKPrice)</td></tr><tr><td style="text-align: left;" class="confluenceTd">3</td><td style="text-align: left;" class="confluenceTd">Less: Coupon Discount</td><td style="text-align: left;" class="confluenceTd">This value will be deducted from subtotal</td></tr><tr><td style="text-align: left;" class="confluenceTd">4</td><td style="text-align: left;" class="confluenceTd">Add: Shipping Charge</td><td style="text-align: left;" class="confluenceTd">This value will be added to the subtotal</td></tr><tr><td style="text-align: left;" class="confluenceTd">5</td><td style="text-align: left;" class="confluenceTd">Less: Advance Discount</td><td style="text-align: left;" class="confluenceTd">This value will be deducted from Subtotal. Do not show this row if value is 0</td></tr><tr><td style="text-align: left;" class="confluenceTd">6</td><td style="text-align: left;" class="confluenceTd">Grand Total</td><td style="text-align: left;" class="confluenceTd">This is the sum value of all the Value given above.</td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Data Points and Logic - Advance Payment</strong></p><p class="auto-cursor-target">This box will appear only in case the payment Option is 20% Advance.</p><div class="table-wrap"><table class="relative-table wrapped tablesorter tablesorter-default confluenceTable" style="width: 898.667px;"><colgroup><col style="width: 0.0px;"/><col style="width: 0.0px;"/><col style="width: 0.0px;"/></colgroup><tbody><tr class="tablesorter-headerRow"><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">#</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Data Points / Buttons</div></th><th style="text-align: left;" class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Logic</div></th></tr><tr><td style="text-align: left;" class="confluenceTd">1</td><td style="text-align: left;" class="confluenceTd">20% Advance </td><td style="text-align: left;" class="confluenceTd">20% of the Net Amount</td></tr><tr><td style="text-align: left;" class="confluenceTd">2</td><td style="text-align: left;" class="confluenceTd">80% COD</td><td style="text-align: left;" class="confluenceTd">80% of the Net Amount</td></tr><tr><td style="text-align: left;" class="confluenceTd">3</td><td style="text-align: left;" class="confluenceTd">Advance Payment</td><td style="text-align: left;" class="confluenceTd">20% of the Net Amount</td></tr></tbody></table></div><p class="auto-cursor-target"><strong>Delivery Address</strong></p><p class="auto-cursor-target">This will show the delivery address given by the Buyer</p><ol><li class="auto-cursor-target">Company Name (Bold)</li><li class="auto-cursor-target">Representative Name</li><li class="auto-cursor-target">Phone No</li><li class="auto-cursor-target">Address Line 1 </li><li class="auto-cursor-target">City - PinCode</li><li class="auto-cursor-target">State</li></ol></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/53575684/52920322.png?width=350" data-image-src="attachments/53575684/52920322.png" data-unresolved-comment-count="0" data-linked-resource-id="52920322" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Orders Details Test 1 – 2.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="53575684" data-linked-resource-container-version="3" data-media-id="be9a3bce-d28b-4aca-ad8e-9cf6de83ea2d" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/53575684/52920322.png">My Orders Details Test 1 – 2.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:52</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

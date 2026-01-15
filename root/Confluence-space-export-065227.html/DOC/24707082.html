@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Case 2: Lot Wise (Include Color = No)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Add-To-Truck-Page_24019061.html">Add To Truck Page</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Case 2: Lot Wise (Include Color = No)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span> on Mar 24, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>Here the screen is same as the Case 1: Lot Wise (Include Color = Yes). The only difference is in the logic on 'No. of Pairs' Dropdown</p><div style="" class="table-wrap"><p class="auto-cursor-target"><strong>Data Points &amp; Logic</strong></p><div class="table-wrap"><table class="relative-table wrapped tablesorter tablesorter-default confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.34413%;"/><col style="width: 19.6761%;"/><col style="width: 74.9798%;"/></colgroup><tbody><tr class="tablesorter-headerRow"><th class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">S.No</div></th><th class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Data Points </div></th><th class="tablesorter-header sortableHeader tablesorter-headerUnSorted confluenceTh" scope="col"><div class="tablesorter-header-inner">Logic</div></th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">No. of Pairs </td><td class="confluenceTd"><p>The dropdown value will give the list of numbers in <strong>multiple</strong> of MOQ Value. </p><p>Minimum being the MOQ Pairs value itself and going upto 10 multiples.</p><ul><li>Validate for Stock Lot information. If Stock lot is activated and the value for a particular size set is say 3 ; where lot size = 8 and MOQ = 24, then in the dropdown, the values populated should be (24, 32).</li><li>In case the Stock Lot value for a particular size set is less than the MOQ Pairs then, do not show that Size Set. </li><li>In order to Select no. of pairs, the Size Set field should be selected. If Size set is not selected, and user clicks on No. of Pairs dropdown, show toast &quot;Please select a Size Set first&quot;</li></ul></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Fulfill pairs box</td><td class="confluenceTd"><div class="content-wrapper"><p>Suppose, value of MOQ/Carton = X Pairs,</p><p>By Default, when no. of Pairs value is not selected in any variant block, keep this box hidden. </p><p>Now if the sum of pairs selected in all variant block is less than 'X', show this box with following text:</p><ul><li>Text: &quot;Required minimum of X Pairs&quot;</li></ul><p>As long as the minimum pairs criteria is not fulfilled, the &quot;Add to Truck&quot; button must be in Disabled State.</p><p><span class="confluence-embedded-file-wrapper"><span class="confluence-embedded-file-wrapper"><img class="confluence-embedded-image" loading="lazy" src="attachments/24707082/24707089.png" data-image-src="attachments/24707082/24707089.png" data-unresolved-comment-count="0" data-linked-resource-id="24707089" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Add to truck disabled.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24707082" data-linked-resource-container-version="1" data-media-id="e404a423-841c-45f8-bdf1-a7c192008ec1" data-media-type="file"></span></span></p><p>As the sum of pairs selected in all variant block is equal or more than 'X', hide this box again.</p></div></td></tr></tbody></table></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23822563/23888051.png?width=350" data-image-src="attachments/23822563/23888051.png" data-unresolved-comment-count="0" data-linked-resource-id="23888051" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Lot Only.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23822563" data-linked-resource-container-version="2" data-media-id="c65679fe-18b5-40c9-a99d-bfb2b5cd5477" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24707082/24707089.png">Add to truck disabled.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

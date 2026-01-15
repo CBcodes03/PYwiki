@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Manage Addresses</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Checkout-Page_24674543.html">Checkout Page</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Manage Addresses
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Mar 25, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>This explains how the user will follow if he wants to either add or change an address.</p><p>This flow contains basically two pages:</p><p>a. My Address List (to switch delivery location or edit an address)</p><p>b. Add New Address (for adding a new address to the address list)</p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="ManageAddresses-a.MyAddressList">a. My Address List</h2><p>This page will open when user clicks on the &quot;Change Address&quot; button on the Checkout Page. This page will list down all the addresses ever added by the user.</p><p><strong>Data Points and Logics</strong></p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 4.93927%;"/><col style="width: 19.5951%;"/><col style="width: 75.4656%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Add New Button</td><td class="confluenceTd">This button appears on the toolbar towards the right. On click, open teh Add New Address Page (as explained below)</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Radio buttons</td><td class="confluenceTd"><p>User can select any one address at any given time.</p><p>There must be at least one selected address at any given time.</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Address List</td><td class="confluenceTd"><p>Each Address Row must display the address in following format:</p><ul style="list-style-type: square;"><li>Full Street name (In bold)</li><li>City Name - Pincode,</li><li>State Name,</li><li>Reg Phone No.</li><li>Optional Phone No. (if provided)</li></ul></td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Edit Button </td><td colspan="1" class="confluenceTd"><p><strong>On click,</strong> the &quot;Add New Address&quot; page will open with its Title changed to &quot;Edit Address&quot;.</p><p>All the data on the page will be prefilled and user can edit and update the Address from there.</p></td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Continue Button</td><td colspan="1" class="confluenceTd"><strong>On click, </strong>check the address whose radio button is selected and mark that address as &quot;selected&quot; in the Database. <strong>On click,</strong> close the page and open the Checkout page where the selected address should be populated.</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24805626/24576278.png?width=350" data-image-src="attachments/24805626/24576278.png" data-unresolved-comment-count="0" data-linked-resource-id="24576278" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Addresses.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24805626" data-linked-resource-container-version="3" data-media-id="bffc1c46-1117-438c-afd6-4b4d6469154c" data-media-type="file"></span></p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="ManageAddresses-b.AddNewAddress">b. Add New Address</h2><p>This page can be accessed from three points:</p><p>a. Add New Address Button on checkout page in shipping section</p><p>b. Add New Button from the My Address List Page (as described above)</p><p>c. Edit Button from the My Address List Page </p><p>This page will be used for both &quot;adding&quot; or &quot;updating&quot; an address.</p><p><strong>Data Points and Logics</strong> </p><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.74899%;"/><col style="width: 23.6437%;"/><col style="width: 70.6073%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logics</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Page Title </td><td class="confluenceTd"><p>&quot;Add New Address&quot;. </p><p>If page is opened via &quot;Edit&quot; button from My Address List page, then change the page title to &quot;Edit Address&quot;</p></td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Registered Phone No.</td><td class="confluenceTd">Populate the registered no. of the user. This field be in a locked state. </td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Pin Code</td><td class="confluenceTd"><div class="content-wrapper"><p><strong>On click,</strong> open a small popup for entering the pin code.</p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="150" loading="lazy" src="attachments/24805626/24641840.png?height=150" data-image-src="attachments/24805626/24641840.png" data-unresolved-comment-count="0" data-linked-resource-id="24641840" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="enter pincode.PNG" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24805626" data-linked-resource-container-version="3" data-media-id="6b28e790-b484-4716-b63d-ed0e643564ec" data-media-type="file"></span></p><p>Automatically open the Keyboard (with number inputs only).</p><p>Validate this edit box with 6 Digit input. User should not be able to enter more than 6 Digits. If a user tries to enter less than 6 digits and clicks on Save Button, show toast &quot;Please enter a valid Pincode&quot;</p><p>When a user enters a pin code and clicks on Save Button, Run the pincode checker API:</p><ul style="list-style-type: square;"><li>if pincode is serviciable, close the popup box and populate the Pincode box on the page and show the location values below the Pincode Edit Box in the following format: Your Location: 'City Name', 'State Name'</li><li>If pincode is not serviciable, show the toast &quot;This pincode is not in our service area&quot;.</li></ul></div></td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Street Address</td><td colspan="1" class="confluenceTd">Here user can enter the street address. Validate this field for minimum 10 Characters. </td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Secondary Phone </td><td colspan="1" class="confluenceTd">This field is optional. Open keyboard (number input). 10 digit validation</td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Save Address Button</td><td colspan="1" class="confluenceTd"><p><strong>On click, </strong>Save the address above and close this page. </p><p>Now if the user had landed on this page from &quot;Add New Address&quot; button on Checkout page, then <strong>on click</strong> of save button, open the Checkout page directly.</p><p>Whereas if the user had landed on this page via &quot;Add New&quot; Button or &quot;Edit Button&quot; of the My Address List Page, then <strong>on click</strong> of save button, open the My Address List Page.</p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/24805626/24641817.png?width=350" data-image-src="attachments/24805626/24641817.png" data-unresolved-comment-count="0" data-linked-resource-id="24641817" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Add Address Page.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24805626" data-linked-resource-container-version="3" data-media-id="d9db9bae-794b-4d82-b3b1-6b221cdcf9c6" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24805626/24576278.png">My Addresses.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24805626/24641817.png">Add Address Page.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24805626/24641840.png">enter pincode.PNG</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

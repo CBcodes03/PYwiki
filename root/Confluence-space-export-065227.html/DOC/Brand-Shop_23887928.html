@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : Brand Shop</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : Brand Shop
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on Mar 26, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="BrandShop-Overview">Overview</h2><p>After the introduction of Brand Management System, one Brand could be sold by Multiple sellers. Therefore, any single brand can have its products sold by various sellers and therefore we need to address this as a seller filter feature in brand shop.</p><h3 id="BrandShop-DataPoints">Data Points</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 4.93927%;"/><col style="width: 26.0729%;"/><col style="width: 68.9879%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Buttons</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Brand Name</td><td class="confluenceTd">Name of the Brand opened</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Brand Logo </td><td class="confluenceTd"><p>If the brand logo is present, then show logo.</p><p>Else, show the initial of the brand name. </p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Total Products Count</td><td class="confluenceTd">Show count total no. of available variants in that brand. </td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Seller Filter Feature</td><td colspan="1" class="confluenceTd"><p><strong>Case 1 - </strong>If the brand has only one Seller, then this filter must remain hidden.</p><p><strong>Case 2</strong> - If there are more than one sellers of the brand, then this filter will be visible.</p><p>Show &quot;count of Sellers&quot; and a dropdown dialog, on click of which a popup will open showing the list of sellers selling this brand. (Popup Dialog explained below in further detail)</p><p>If there are total 3 sellers and user deselects one seller, then the text here should be &quot;Showing 2 out of 3 Sellers&quot;</p></td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Product Listing</td><td colspan="1" class="confluenceTd">Basic Product Listing</td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Filters</td><td colspan="1" class="confluenceTd">We will use existing filters. <span class="legacy-color-text-blue4">(New Filters will be introduced in subsequent release)</span></td></tr></tbody></table></div><p class="auto-cursor-target">Note* - By Default, all the sellers will be enabled.</p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p><p><br/></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23887928/23855154.png?width=350" data-image-src="attachments/23887928/23855154.png" data-unresolved-comment-count="0" data-linked-resource-id="23855154" data-linked-resource-version="2" data-linked-resource-type="attachment" data-linked-resource-default-alias="Brand Shop.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23887928" data-linked-resource-container-version="4" data-media-id="544371b6-fe9c-4b90-b8d7-46a516deb760" data-media-type="file"></span></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>    </p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="BrandShop-SellerFilterPopup">Seller Filter Popup</h2><h3 id="BrandShop-DataPoints.1"><strong>Data Points</strong></h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 100.0%;"><colgroup><col style="width: 5.50607%;"/><col style="width: 26.0729%;"/><col style="width: 68.4211%;"/></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data Points / Button</th><th class="confluenceTh">Logic</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Showing Sellers</td><td class="confluenceTd">Show the count of Sellers showing</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Checkbox List</td><td class="confluenceTd"><p>List all the Sellers of the Brand.</p><p>By default, all sellers must be checked.</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd"><p>Company Name of the Seller</p></td></tr><tr><td colspan="1" class="confluenceTd">4</td><td colspan="1" class="confluenceTd">Brand Owner tag</td><td colspan="1" class="confluenceTd"><p>Show this tag against the seller name if that seller is the original seller of the brand.</p><p>There can be only one Brand Owner for one brand.</p></td></tr><tr><td colspan="1" class="confluenceTd">5</td><td colspan="1" class="confluenceTd">Total Products</td><td colspan="1" class="confluenceTd">Below every seller, show the total count of variants that seller has for that brand. </td></tr><tr><td colspan="1" class="confluenceTd">6</td><td colspan="1" class="confluenceTd">Apply Button</td><td colspan="1" class="confluenceTd">Validation: If no seller is checked and user clicks on 'Apply' button, then show toast &quot;Please select any one seller&quot;</td></tr></tbody></table></div><p class="auto-cursor-target">Note - If user clicks outside the popup, it should close.</p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><span class="confluence-embedded-file-wrapper image-right-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image image-right" width="350" loading="lazy" src="attachments/23887928/23855172.png?width=350" data-image-src="attachments/23887928/23855172.png" data-unresolved-comment-count="0" data-linked-resource-id="23855172" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="Brand Shop – Seller Filter.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="23887928" data-linked-resource-container-version="4" data-media-id="87f78c46-00be-4fc2-bc40-056427e48864" data-media-type="file"></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887928/24609250.png">Brand Shop.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887928/23855172.png">Brand Shop – Seller Filter.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/23887928/23855154.png">Brand Shop.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

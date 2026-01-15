@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documentation : My Truck</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">Documentation</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="MVP-Release_286261255.html">MVP Release</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="APP-6.0-Overview_23101447.html">APP 6.0 Overview</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Documentation : My Truck
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                            
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Siddharth Rastogi</span>, last modified on May 07, 2018
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2"><style>[data-colorid=leunzg9jth]{color:#222222} html[data-color-mode=dark] [data-colorid=leunzg9jth]{color:#dddddd}</style>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 id="MyTruck-Overview">Overview</h2><p>When a user adds products to the Truck, they land up on this page grouped by the seller names.&nbsp;Users can reach this page by clicking on the Truck icon present on the Toolbar. Few new concepts are to be introduced here.</p><p>a. Unlike existing app, now when a user adds multiple products from different sellers, for <strong>every seller a separate order id</strong> will be generated.&nbsp;</p><p>b. Users cannot checkout a seller if its S<strong>eller MOQ</strong> requirement is not fulfilled.&nbsp;&nbsp;</p><p>c. Users can Visit the sellers shop, edit Order or Remove Seller Order&nbsp;</p><p>d.&nbsp;User can check multiple sellers and place <strong>multiple orders</strong> from his Cart/Truck in one go.</p></div>
+</div>
+</div>
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 id="MyTruck-DataPointsandLogic">Data Points and Logic</h3><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="width: 99.7978%;"><colgroup><col style="width: 5.36041%;" /><col style="width: 22.9848%;" /><col style="width: 71.7157%;" /></colgroup><tbody><tr><th class="confluenceTh">S.No</th><th class="confluenceTh">Data points / Buttons</th><th class="confluenceTh">Logics</th></tr><tr><td class="confluenceTd">1</td><td class="confluenceTd">Seller Name</td><td class="confluenceTd">Company Name of the Seller</td></tr><tr><td class="confluenceTd">2</td><td class="confluenceTd">Seller MOQ</td><td class="confluenceTd"><p>MOQ Value set by the Seller.&nbsp;</p><p>In case Seller MOQ = 0, show text &quot;No Seller MOQ&quot;</p></td></tr><tr><td class="confluenceTd">3</td><td class="confluenceTd">Image Thumbnails</td><td class="confluenceTd">Show maximum of 4 image thumbnails. These images will be of the individual variants which have been added by the user.&nbsp;&nbsp;</td></tr><tr><td class="confluenceTd">4</td><td class="confluenceTd">Add Products Button</td><td class="confluenceTd"><strong>On click,</strong> open the <a href="Seller-Shop_23887875.html" data-linked-resource-id="23887875" data-linked-resource-version="2" data-linked-resource-type="page">Seller Shop products page</a></td></tr><tr><td class="confluenceTd">5</td><td class="confluenceTd">Edit Order Button</td><td class="confluenceTd"><strong>On click,</strong> open the <a href="Edit-Seller-Order_100433921.html" data-linked-resource-id="100433921" data-linked-resource-version="3" data-linked-resource-type="page">Edit Seller Order</a> Page.&nbsp;</td></tr><tr><td class="confluenceTd">6</td><td class="confluenceTd">Remove Seller Button</td><td class="confluenceTd"><p><strong>On click,&nbsp;</strong>Open a popup:</p><p>Main Text: &quot;Are you sure you want to remove the order of this seller?&quot;</p><p>Options: No, Yes</p><p><strong>On click</strong> of Remove, Remove the order entry for that specific seller from the list (Delete the entry from database).</p></td></tr><tr><td colspan="1" class="confluenceTd">7</td><td colspan="1" class="confluenceTd">Info text Box</td><td colspan="1" class="confluenceTd"><p>This is a red info box that appears above the Order Value text. This box will display texts to the user in case there is a Seller MOQ or Product MOQ violations. This box will appear only in two cases:</p><p><strong>Case 1:&nbsp;</strong>If the no. of pairs of any product in an order becomes less than the Product MOQ. This could be because any product became inactive (isAvailable = 0) or is StockLot of any variant become 0 or brand is Deactivated. etc..</p><ul style="list-style-type: square;"><li>Show text: &quot;EDIT ORDER: X Product's MOQ does not match the order qty&quot; ; where X = Count pf products which have this violation.</li></ul><p><strong>Case 2: </strong>If the no. of pairs of any order is less than the sellerMOQ.&nbsp;</p><ul style="list-style-type: square;"><li>Show text: &quot;Add X more pairs to complete Seller MOQ&quot; ; where X is the difference of pairs between pairs ordered and sellerMOQ</li></ul><p><strong>Case 3:&nbsp;</strong>In all other cases do not show this box.&nbsp;</p></td></tr><tr><td class="confluenceTd">8</td><td class="confluenceTd">Checkbox</td><td class="confluenceTd"><p>When the whole page loads, for every order check whether the no. of pairs are equal to or more than the Seller MOQ of that order.</p><ul style="list-style-type: square;"><li>If Yes, set the checkbox in checked state automatically. (User can click on it and un-check the checkbox. This will affect the &quot;multiple order checkout&quot; button as explained below.)&nbsp;</li><li>If No, set the checkbox in disabled state. (In this case if user clicks on the checkbox, show toast &quot;Add X Pairs to place the order&quot;)&nbsp;</li></ul></td></tr><tr><td class="confluenceTd">9</td><td class="confluenceTd">Order Value and Pairs</td><td class="confluenceTd"><p>This will show the sum value of all products in that order [Sum of (SK Price x Pairs)]. This will be appended by the count of total pairs ordered. The color of the text will change according to following condition:</p><ul style="list-style-type: square;"><li>If Pairs Ordered &lt; Seller MOQ, set the color as Red&nbsp;#FF6565</li><li>If the Pairs Ordered&nbsp;<span data-colorid="leunzg9jth">&ge;<span>&nbsp;Seller MOQ, set the color as Green&nbsp;#00C29C</span></span></li></ul></td></tr><tr><td colspan="1" class="confluenceTd">10</td><td colspan="1" class="confluenceTd"><p>Seller Checkout Button /&nbsp;</p><p>Edit Order Button/&nbsp;</p><p>Add Products Button</p></td><td colspan="1" class="confluenceTd"><p>This button will have three possible variants based on the below conditions:</p><ol><li><strong>Seller Checkout Button&nbsp;</strong>This button will be visible when there is no product moq violation or seller moq violation. <strong>On click,&nbsp;</strong>make necessary API calls and open the Checkout Page. Button Color&nbsp;#00C29C</li><li><strong>Edit Order Button</strong> This button will be visible when product MOQ violation is there in an order. <strong>On click</strong>, open the Edit Seller Order Screen. Button Color&nbsp;#FF6565</li><li><strong>Add Product Button</strong> This button will be visible only when the there are no product MOQ violations but there is seller MOQ violation. <strong>On click,</strong> open the Seller Shop Page. BUtton Color&nbsp;#FF6565</li></ol></td></tr><tr><td colspan="1" class="confluenceTd">11</td><td colspan="1" class="confluenceTd">Multiple Orders Checkout Button</td><td colspan="1" class="confluenceTd"><p>This is a floating button that will appear at the bottom of the screen. It will be visible if more than one checkbox is in selected state.&nbsp;</p><ul style="list-style-type: square;"><li>If more than one checkbox is in Selected state, then this button must be visible.</li><li>If only one or no checkbox is in Selected state, then this button must be in hidden state.</li></ul><p>Use animation to slide up and slide down the button according to the above conditions.</p><p>The data points on the button will be:</p><ol><li>text &quot;Multiple Orders Checkout&quot;</li><li>Total Order Amount&nbsp; = Sum of the all the checkboxed orders' amounts</li><li>Total Pairs = Sum of all the checkboxed Orders' pairs</li><li>Text &quot;X Orders&quot;; where X = count of Orders with checkbox in selected state</li></ol><p><strong>On click,</strong> call the necessary APIs and open the Checkout Page</p><p><br /></p></td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p style="text-align: right;"><strong>My Truck&nbsp;</strong></p><p><span class="confluence-embedded-file-wrapper image-right-wrapper"><img class="confluence-embedded-image image-right" loading="lazy" src="attachments/24576133/24576143.png" data-image-src="attachments/24576133/24576143.png" data-unresolved-comment-count="0" data-linked-resource-id="24576143" data-linked-resource-version="3" data-linked-resource-type="attachment" data-linked-resource-default-alias="My Truck – 3.png" data-base-url="https://shoekonnect.atlassian.net/wiki" data-linked-resource-content-type="image/png" data-linked-resource-container-id="24576133" data-linked-resource-container-version="9" data-media-id="3faa9756-4621-4b96-a0f8-02f661023f37" data-media-type="file" /></span></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24576133/24576137.png">My Truck – 2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24576133/24576184.png">My Truck – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24576133/100270142.png">My Truck – 3.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/24576133/24576143.png">My Truck – 3.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Aug 19, 2025 06:51</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
